@@ -1,0 +1,23 @@
+.sectionTitle h1 {
+     color: #E2E8F0;
+     font-family: Hind Siliguri;
+     font-style: normal;
+     font-weight: 600;
+     line-height: 48px;
+     /* 104.348% */
+     letter-spacing: 1.2px;
+}
+
+.sectionTitle h1 span {
+     color: #38BDF8;
+}
+
+.sectionTitle p {
+     color: #94A3B8;
+     text-align: center;
+     font-family: Hind Siliguri;
+     font-size: 18px;
+     font-style: normal;
+     font-weight: 500;
+     line-height: 28px; 
+}

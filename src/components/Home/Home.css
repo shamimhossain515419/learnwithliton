@@ -1,0 +1,26 @@
+.container {
+     background-color: #1E293B;
+}
+
+.barCompleted {
+     background-color: lightblue;
+     width: 80%;
+}
+
+.label {
+     font-size: 20px;
+     color: green;
+}
+
+
+
+.moduleScrollBar::-webkit-scrollbar {
+     width: 8px;
+     margin: 2px;
+
+}
+
+.moduleScrollBar::-webkit-scrollbar-thumb {
+     background-color: #747474;
+     border-radius: 10px;
+}
