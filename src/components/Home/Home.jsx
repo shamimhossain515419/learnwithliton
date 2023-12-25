@@ -397,7 +397,7 @@ const HomePage = () => {
 
                {/* Courses_project */}
                <div>
-                    <Courses_project></Courses_project>
+                <Courses_project></Courses_project>
                </div>
                {/* CoursesProcess  */}
                <CoursesProcess></CoursesProcess>
