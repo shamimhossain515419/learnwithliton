@@ -19,9 +19,9 @@ export default function RootLayout({ children }) {
       <body className={HindSiliguri.className}>
         <Navbar></Navbar>
 
-         <div className=' min-h-[50vh] pt-[60px]'>
-         {children}
-         </div>
+        <div className=' min-h-[50vh] pt-[60px]'>
+          {children}
+        </div>
 
         <Footer></Footer>
 

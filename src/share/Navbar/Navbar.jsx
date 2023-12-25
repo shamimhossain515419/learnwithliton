@@ -44,6 +44,8 @@ const Navbar = () => {
                                                             } href="/live-session"> লাইভ সেশনস</Link>
                                                             <Link className={ pathname == "/support"  ?"  text-[14px]  rounded-[6px] bg-[#8194ae6c]  px-[12px] py-[9px] secondColor " : "primaryColor text-[14px] hover:bg-[#8194ae6c]  rounded-[6px] duration-200  px-[12px] py-[9px]"
                                                             } href="/support"> সাপোর্ট চ্যানেল</Link>
+                                                            <Link className={ pathname == "/payment"  ?"  text-[14px]  rounded-[6px] bg-[#8194ae6c]  px-[12px] py-[9px] secondColor " : "primaryColor text-[14px] hover:bg-[#8194ae6c]  rounded-[6px] duration-200  px-[12px] py-[9px]"
+                                                            } href="/support"> পেমেন্ট করুন</Link>
                                                        </div>
 
                                                        <div className=" flex gap-5 items-center ">
