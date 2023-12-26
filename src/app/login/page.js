@@ -4,6 +4,11 @@ import login from '../../../public/image/other/IMAGE (15).png'
 import Image from 'next/image';
 import SectionTitle from '@/components/SectionTitle/SectionTitle';
 import { FaEye } from 'react-icons/fa';
+export const generateMetadata = () => {
+     return {
+          title: " Login | Asian It"
+     }
+}
 const page = () => {
      return (
           <div className=' py-24'>

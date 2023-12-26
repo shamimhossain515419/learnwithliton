@@ -7,6 +7,8 @@ import { FaBarsStaggered, FaBookOpenReader } from "react-icons/fa6";
 import { FaLock, FaUserCheck } from "react-icons/fa";
 import { MdOutlineCoronavirus } from 'react-icons/md';
 import { usePathname } from 'next/navigation';
+
+
 const Layout = ({ children }) => {
      const pathname = usePathname();
      console.log(pathname);

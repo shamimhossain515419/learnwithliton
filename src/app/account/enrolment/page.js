@@ -1,5 +1,9 @@
 import React from 'react';
-
+export const generateMetadata = () => {
+     return {
+          title: " enrollment | Asian It"
+     }
+}
 const page = () => {
      return (
           <div>

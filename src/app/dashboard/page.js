@@ -2,7 +2,11 @@
 import Container from '@/components/CommonComponent/Container/Container';
 import React from 'react';
 import { MdArrowDownward } from "react-icons/md"
-
+export const generateMetadata = () => {
+     return {
+          title: " Dashboard | Asian It"
+     }
+}
 const page = () => {
      return (
           <div className=' py-20  secondBg  border-b   border-[#F8FAFC14] '>

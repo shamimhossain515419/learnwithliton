@@ -1,5 +1,9 @@
 import React from 'react';
-
+export const generateMetadata = () => {
+     return {
+          title: " certificate | Asian It"
+     }
+}
 const page = () => {
      return (
           <div>

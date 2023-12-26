@@ -9,6 +9,12 @@ import image5 from '../../../public/image/other/IMAGE (20).png'
 import image6 from '../../../public/image/other/IMAGE (21).png'
 import rank from '../../../public/image/other/Frame (7).svg'
 import Image from 'next/image';
+export const generateMetadata = () => {
+     return {
+          title: " leaderboard | Asian It"
+     }
+}
+
 
 const page = () => {
      return (

@@ -1,9 +1,13 @@
-'use client'
+
 import Image from 'next/image';
 import React from 'react';
 import profileImage from '../../../public/image/home/IMAGE (2).png'
 
-
+export const generateMetadata = () => {
+     return {
+          title: " account | Asian It"
+     }
+}
 const page = () => {
 
      return (

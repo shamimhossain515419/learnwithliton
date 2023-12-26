@@ -1,6 +1,10 @@
 import Container from '@/components/CommonComponent/Container/Container';
 import React from 'react';
-
+export const generateMetadata = () => {
+     return {
+          title: " change-password | Asian It"
+     }
+}
 const page = () => {
      return (
           <div>

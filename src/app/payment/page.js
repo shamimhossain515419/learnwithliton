@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import Container from '@/components/CommonComponent/Container/Container';
 import SectionTitle from '@/components/SectionTitle/SectionTitle';
@@ -9,6 +9,8 @@ import Image from 'next/image';
 import initializeAOS from '@/share/aos/aos';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css'
+
+   
 const PaymentPage = () => {
      useEffect(() => {
           initializeAOS();
@@ -19,7 +21,7 @@ const PaymentPage = () => {
      const handlePhoneChange = (newPhone) => {
           setPhone(newPhone);
      };
- console.log(phone);
+     console.log(phone);
      return (
           <div className=' py-28 border-b border-[#F8FAFC14]'>
                <Container>
