@@ -32,20 +32,18 @@ const Navbar = () => {
                                              <div className=" hidden lg:flex">
                                                   <div className=" flex items-center gap-8  ">
                                                        <div className=" flex items-center gap-[10px]  space-x-5">
-                                                            <Link className={ pathname == "/"  ? " text-[14px]  rounded-[6px] bg-[#8194ae6c]  px-[12px] py-[9px] secondColor " : "primaryColor hover:bg-[#8194ae6c]  rounded-[6px] duration-200  px-[12px] py-[9px] text-[14px]"
+                                                            <Link className={pathname == "/" ? " text-[14px]  rounded-[6px] bg-[#8194ae6c]  px-[12px] py-[9px] secondColor " : "primaryColor hover:bg-[#8194ae6c]  rounded-[6px] duration-200  px-[12px] py-[9px] text-[14px]"
                                                             } href="/">হোম </Link>
-                                                            <Link className={ pathname == "/corses-access"  ? "  text-[14px]  rounded-[6px] bg-[#8194ae6c]  px-[12px] py-[9px] secondColor " : "primaryColor  text-[14px] hover:bg-[#8194ae6c]  rounded-[6px] duration-200  px-[12px] py-[9px]"
-                                                            } href="/corses-access">কোর্স এক্সেস </Link>
-                                                            <Link className={ pathname == "/dashboard"  ? "  text-[14px]  rounded-[6px] bg-[#8194ae6c]  px-[12px] py-[9px] secondColor " : "primaryColor text-[14px] hover:bg-[#8194ae6c]  rounded-[6px] duration-200  px-[12px] py-[9px]"
+                                                            <Link className={pathname == "/corses-access" ? "  text-[14px]  rounded-[6px] bg-[#8194ae6c]  px-[12px] py-[9px] secondColor " : "primaryColor  text-[14px] hover:bg-[#8194ae6c]  rounded-[6px] duration-200  px-[12px] py-[9px]"
+                                                            } href="/courses/1">কোর্স এক্সেস </Link>
+                                                            <Link className={pathname == "/dashboard" ? "  text-[14px]  rounded-[6px] bg-[#8194ae6c]  px-[12px] py-[9px] secondColor " : "primaryColor text-[14px] hover:bg-[#8194ae6c]  rounded-[6px] duration-200  px-[12px] py-[9px]"
                                                             } href="/dashboard"> ড্যাশবোর্ড</Link>
-                                                            <Link className={ pathname == "/leaderboard"  ? "  text-[14px]  rounded-[6px] bg-[#8194ae6c]  px-[12px] py-[9px] secondColor " : "primaryColor text-[14px] hover:bg-[#8194ae6c]  rounded-[6px] duration-200  px-[12px] py-[9px]"
+                                                            <Link className={pathname == "/leaderboard" ? "  text-[14px]  rounded-[6px] bg-[#8194ae6c]  px-[12px] py-[9px] secondColor " : "primaryColor text-[14px] hover:bg-[#8194ae6c]  rounded-[6px] duration-200  px-[12px] py-[9px]"
                                                             } href="/leaderboard">লিডারবোর্ড </Link>
-                                                            <Link className={ pathname == "/live-session"  ? "  text-[14px]  rounded-[6px] bg-[#8194ae6c]  px-[12px] py-[9px] secondColor " : "primaryColor text-[14px] hover:bg-[#8194ae6c]  rounded-[6px] duration-200  px-[12px] py-[9px]"
-                                                            } href="/live-session"> লাইভ সেশনস</Link>
-                                                            <Link className={ pathname == "/support"  ?"  text-[14px]  rounded-[6px] bg-[#8194ae6c]  px-[12px] py-[9px] secondColor " : "primaryColor text-[14px] hover:bg-[#8194ae6c]  rounded-[6px] duration-200  px-[12px] py-[9px]"
-                                                            } href="/support"> সাপোর্ট চ্যানেল</Link>
-                                                            <Link className={ pathname == "/payment"  ?"  text-[14px]  rounded-[6px] bg-[#8194ae6c]  px-[12px] py-[9px] secondColor " : "primaryColor text-[14px] hover:bg-[#8194ae6c]  rounded-[6px] duration-200  px-[12px] py-[9px]"
-                                                            } href="/support"> পেমেন্ট করুন</Link>
+                                                            <Link className={pathname == "/live-session" ? "  text-[14px]  rounded-[6px] bg-[#8194ae6c]  px-[12px] py-[9px] secondColor " : "primaryColor text-[14px] hover:bg-[#8194ae6c]  rounded-[6px] duration-200  px-[12px] py-[9px]"
+                                                            } href="/live"> লাইভ সেশনস</Link>
+                                                            <Link className={pathname == "/payment" ? "  text-[14px]  rounded-[6px] bg-[#8194ae6c]  px-[12px] py-[9px] secondColor " : "primaryColor text-[14px] hover:bg-[#8194ae6c]  rounded-[6px] duration-200  px-[12px] py-[9px]"
+                                                            } href="/payment"> পেমেন্ট করুন</Link>
                                                        </div>
 
                                                        <div className=" flex gap-5 items-center ">
@@ -63,7 +61,7 @@ const Navbar = () => {
                                                             <div>
                                                                  {
                                                                       user ? <>
-                                                                           <Link href={'/profile'}>  <Image className=" h-[28px] w-[28px] rounded-full " src={userImage} alt="" /></Link>
+                                                                           <Link href={'/account'}>  <Image className=" h-[28px] w-[28px] rounded-full " src={userImage} alt="" /></Link>
                                                                       </> : < p> Login </p>
                                                                  }
                                                             </div>

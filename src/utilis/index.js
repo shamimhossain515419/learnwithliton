@@ -1,4 +1,4 @@
-  export const FAQData = [
+export const FAQData = [
      {
           id: 1,
           title: "কোর্সটি করার জন্য আগে থেকে কি কি জানতে হবে?",
@@ -42,6 +42,182 @@
 ]
 
 
+
+export const Classes = [
+     {
+          id: 1,
+          name: "Module 1 - Advanced - Project Chat",
+          videoTime: "02:56:52 hours",
+          dataLine: "19 Jul 2025 12:00:00 AM",
+          subClass: [
+               {
+                    id: 1,
+                    title: "1.1 What is State Management",
+                    time: "12:05 "
+               },
+               {
+                    id: 2,
+                    title: "1.2 What is State Management",
+                    time: "12:05 "
+               },
+               {
+                    id: 3,
+                    title: "1.3 What is State Management",
+                    time: "12:05 "
+               },
+               {
+                    id: 4,
+                    title: "1.4 What is State Management",
+                    time: "12:05 "
+               },
+               {
+                    id: 5,
+                    title: "1.5 What is State Management",
+                    time: "12:05 "
+               },
+               {
+                    id: 6,
+                    title: "1.6 What is State Management",
+                    time: "12:05 "
+               },
+               {
+                    id: 7,
+                    title: "1.7 What is State Management",
+                    time: "12:05 "
+               },
+              
+          ]
+     },
+     {
+          id: 2,
+          name: "Module 2 - Advanced - Project ",
+          videoTime: "02:56:52 hours",
+          dataLine: "19 Jul 2025 12:00:00 AM",
+          subClass: [
+               {
+                    id: 1,
+                    title: "1.1 What is State Management",
+                    time: "12:05 "
+               },
+               {
+                    id: 2,
+                    title: "1.2 What is State Management",
+                    time: "12:05 "
+               },
+               {
+                    id: 3,
+                    title: "1.3 What is State Management",
+                    time: "12:05 "
+               },
+               {
+                    id: 4,
+                    title: "1.4 What is State Management",
+                    time: "12:05 "
+               },
+               {
+                    id: 5,
+                    title: "1.5 What is State Management",
+                    time: "12:05 "
+               },
+               {
+                    id: 6,
+                    title: "1.6 What is State Management",
+                    time: "12:05 "
+               },
+               {
+                    id: 7,
+                    title: "1.7 What is State Management",
+                    time: "12:05 "
+               },
+          ]
+     },
+     {
+          id: 3,
+          name: "Module 3 - Advanced - Project ",
+          videoTime: "02:56:52 hours",
+          dataLine: "19 Jul 2025 12:00:00 AM",
+          subClass: [
+               {
+                    id: 1,
+                    title: "1.1 What is State Management",
+                    time: "12:05 "
+               },
+               {
+                    id: 2,
+                    title: "1.2 What is State Management",
+                    time: "12:05 "
+               },
+               {
+                    id: 3,
+                    title: "1.3 What is State Management",
+                    time: "12:05 "
+               },
+               {
+                    id: 4,
+                    title: "1.4 What is State Management",
+                    time: "12:05 "
+               },
+               {
+                    id: 5,
+                    title: "1.5 What is State Management",
+                    time: "12:05 "
+               },
+               {
+                    id: 6,
+                    title: "1.6 What is State Management",
+                    time: "12:05 "
+               },
+               {
+                    id: 7,
+                    title: "1.7 What is State Management",
+                    time: "12:05 "
+               },
+          ]
+     },
+     {
+          id: 4,
+          name: "Module 4 - Advanced - Project ",
+          videoTime: "02:56:52 hours",
+          dataLine: "19 Jul 2025 12:00:00 AM",
+          subClass: [
+               {
+                    id: 1,
+                    title: "1.1 What is State Management",
+                    time: "12:05 "
+               },
+               {
+                    id: 2,
+                    title: "1.1 What is State Management",
+                    time: "12:05 "
+               },
+               {
+                    id: 3,
+                    title: "1.1 What is State Management",
+                    time: "12:05 "
+               },
+               {
+                    id: 4,
+                    title: "1.1 What is State Management",
+                    time: "12:05 "
+               },
+               {
+                    id: 5,
+                    title: "1.1 What is State Management",
+                    time: "12:05 "
+               },
+               {
+                    id: 6,
+                    title: "1.1 What is State Management",
+                    time: "12:05 "
+               },
+               {
+                    id: 7,
+                    title: "1.1 What is State Management",
+                    time: "12:05 "
+               },
+          ]
+     },
+]
 
 
 

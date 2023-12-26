@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const Footer = () => {
      return (
-          <div className=" bg-[#0B1120]">
+          <div className=" bg-[#0B1120] border-t border-[#f8fafc2c]">
                
 
                <div className=" pt-[70px]">
@@ -40,7 +40,7 @@ const Footer = () => {
                          </div>
                          <div>
                               <div className="  py-3">
-                                   <hr className=" w-full h-[1px] bg-[#CBD5E11A]" />
+                                   <hr className=" w-full border border-[#f8fafc0f]" />
                               </div>
                               <div className=" w-full py-4">
                                    <Image className=" w-full" src={paymentImage} alt="" />

@@ -97,3 +97,32 @@ body {
   background-color: #747474;
   border-radius: 10px;
 }
+
+
+.custom_file::-webkit-file-upload-button {
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background: #1E293B;
+  color: #FFF;
+  font-family: Hind Siliguri;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px;
+  margin-right: 18px;
+}
+
+
+
+.moduleScrollBar::-webkit-scrollbar {
+  width: 8px;
+  margin: 2px;
+
+}
+
+.moduleScrollBar::-webkit-scrollbar-thumb {
+  background-color: #747474;
+  border-radius: 10px;
+}
