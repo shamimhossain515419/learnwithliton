@@ -1,3 +1,4 @@
+// FAQData  
 export const FAQData = [
      {
           id: 1,
@@ -42,7 +43,7 @@ export const FAQData = [
 ]
 
 
-
+// Classes data 
 export const Classes = [
      {
           id: 1,
@@ -85,7 +86,7 @@ export const Classes = [
                     title: "1.7 What is State Management",
                     time: "12:05 "
                },
-              
+
           ]
      },
      {

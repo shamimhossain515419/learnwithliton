@@ -19,15 +19,16 @@ const Courses_project = () => {
      return (
           <div className='  bg-[#0B1120] border-t border-[#FFFFFF4D] py-20'>
                <div className=' mx-auto'>
-                    <Image className='block mx-auto py-4' src={HeadingImage} alt="image"></Image>
+                    {/* courses project title  */}
+                    <Image data-aos="fade-up" className='block mx-auto py-4' src={HeadingImage} alt="image"></Image>
                     <SectionTitle size={"text-[34px]"} alignment={'text-center'} title_1={'কোর্সে যে'} title_2={"প্রজেক্ট"} title_3={"গুলো করানো হবে"} paragraph={"দশটি প্রজেক্ট আমরা একসাথে করবো"}></SectionTitle>
                </div>
 
 
 
                <Container>
+                    {/* courses project  image  */}
                     <div className=' grid md:grid-cols-2 gap-4 py-12'>
-
                          <div className=' w-full rounded-md overflow-hidden'>
                               <Image className='  hover:scale-125 duration-500 cursor-pointer w-full h-full  object-fill' src={image5} alt='image'></Image>
                          </div>

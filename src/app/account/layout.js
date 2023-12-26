@@ -18,25 +18,25 @@ const Layout = ({ children }) => {
 
                          <div className="  w-full md:w-[250px] md:border-r-2 border-[#F8FAFC14]">
                               <div className="sm:w-10/12 ">
-                                   <Link  href={'/account'} className=" flex items-center gap-3  my-2 hover:bg-[#1E293B] rounded-[3px] bg-[#1E293B] py-2 px-2 ">
+                                   <Link  href={'/account'} className={` ${pathname == '/account' ? "bg-[#1E293B] text-[#0284C7]" : "text-[#94A3B8]" } flex items-center gap-3  my-2 hover:bg-[#1E293B] rounded-[3px]  py-2 px-2 `}>
                                         <FaUserCheck className=" text-[#38BDF8]" size={16} />
-                                        <p className=" text-[#0284C7]">প্রোফাইল</p>
+                                        <p className=" text-[14px]  font-semibold">প্রোফাইল</p>
                                    </Link>
-                                   <Link  href={'/account/change-password'} className=" flex items-center gap-3 hover:bg-[#1E293B]  my-2 rounded-[3px]  py-2 px-2 ">
+                                   <Link  href={'/account/change-password'} className={` ${pathname == '/account/change-password' ? "bg-[#1E293B] text-[#0284C7]" : "text-[#94A3B8]" } flex items-center gap-3  my-2 hover:bg-[#1E293B] rounded-[3px]  py-2 px-2 `}>
                                         <FaLock className=" text-[#38BDF8]" size={16} />
-                                        <p className=" text-[#94A3B8] text-[14px]  font-semibold ">পাসওয়ার্ড</p>
+                                        <p className=" text-[14px]  font-semibold  ">পাসওয়ার্ড</p>
                                    </Link>
-                                   <Link  href={'/account/transactions'} className=" flex items-center gap-3  my-2 hover:bg-[#1E293B] rounded-[3px]  py-2 px-2 ">
+                                   <Link  href={'/account/transactions'} className={` ${pathname == '/account/transactions' ? "bg-[#1E293B] text-[#0284C7]" : "text-[#94A3B8]" } flex items-center gap-3  my-2 hover:bg-[#1E293B] rounded-[3px]  py-2 px-2 `}>
                                         <GrNotes className=" text-[#38BDF8]" size={16} />
-                                        <p className=" text-[#94A3B8] text-[14px]  font-semibold ">ট্রানজেকশন</p>
+                                        <p className="  text-[14px]  font-semibold ">ট্রানজেকশন</p>
                                    </Link>
-                                   <Link  href={'/account/enrolment'} className=" flex items-center gap-3  hover:bg-[#1E293B] my-2 rounded-[3px]  py-2 px-2 ">
+                                   <Link  href={'/account/enrolment'} className={` ${pathname == '/account/enrolment' ? "bg-[#1E293B] text-[#0284C7]" : "text-[#94A3B8]" } flex items-center gap-3  my-2 hover:bg-[#1E293B] rounded-[3px]  py-2 px-2 `}>
                                         <FaBookOpenReader className=" text-[#38BDF8]" size={16} />
-                                        <p className=" text-[#94A3B8] text-[14px]  font-semibold ">এনরোলমেন্ট</p>
+                                        <p className="  text-[14px]  font-semibold ">এনরোলমেন্ট</p>
                                    </Link>
-                                   <Link  href={'/account/certificate'} className=" flex items-center gap-3  hover:bg-[#1E293B] my-2 rounded-[3px]  py-2 px-2 ">
+                                   <Link  href={'/account/certificate'} className={` ${pathname == '/account/certificate' ? "bg-[#1E293B] text-[#0284C7]" : "text-[#94A3B8]" } flex items-center gap-3  my-2 hover:bg-[#1E293B] rounded-[3px]  py-2 px-2 `}>
                                         <MdOutlineCoronavirus className=" text-[#38BDF8]" size={16} />
-                                        <p className=" text-[#94A3B8] text-[14px]  font-semibold ">কোর্স সার্টিফিকেট</p>
+                                        <p className="  text-[14px]  font-semibold ">কোর্স সার্টিফিকেট</p>
                                    </Link>
 
                               </div>

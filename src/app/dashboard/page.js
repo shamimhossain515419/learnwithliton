@@ -8,6 +8,7 @@ const page = () => {
           <div className=' py-20  secondBg  border-b   border-[#F8FAFC14] '>
 
                <Container>
+                    {/* কোর্স অগ্রগতি   */}
                     <div className=' py-3 flex justify-between gap-3  items-center'>
                          <h1 className=' heading-18 '> কোর্স অগ্রগতি - Batch-2 </h1>
                          <button className='bg-gradient-to-r from-[#0a8a63] to-[#1971c2] text-white text-[16px] font-normal   rounded-2xl px-3 py-[6px]'>কোর্স সার্টিফিকেট</button>
@@ -137,17 +138,19 @@ const page = () => {
                          </div>
                     </div>
 
-                    {/* এসাইনমেন্ট মার্কস  */}
+                    {/* কুইজ রিপোর্ট সামারি  */}
 
 
                     <div className="grid w-full grid-cols-1 gap-10 lg:grid-cols-3 lg:gap-10 pt-24 pb-0  ">
-                         <div className='col-span-2  w-full'>
+
+                         <div className='col-span-2   h-full w-full '>
                               <div className=''>
                                    <h1 className=' heading-18'>কুইজ রিপোর্ট সামারি</h1>
                                    <div className=' mt-5   h-full  p-2 md:p-4 rounded-lg  border border-[#F8FAFC14] '>
                                         <div>
                                              <p className=' text-end text-[14px] text-[#64748B] font-normal py-2' >* এসাইনমেন্টে ইন্সট্রাকটরের মতামত দেখতে, সংশ্লিষ্ট লেসনের এসাইনমেন্ট ট্যাব দেখুন* </p>
                                              <div>
+                                                  {/* dashboard table  */}
                                                   <table class="min-w-full border border-[#F8FAFC14] text-white">
                                                        <thead>
                                                             <tr>
@@ -226,10 +229,11 @@ const page = () => {
                                    </div>
                               </div>
                          </div>
-                         <div className='col-span-1  h-full w-full  '>
-                              <h1 className='heading-18'>এসাইনমেন্ট রিপোর্ট সামারি</h1>
-                              <div className='  h-full overflow-hidden mt-5  flex justify-center items-center  rounded-lg  border border-[#F8FAFC14] '>
-                                   <p className=' text-[#94A3B8] text-[15px]'>কোন এসাইনমেন্টে এখনও অংশগ্রহণ করেন নি</p>
+
+                         <div className='col-span-1 h-full w-full  '>
+                              <h1 className=' heading-18'>কুইজ রিপোর্ট সামারি</h1>
+                              <div className='flex mt-5  h-[90%]  text-white  items-center justify-center rounded-lg border  border-[#F8FAFC14]  bg-[#0F172A]  px-2 py-4 text-center   sm:p-6'>
+                                   <h1 className=' heading-18'>কুইজ রিপোর্ট সামারি</h1>
                               </div>
                          </div>
                     </div>

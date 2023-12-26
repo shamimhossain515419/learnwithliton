@@ -27,15 +27,17 @@ const CoursesProcess = () => {
           <div className=' py-20  border-t border-[#FFFFFF4D] '>
 
                <div>
-                    <Image className=" block mx-auto py-3" src={headingImage} alt="" />
+                    {/* courses process  title  */}
+                    <Image data-aos="fade-up" className=" block mx-auto py-3" src={headingImage} alt="" />
                     <div>
                          <SectionTitle alignment={"text-center"} size={"text-[34px]"} title_1={"কোর্সটি"} title_2={"কিভাবে চলবে"} paragraph={"যেভাবে আমরা আপনাকে একজন দক্ষ রিডাক্স প্রোগ্রামার হয়ে উঠতে সাহায্য করতে পারি"}></SectionTitle>
                     </div>
                </div>
 
                <Container>
+               {/* courses process content  */}
+                     
                     <div>
-
                          <div className=' relative   grid md:grid-cols-2 gap-7 my-4 '>
                               <div>
                                    <div className=' text-center md:text-star'>
@@ -51,7 +53,7 @@ const CoursesProcess = () => {
                                    </div>
                               </div>
                               <div className=' hidden md:flex  items-end overflow-hidden'>
-                                   <Image className=' w-full object-fill ' src={image1} alt='image'></Image>
+                                   <Image data-aos="zoom-in-up" className=' w-full object-fill ' src={image1} alt='image'></Image>
                               </div>
 
                          </div>
@@ -61,7 +63,7 @@ const CoursesProcess = () => {
 
                          <div className='   grid md:grid-cols-2 gap-7 py-10  '>
                               <div className=' hidden md:flex  items-end overflow-hidden'>
-                                   <Image className=' w-full object-fill' src={image2} alt='image'></Image>
+                                   <Image data-aos="zoom-in" className=' w-full object-fill' src={image2} alt='image'></Image>
                               </div>
                               <div>
                                    <div className=' text-center md:text-star'>
@@ -73,7 +75,7 @@ const CoursesProcess = () => {
 
                                    <div>
                                         <h1 className=' text-center md:text-start heading-28 py-6'>পরীক্ষার মাধ্যমে নিজেকে যাচাই করার সুযোগ</h1>
-                                        <p className=' text-center md:text-start heading-18'>আপনারা ভিডিও দেখে কি শিখলেন সেটা যাচাই করার জন্য প্রতিটি ভিডিওর সাথে কুইজ & প্রতিটি মডিউলে এসাইনমেন্ট থাকছে। কুইজ গুলো আপনারা তাৎক্ষণিক উত্তর দিতে পারবেন এবং নিজেদের সুবিধামতো সময় অনুযায়ী এসাইনমেন্ট গুলো করতে পারবেন প্র্যাকটিস করার জন্য। এসাইনমেন্টের সল্যুশনও গিটহাবে দেয়া থাকবে। যেহেতু এটি 'ভিডিও অনলি' কোর্স, তাই কুইজ বা এসাইনমেন্টের কোন মার্কিং থাকবেনা। সম্পূর্ণ নিজের প্রয়োজনে নিজের গতিতে আপনারা আগাতে পারবেন। </p>
+                                        <p className=' text-center md:text-start heading-18'>আপনারা ভিডিও দেখে কি শিখলেন সেটা যাচাই করার জন্য প্রতিটি ভিডিওর সাথে কুইজ & প্রতিটি মডিউলে এসাইনমেন্ট থাকছে। কুইজ গুলো আপনারা তাৎক্ষণিক উত্তর দিতে পারবেন এবং নিজেদের সুবিধামতো সময় অনুযায়ী এসাইনমেন্ট গুলো করতে পারবেন প্র্যাকটিস করার জন্য। এসাইনমেন্টের সল্যুশনও গিটহাবে দেয়া থাকবে। যেহেতু এটি  ভিডিও অনলি কোর্স, তাই কুইজ বা এসাইনমেন্টের কোন মার্কিং থাকবেনা। সম্পূর্ণ নিজের প্রয়োজনে নিজের গতিতে আপনারা আগাতে পারবেন। </p>
                                    </div>
                               </div>
 
@@ -93,11 +95,11 @@ const CoursesProcess = () => {
 
                                    <div>
                                         <h1 className=' text-center md:text-start heading-28 py-6'>পরীক্ষার পরে থাকছে প্রশ্নের সঠিক সমাধান</h1>
-                                        <p className=' text-center md:text-start heading-18'>প্রতিটি কুইজ এর শেষে আপনারা সঠিক উত্তর ব্যাখ্যা সহ দেখতে পারবেন। সবগুলো এসাইনমেন্টের সল্যুশন কোর্স শেষে গিটহাব - এ শেয়ার করে দেয়া হবে যেন আপনারা বেস্ট প্র্যাকটিস এবং পদ্ধতি গুলো আরো ভাল করে যাচাই করে নিতে পারেন। এই 'ভিডিও অনলি' কোর্সে কোন এসাইনমেন্ট বা কুইজের মার্কিং করা হবেনা এবং শুধু প্র্যাকটিস হিসেবে নিজেকে যাচাই করবেন আপনি নিজেই।</p>
+                                        <p className=' text-center md:text-start heading-18'>প্রতিটি কুইজ এর শেষে আপনারা সঠিক উত্তর ব্যাখ্যা সহ দেখতে পারবেন। সবগুলো এসাইনমেন্টের সল্যুশন কোর্স শেষে গিটহাব - এ শেয়ার করে দেয়া হবে যেন আপনারা বেস্ট প্র্যাকটিস এবং পদ্ধতি গুলো আরো ভাল করে যাচাই করে নিতে পারেন। এই ভিডিও অনলি কোর্সে কোন এসাইনমেন্ট বা কুইজের মার্কিং করা হবেনা এবং শুধু প্র্যাকটিস হিসেবে নিজেকে যাচাই করবেন আপনি নিজেই।</p>
                                    </div>
                               </div>
                               <div className=' hidden md:flex  items-end overflow-hidden'>
-                                   <Image className=' object-fill w-full ' src={image3} alt='image'></Image>
+                                   <Image data-aos="zoom-out" className=' object-fill w-full ' src={image3} alt='image'></Image>
                               </div>
 
                          </div>
@@ -109,7 +111,7 @@ const CoursesProcess = () => {
 
                          <div className='   grid md:grid-cols-2 gap-7 py-10  mt-10 '>
                               <div className=' hidden md:flex  items-end overflow-hidden'>
-                                   <Image className=' w-full  object-fill ' src={image4} alt='image'></Image>
+                                   <Image data-aos="zoom-in-up" className=' w-full  object-fill ' src={image4} alt='image'></Image>
                               </div>
                               <div>
                                    <div className=' text-center md:text-star'>
@@ -121,7 +123,7 @@ const CoursesProcess = () => {
 
                                    <div>
                                         <h1 className=' text-center md:text-start heading-28 py-6'>ডিসকোর্ড কমিউনিটি লিমিটেড সাপোর্ট থাকছে</h1>
-                                        <p className=' text-center md:text-start heading-18'>যেহেতু কোর্সটি 'ভিডিও অনলি' কোর্স, তাই সাপোর্ট কমিটমেন্ট থাকছেনা। তবে কোর্স পার্চেস করার পর আমাদের প্রাইভেট ডিস্কোর্ড চ্যানেলে আপনাকে এক্সেস দেয়া হবে যেখানে আমাদের আগের ব্যাচ গুলোর ছাত্ররা আছেন যারা বেশ সহযোগিতাপূর্ণ। কোর্স চলাকালীন কোন সমস্যার সম্মুখীন হলে, কোথাও আটকে গেলে অথবা বুঝতে না পারলে, আপনার প্রশ্নটি আমাদের ডিসকোর্ড সাপোর্ট চ্যানেলে পোস্ট করতে পারবেন। সাপোর্ট কমিটমেন্ট না থাকলেও লিমিটেড কিছু কমিউনিটি সাপোর্ট অবশ্যই আপনারা পেতে পারেন। তবে এক্ষেত্রে আমাদের পক্ষ থেকে কোন সাপোর্ট কমিটমেন্ট থাকছেনা।</p>
+                                        <p className=' text-center md:text-start heading-18'>যেহেতু কোর্সটি ভিডিও অনলি কোর্স, তাই সাপোর্ট কমিটমেন্ট থাকছেনা। তবে কোর্স পার্চেস করার পর আমাদের প্রাইভেট ডিস্কোর্ড চ্যানেলে আপনাকে এক্সেস দেয়া হবে যেখানে আমাদের আগের ব্যাচ গুলোর ছাত্ররা আছেন যারা বেশ সহযোগিতাপূর্ণ। কোর্স চলাকালীন কোন সমস্যার সম্মুখীন হলে, কোথাও আটকে গেলে অথবা বুঝতে না পারলে, আপনার প্রশ্নটি আমাদের ডিসকোর্ড সাপোর্ট চ্যানেলে পোস্ট করতে পারবেন। সাপোর্ট কমিটমেন্ট না থাকলেও লিমিটেড কিছু কমিউনিটি সাপোর্ট অবশ্যই আপনারা পেতে পারেন। তবে এক্ষেত্রে আমাদের পক্ষ থেকে কোন সাপোর্ট কমিটমেন্ট থাকছেনা।</p>
                                    </div>
                               </div>
 
@@ -145,7 +147,7 @@ const CoursesProcess = () => {
                                    </div>
                               </div>
                               <div className=' hidden md:flex  items-end overflow-hidden'>
-                                   <Image className=' w-full object-fill ' src={image5} alt='image'></Image>
+                                   <Image data-aos="zoom-out" className=' w-full object-fill ' src={image5} alt='image'></Image>
                               </div>
 
 
@@ -166,21 +168,21 @@ const CoursesProcess = () => {
                          </div>
 
                          <div className=' sm:grid  sm:grid-cols-2 xl:grid-cols-3 gap-5  mt-4 py-10 '>
-                              <div className=' flex justify-center w-full  items-center gap-4 flex-col  border border-[#F8FAFC14] px-3 py-8 rounded-[12px]'>
+                              <div className=' hover:scale-105 duration-300 transform flex justify-center w-full  items-center gap-4 flex-col  border border-[#F8FAFC14] px-3 py-8 rounded-[12px]'>
                                    <div> <div className=' rounded-full bg-[#38BDF81A] p-4  inline-block'>
                                         <Image className=' ' src={getImage} alt='image'></Image>
                                    </div></div>
                                    <h1 className=' heading-18 '> কোর্স সার্টিফিকেট নেই </h1>
                                    <p className='text-[15px] text-center leading-[24px] font-normal text-[#94A3B8]'>আমাদের কোন কোর্সেই আমরা চাকরির নিশ্চয়তা দেইনা এবং এই কোর্সেও ব্যাতিক্রম নয়। চাকরির বেতনের মতোই চাকরি প্রাপ্তি আপনার নিজের। এক্ষেত্রে আমরা সাহায্য করতে পারি কিন্তু কোন নিশ্চয়তা দিতে পারছিনা।</p>
                               </div>
-                              <div className=' flex justify-center w-full  items-center gap-4 flex-col  border border-[#F8FAFC14] px-3 py-8  rounded-[12px]'>
+                              <div className=' hover:scale-105 duration-300 transform  flex justify-center w-full  items-center gap-4 flex-col  border border-[#F8FAFC14] px-3 py-8  rounded-[12px]'>
                                    <div> <div className=' rounded-full bg-[#38BDF81A] p-4  inline-block'>
                                         <Image className=' ' src={getImage} alt='image'></Image>
                                    </div></div>
                                    <h1 className=' heading-18 '> কোর্স সার্টিফিকেট নেই </h1>
                                    <p className='text-[15px] text-center leading-[24px] font-normal text-[#94A3B8]'>আমাদের কোন কোর্সেই আমরা চাকরির নিশ্চয়তা দেইনা এবং এই কোর্সেও ব্যাতিক্রম নয়। চাকরির বেতনের মতোই চাকরি প্রাপ্তি আপনার নিজের। এক্ষেত্রে আমরা সাহায্য করতে পারি কিন্তু কোন নিশ্চয়তা দিতে পারছিনা।</p>
                               </div>
-                              <div className=' flex justify-center w-full  items-center gap-4 flex-col  border border-[#F8FAFC14] px-3 py-8 rounded-[12px]'>
+                              <div className=' hover:scale-105 duration-300 transform  flex justify-center w-full  items-center gap-4 flex-col  border border-[#F8FAFC14] px-3 py-8 rounded-[12px]'>
                                    <div> <div className=' rounded-full bg-[#38BDF81A] p-4  inline-block'>
                                         <Image className=' ' src={getImage} alt='image'></Image>
                                    </div></div>
@@ -188,22 +190,22 @@ const CoursesProcess = () => {
                                    <p className='text-[15px] text-center leading-[24px] font-normal text-[#94A3B8]'>আমাদের কোন কোর্সেই আমরা চাকরির নিশ্চয়তা দেইনা এবং এই কোর্সেও ব্যাতিক্রম নয়। চাকরির বেতনের মতোই চাকরি প্রাপ্তি আপনার নিজের। এক্ষেত্রে আমরা সাহায্য করতে পারি কিন্তু কোন নিশ্চয়তা দিতে পারছিনা।</p>
                               </div>
                          </div>
-                         <div className=' sm:grid  sm:grid-cols-2 xl:grid-cols-3 gap-5    pt-3 pb-10 '>
-                              <div className=' flex justify-center w-full  items-center gap-4 flex-col  border border-[#F8FAFC14] px-3 py-8 rounded-[12px]'>
+                         <div className='  sm:grid  sm:grid-cols-2 xl:grid-cols-3 gap-5    pt-3 pb-10 '>
+                              <div className=' hover:scale-105 duration-300 transform  flex justify-center w-full  items-center gap-4 flex-col  border border-[#F8FAFC14] px-3 py-8 rounded-[12px]'>
                                    <div> <div className=' rounded-full bg-[#38BDF81A] p-4  inline-block'>
                                         <Image className=' ' src={getImage} alt='image'></Image>
                                    </div></div>
                                    <h1 className=' heading-18 '> কোর্স সার্টিফিকেট নেই </h1>
                                    <p className='text-[15px] text-center leading-[24px] font-normal text-[#94A3B8]'>আমাদের কোন কোর্সেই আমরা চাকরির নিশ্চয়তা দেইনা এবং এই কোর্সেও ব্যাতিক্রম নয়। চাকরির বেতনের মতোই চাকরি প্রাপ্তি আপনার নিজের। এক্ষেত্রে আমরা সাহায্য করতে পারি কিন্তু কোন নিশ্চয়তা দিতে পারছিনা।</p>
                               </div>
-                              <div className=' flex justify-center w-full  items-center gap-4 flex-col  border border-[#F8FAFC14] px-3 py-8  rounded-[12px]'>
+                              <div className=' hover:scale-105 duration-300 transform  flex justify-center w-full  items-center gap-4 flex-col  border border-[#F8FAFC14] px-3 py-8  rounded-[12px]'>
                                    <div> <div className=' rounded-full bg-[#38BDF81A] p-4  inline-block'>
                                         <Image className=' ' src={getImage} alt='image'></Image>
                                    </div></div>
                                    <h1 className=' heading-18 '> কোর্স সার্টিফিকেট নেই </h1>
                                    <p className='text-[15px] text-center leading-[24px] font-normal text-[#94A3B8]'>আমাদের কোন কোর্সেই আমরা চাকরির নিশ্চয়তা দেইনা এবং এই কোর্সেও ব্যাতিক্রম নয়। চাকরির বেতনের মতোই চাকরি প্রাপ্তি আপনার নিজের। এক্ষেত্রে আমরা সাহায্য করতে পারি কিন্তু কোন নিশ্চয়তা দিতে পারছিনা।</p>
                               </div>
-                              <div className=' flex justify-center w-full  items-center gap-4 flex-col  border border-[#F8FAFC14] px-3 py-8 rounded-[12px]'>
+                              <div className=' hover:scale-105 duration-300 transform  flex justify-center w-full  items-center gap-4 flex-col  border border-[#F8FAFC14] px-3 py-8 rounded-[12px]'>
                                    <div> <div className=' rounded-full bg-[#38BDF81A] p-4  inline-block'>
                                         <Image className=' ' src={getImage} alt='image'></Image>
                                    </div></div>

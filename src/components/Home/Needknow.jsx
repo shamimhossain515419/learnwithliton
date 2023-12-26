@@ -15,13 +15,14 @@ const Needknow = () => {
                <Container>
                     <div className=' xl:grid xl:grid-cols-5  gap-6'>
                          <div className='xl:col-span-2'>
+                              {/* Needknow title  */}
                               <SectionTitle size={"text-[34px]"} alignment={"text-center sm:text-start"} title_1={"কোর্স করতে"} title_2={'যা জানতে হবে '}></SectionTitle>
                               <p className=' text-[17px] font-normal text-center sm:text-start   text-[#94A3B8] py-4'>এই কোর্সটি একেবারে বিগিনারদের জন্য নয়। কোর্সটি করতে হলে উল্লিখিত বিষয়গুলো সম্পর্কে আপনার ধারণা থাকতে হবে। এই কোর্সে ধরে নেয়া হবে আপনি বিষয়গুলো জানেন। যদি না জানেন, তাহলে রেকোমেন্ডেড লিঙ্ক থেকে শিখে নিতে পারেন। </p>
 
                          </div>
                          <div className=' xl:col-span-3 '>
                               <div className=' grid   sm:grid-cols-2 xl:grid-cols-3 gap-5'>
-
+                                   {/* Needknow technology  card */}
                                    <div className=' hover:scale-105 duration-300 rounded-lg bg-black p-4  shadow-md' style={{
                                         boxShadow: '0px 0px 4px 0px rgba(255, 255, 255, 0.25)',
                                    }}>
@@ -47,7 +48,7 @@ const Needknow = () => {
                                    }}>
                                         <div className=' text-center'>
                                              <div className=' bg-[#EA580C] rounded-full    inline-block   p-3'>
-                                             <FaCss3Alt className=' text-[#E2E8F0]' size={20} />
+                                                  <FaCss3Alt className=' text-[#E2E8F0]' size={20} />
                                              </div>
                                         </div>
                                         <h1 className=' heading-16 text-center text-[#E2E8F0] py-1'> বেসিক CSS</h1>
@@ -67,7 +68,7 @@ const Needknow = () => {
                                    }}>
                                         <div className=' text-center'>
                                              <div className=' bg-[#FACC15] rounded-full    inline-block   p-3'>
-                                             <IoLogoJavascript className='' size={20} />
+                                                  <IoLogoJavascript className='' size={20} />
                                              </div>
                                         </div>
                                         <h1 className=' heading-16 text-center text-[#E2E8F0] py-1'> বেসিক ও মডার্ন JavaScript</h1>
@@ -127,7 +128,7 @@ const Needknow = () => {
                                    }}>
                                         <div className=' text-center'>
                                              <div className=' bg-[#fff] rounded-full    inline-block   p-3'>
-                                                  <TbBrandVscode  className='text-[#38BDF8]' size={20} />
+                                                  <TbBrandVscode className='text-[#38BDF8]' size={20} />
                                              </div>
                                         </div>
                                         <h1 className=' heading-16 text-center text-[#E2E8F0] py-1'> VS Code এডিটর</h1>

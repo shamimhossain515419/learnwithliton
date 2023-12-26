@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../public/image/home/asianitinc 2.png'
+import logo from '../../../public/image/home/asianitinc 2.png'
 import Image from 'next/image';
 
 const loading = () => {

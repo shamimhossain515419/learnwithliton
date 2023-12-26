@@ -126,3 +126,48 @@ body {
   background-color: #747474;
   border-radius: 10px;
 }
+/* customButtonClass */
+.customButtonClass {
+  background-color: #1E293B !important;
+  outline: none;
+   border: none;
+}
+.customButtonClass:hover  {
+     background-color: transparent !important;
+}
+.dropdownClass{
+  background-color: #1E293B !important;
+  color: white; 
+
+}
+.dropdownStyle{
+  background-color: #1E293B !important;
+  color: white; 
+}
+.containerClass{
+   padding: 8px;
+   border-radius: 6px;
+}
+.containerClass:hover{
+   border: 1px solid #0284C7;
+}
+
+.react-tel-input .flag-dropdown .selected-flag {
+  background-color: transparent !important;
+}
+
+.react-tel-input  ul li:hover  {
+  background: #747474  !important;
+
+}
+
+.customButtonClass::-webkit-scrollbar {
+  width: 8px;
+  margin: 2px;
+
+}
+
+.customButtonClass::-webkit-scrollbar-thumb {
+  background-color: #747474;
+  border-radius: 10px;
+}

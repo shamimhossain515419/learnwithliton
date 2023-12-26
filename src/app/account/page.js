@@ -24,13 +24,13 @@ const page = () => {
                                         <h1 className="  font-medium text-[14px] text-[#94A3B8]   leading-[21.7px] m-0"> আপনার পুরো নাম</h1>
                                         <p className="  text-start text-[#94A3B8] text-[12px] leading-[14.4px]  font-normal mt-1 ">কোর্স কমপ্লিশন সার্টিফিকেটে এই নামটি দেয়া হবে। পরিবর্তন করতে পারবেন না</p>
 
-                                        <input className=" w-full text-[#64748B] md:pl-6 my-2 outline-none border-none p-3 rounded-[4px] bg-[#1E293B] " type="text" name="" id="" placeholder="Ex: MD. LITON HOSSAIN" />
+                                        <input className=" w-full text-[#64748B] md:pl-6 my-2 focus:outline-[#0284C7] focus:outline-1 mt-2 border-none outline-none p-3 rounded-[4px] bg-[#1E293B] " type="text" name="" id="" placeholder="Ex: MD. LITON HOSSAIN" />
                                    </div>
                                    <div className=" w-full py-3">
                                         <h1 className="  font-medium text-[14px] text-[#94A3B8]   leading-[21.7px] m-0"> আপনার ইমেইল এড্রেস</h1>
                                         <p className="  text-start text-[#94A3B8] text-[12px] leading-[14.4px]  font-normal mt-1 ">সব কমিউনিকেশন এই ইমেইল এড্রেসে করা হবে & এটাই আপনার লগইন ইউজারনেম। পরিবর্তন করতে পারবেন না।</p>
 
-                                        <input className=" w-full text-[#64748B] md:pl-6 my-2 outline-none border-none p-3 rounded-[4px] bg-[#1E293B]" type="text" name="" id="" placeholder="Ex: asianitinc@gmail.com" />
+                                        <input className=" w-full text-[#64748B] md:pl-6 my-2 focus:outline-[#0284C7] focus:outline-1 mt-2 border-none outline-none p-3 rounded-[4px] bg-[#1E293B]" type="text" name="" id="" placeholder="Ex: asianitinc@gmail.com" />
                                    </div>
                                    <div className=" w-full py-2">
                                         <div className=" flex items-start gap-3 ">
@@ -40,7 +40,7 @@ const page = () => {
                                                   <p className="  text-start text-[#94A3B8] text-[12px] leading-[14.4px]  font-normal mt-1 ">এই ছবিটি আমরা আমাদের ওয়েবসাইটে কোর্স স্টুডেন্ট দের লিস্ট এ ব্যবহার করতে পারি</p>
 
                                                   <div className=" mt-3 w-full overflow-hidden">
-                                                       <input className="  text-[16px]  leading-[16px] f font-semibold text-[#FFFFFF] custom_file" type="file" name="" id="" />
+                                                       <input className="  text-[16px]   border-none outline-none  leading-[16px] f font-semibold text-[#FFFFFF] custom_file" type="file" name="" id="" />
                                                   </div>
                                              </div>
                                         </div>
@@ -55,7 +55,7 @@ const page = () => {
                                              </div>
                                         </div>
                                         <div className="  relative ">
-                                             <input className="  relative w-full text-[#64748B] md:pl-6 my-2 outline-none border-none p-3 rounded-[4px] bg-[#1E293B]" type="text" name="" id="" placeholder="Ex: asianitinc#3221" />
+                                             <input className="  relative w-full text-[#64748B] md:pl-6 my-2 focus:outline-[#0284C7] focus:outline-1 mt-2 border-none outline-none p-3 rounded-[4px] bg-[#1E293B]" type="text" name="" id="" placeholder="Ex: asianitinc#3221" />
                                              <div className=" absolute  top-6 right-2">
                                                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                        <g clip-path="url(#clip0_4_84)">
@@ -79,7 +79,7 @@ const page = () => {
                                         <h1 className="  font-medium text-[14px] text-[#94A3B8]   leading-[21.7px] m-0"> আপনার মোবাইল নাম্বার</h1>
                                         <p className="  text-start text-[#94A3B8] text-[12px] leading-[14.4px]  font-normal mt-1 ">পরিবর্তন করতে পারবেন না</p>
 
-                                        <input className=" w-full text-[#64748B] md:pl-6 my-2 outline-none border-none p-3 rounded-[4px] bg-[#1E293B]  " type="number" name="" id="" placeholder="+8801723626707" />
+                                        <input className=" w-full text-[#64748B] md:pl-6 my-2 focus:outline-[#0284C7] focus:outline-1 mt-2 border-none outline-none p-3 rounded-[4px] bg-[#1E293B]  " type="number" name="" id="" placeholder="+8801723626707" />
                                    </div>
                                    <div className=" w-full py-3">
                                         <h1 className="  font-medium text-[14px] text-[#94A3B8]   leading-[21.7px] m-0"> আপনার পুরো ঠিকানা</h1>
@@ -87,7 +87,7 @@ const page = () => {
 
 
                                         <div className="  relative ">
-                                             <textarea className="  relative w-full text-[#64748B] md:pl-6 my-2 outline-none border-none p-3 rounded-[4px] bg-[#1E293B]" name="" id="" cols="30" rows="5" placeholder="আপনার মোবাইল নাম্বার"></textarea>
+                                             <textarea className="  relative w-full text-[#64748B] md:pl-6 my-2 focus:outline-[#0284C7] focus:outline-1 mt-2 border-none outline-none p-3 rounded-[4px] bg-[#1E293B]" name="" id="" cols="30" rows="5" placeholder="আপনার মোবাইল নাম্বার"></textarea>
                                              <div className="absolute top-1/2  right-1 transform -translate-x-1/2 flex justify-end items-center ">
                                                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                        <g clip-path="url(#clip0_4_84)">

@@ -24,7 +24,13 @@ import Instructor from './Instructor'
 import Success_story from './success_story'
 import Feedback from './Feedback'
 import FAQ from './FAQ'
+import { useEffect } from 'react'
+import initializeAOS from '@/share/aos/aos'
 const HomePage = () => {
+
+     useEffect(() => {
+          initializeAOS()
+        }, []);
 
      const codeString = `
      1 import  createStore  from "redux";
@@ -54,7 +60,7 @@ const HomePage = () => {
                     <Container>
                          <div className=" md:grid md:grid-cols-2  items-start gap-2">
 
-                              <div className="  md:pr-6 w-full ">
+                              <div data-aos="fade-right"  className="  md:pr-6 w-full ">
                                    <div className=" ">
                                         <Image className="  " src={reactIcon} alt="" />
                                    </div>
@@ -98,7 +104,7 @@ const HomePage = () => {
 
                               </div>
 
-                              <div className="  pt-9  text-white sm:ml-5 w-full">
+                              <div data-aos="fade-left" className="  pt-9  text-white sm:ml-5 w-full">
                                    <div className=" flex justify-start  gap-0">
 
                                         <div className=" border-t border-l  border-[#f8fafc29]  flex justify-start gap-2 items-center p-2 ">
@@ -138,9 +144,8 @@ const HomePage = () => {
                     <div className=" mx-4 sm:mx-16  md:mx-24 xl:mx-32 ">
                          {/* এই কোর্সে যা যা থাকছে  */}
                          <div className=" my-10">
-
                               <div>
-                                   <Image className=" block mx-auto py-3" src={reduxImage} alt="" />
+                                   <Image data-aos="fade-up" className=" block mx-auto py-3" src={reduxImage} alt="" />
                                    <div>
                                         <SectionTitle size={"text-[34px]"} title_1={"এক নজরে আমাদের"} title_2={"রিডাক্স"} title_3={"কোর্স"} alignment={"text-center"} paragraph={"এই কোর্সে যা যা থাকছে"}></SectionTitle>
                                    </div>
@@ -212,7 +217,7 @@ const HomePage = () => {
 
                          <div className=" my-12 py-4">
                               <div>
-                                   <Image className=" block mx-auto py-3" src={moduleImage} alt="" />
+                                   <Image data-aos="fade-up" className=" block mx-auto py-3" src={moduleImage} alt="" />
                                    <div>
                                         <SectionTitle size={"text-[34px]"} title_1={"কোর্সে যে যে"} title_2={"মডিউল"} title_3={"থাকছে"} alignment={"text-center"} paragraph={"12 টি মডিউলে সাজানো হয়েছে পুরো কোর্সটি"}></SectionTitle>
                                    </div>
@@ -397,7 +402,7 @@ const HomePage = () => {
 
                {/* Courses_project */}
                <div>
-                <Courses_project></Courses_project>
+                    <Courses_project></Courses_project>
                </div>
                {/* CoursesProcess  */}
                <CoursesProcess></CoursesProcess>

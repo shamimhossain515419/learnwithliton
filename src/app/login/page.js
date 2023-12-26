@@ -14,6 +14,7 @@ const page = () => {
 
                          <div>
                               <div>
+                                   {/* login title  */}
                                    <SectionTitle title_1={"লগইন"} title_2={"করুন"} paragraph={"আপনার লগইন তথ্য কারো সাথে শেয়ার করবেন না"} size={"text-[34px]"} alignment={"text-center"}></SectionTitle>
                               </div>
                               <div>
@@ -21,7 +22,7 @@ const page = () => {
                                         <h1 className="  font-medium text-[14px] text-[#94A3B8]   leading-[21.7px] m-0"> আপনার ইমেইল এড্রেস <span className=' text-[#FF6B6B]'>*</span> </h1>
                                         <p className="  text-start text-[#94A3B8] text-[12px] leading-[14.4px]  font-normal mt-1 ">যে ইমেইল এড্রেস দিয়ে আপনি নিবন্ধন করেছিলেন।</p>
 
-                                        <input className=" w-full  text-[#64748B] md:pl-6 my-2 outline-none border-none p-3 rounded-[4px] bg-[#1E293B] " type="email" name="" id="" />
+                                        <input className=" w-full  text-[#64748B] md:pl-6 my-2  focus:outline-[#0284C7] focus:outline-1 mt-2 border-none outline-none p-3 rounded-[4px] bg-[#1E293B] " type="email" name="" id="" />
                                    </div>
                                    <div className=" w-full py-3">
                                         <h1 className="  font-medium text-[14px] text-[#94A3B8]   leading-[21.7px] m-0">পাসওয়ার্ড দিন  <span className=' text-[#FF6B6B]'>*</span>
@@ -29,12 +30,11 @@ const page = () => {
                                         <p className="  text-start text-[#94A3B8] text-[12px] leading-[14.4px]  font-normal mt-1 ">পাসওয়ার্ড কমপক্ষে ৮ অক্ষরের হতে হবে এবং সেখানে কমপক্ষে 1 টি লেটার এবং 1 টি নাম্বার থাকতেই হবে।
                                         </p>
                                         <div className="  cursor-pointer relative ">
-                                             <input className="  relative w-full text-[#64748B] md:pl-6 my-2 outline-none border-none p-3 rounded-[4px] bg-[#1E293B]" type="password" name="" id=""  />
+                                             <input className="  relative w-full text-[#64748B] md:pl-6 my-2  focus:outline-[#0284C7] focus:outline-1 mt-2 border-none outline-none p-3 rounded-[4px] bg-[#1E293B]" type="password" name="" id="" />
                                              <div className=" absolute  top-6 right-2">
                                                   <FaEye size={20} />
                                              </div>
                                         </div>
-                                       
                                    </div>
                                    <div className=' flex justify-between items-center gap-2'>
                                         <div className=" py-2">

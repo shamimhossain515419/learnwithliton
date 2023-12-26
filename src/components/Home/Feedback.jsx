@@ -11,13 +11,15 @@ const Feedback = () => {
           <div className=' py-20  border-b border-[#FFFFFF80]' >
 
                <Container>
-
+                    {/* feedback title  */}
                     <div className=' py-10'>
                          <SectionTitle size={'text-[34px]'} alignment={"text-center"} title_1={"কোর্স সম্পর্কে"} title_2={"লার্নারদের"} title_3={"অভিমত"} paragraph={"লার্নাররা সর্বদাই লার্ন উইথ সুমিত এর প্রতি তাদের ভালবাসা প্রকাশ করেছেন"}></SectionTitle>
                     </div>
 
 
                     <div>
+
+                         {/* feedback box  */}
                          <ResponsiveMasonry
                               columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
 

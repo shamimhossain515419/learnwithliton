@@ -10,16 +10,17 @@ const Instructor = () => {
 
 
                <div>
+                    {/* Instructor title  */}
                     <SectionTitle alignment={"text-center"} size={"text-[34px]"} title_1={'কোর্স ইন্সট্রাক্টর'}></SectionTitle>
                </div>
 
-
                <Container>
+
 
                     <div className='  md:grid md:grid-cols-2 gap-5 py-16'>
                          <div className=' mx-auto'>
                               <div className=" relative">
-
+                                   {/* Instructor   image  */}
                                    <div className="   relative top-0   z-0 mx-auto h-[300px] w-[200px] border-4 border-white !bg-[#2c9ecf] lg:-bottom-3 lg:h-[350px] lg:w-[280px]  rounded-[10px]">   </div>
                                    <div className='box-border block  absolute  right-[60px] -top-[48px] lg:w-[280px] w-[200px]  h-auto bg-none opacity-100 border-0 m-0 p-0 max-w-full'>
                                         <Image className='  h-[320px]  lg:h-[380px] w-full' src={Rectangle} alt='image'></Image>
@@ -27,6 +28,7 @@ const Instructor = () => {
                               </div>
                          </div>
                          <div className=' mt-10  md:mt-0 md:border-l-2 sm:pl-7 md:border-[#FACC15] '>
+                               {/* Instructor    information   */}
                               <div>
                                    <div>
 

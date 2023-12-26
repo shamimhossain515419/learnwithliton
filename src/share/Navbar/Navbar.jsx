@@ -62,7 +62,7 @@ const Navbar = () => {
                                                                  {
                                                                       user ? <>
                                                                            <Link href={'/account'}>  <Image className=" h-[28px] w-[28px] rounded-full " src={userImage} alt="" /></Link>
-                                                                      </> : < p> Login </p>
+                                                                      </> : <Link href={'/login'} className=" text-[#FFF]  cursor-pointer bg-[#0284C7]   w-full border border-[#0284C7] rounded-[32px] px-[18px] py-[4px] flex items-center   font-medium   justify-center  gap-2">  <span>লগইন</span> </Link>
                                                                  }
                                                             </div>
                                                        </div>

@@ -21,6 +21,7 @@ const page = () => {
                               <h2 className=' border-b  pb-2 border-[#F8FAFC14]  text-[#F8FAFC] text-[16px] font-medium '>লিডারবোর্ড - থিংক ইন এ রিডাক্স ওয়ে</h2>
 
                               <div>
+                                   {/* leader board table  */}
                                    <table class="min-w-full border border-[#F8FAFC14] text-white">
                                         <thead>
                                              <tr>
@@ -31,6 +32,7 @@ const page = () => {
                                                   <th class="border border-[#F8FAFC14] text-white text-[13px]  font-medium   text-center py-2 px-4">মোট নাম্বার</th>
                                              </tr>
                                         </thead>
+                                        {/* table data  */}
                                         <tbody>
                                              <tr className=' hover:bg-[#F8FAFC14] duration-200'>
                                                   <td class="border border-[#F8FAFC14] text-[12px]  font-medium text-[#0284C7] hover:text-[#38BDF8]  cursor-pointer py-2 px-4">
@@ -42,10 +44,10 @@ const page = () => {
                                                   <td class="border  !hidden lg:!table-cell  border-[#F8FAFC14] text-[16px] text-center  font-medium  text-[#F8FAFC] py-2 px-4">675</td>
                                                   <td class="border !hidden lg:!table-cell border-[#F8FAFC14] text-[16px]  font-medium  text-[#F8FAFC] py-2 px-4">1161</td>
                                                   <td class="border border-[#F8FAFC14] text-[16px]  text-center font-medium   text-[#38BDF8] py-2 px-4">1836</td>
-                                             </tr> 
+                                             </tr>
                                              <tr className=' hover:bg-[#F8FAFC14] duration-200'>
                                                   <td class="border border-[#F8FAFC14] text-[16px]  font-medium text-[#0284C7] hover:text-[#38BDF8]  cursor-pointer py-2 px-4">
-                                                        2    </td>
+                                                       2    </td>
                                                   <td class=" border border-[#F8FAFC14] text-[12px] flex justify-start items-center gap-2  font-medium  text-[#94A3B8] py-2 px-4">
                                                        <Image className=' w-[20px] h-[20px] rounded-full ' src={image2} alt='image'></Image>
                                                        <p className=' text-[#38BDF8] text-[16px] font-medium'>MD OBAIDUL ISLAM</p>
@@ -89,7 +91,7 @@ const page = () => {
                                              </tr>
                                              <tr className=' hover:bg-[#F8FAFC14] duration-200'>
                                                   <td class="border border-[#F8FAFC14] text-[16px]  font-medium text-[#0284C7] hover:text-[#38BDF8]  cursor-pointer py-2 px-4">
-                                                      6   </td>
+                                                       6   </td>
                                                   <td class=" border border-[#F8FAFC14] text-[12px] flex justify-start items-center gap-2  font-medium  text-[#94A3B8] py-2 px-4">
                                                        <Image className=' w-[20px] h-[20px] rounded-full ' src={image5} alt='image'></Image>
                                                        <p className=' text-[#38BDF8] text-[16px] font-medium'>Marzuk Bin Zafar</p>
@@ -98,10 +100,10 @@ const page = () => {
                                                   <td class="border border-[#F8FAFC14] text-[16px]  font-medium  text-[#F8FAFC] !hidden lg:!table-cell text-center py-2 px-4">111</td>
                                                   <td class="border border-[#F8FAFC14] text-[16px]  font-medium  text-[#38BDF8] text-center py-2 px-4">136</td>
                                              </tr>
-                                            
+
                                              <tr className=' hover:bg-[#F8FAFC14] duration-200'>
                                                   <td class="border border-[#F8FAFC14] text-[16px]  font-medium text-[#0284C7] hover:text-[#38BDF8]  cursor-pointer py-2 px-4">
-                                                        7   </td>
+                                                       7   </td>
                                                   <td class=" border border-[#F8FAFC14] text-[12px] flex justify-start items-center gap-2  font-medium  text-[#94A3B8] py-2 px-4">
                                                        <Image className=' w-[20px] h-[20px] rounded-full ' src={image2} alt='image'></Image>
                                                        <p className=' text-[#38BDF8] text-[16px] font-medium'>MD OBAIDUL ISLAM</p>
@@ -145,7 +147,7 @@ const page = () => {
                                              </tr>
                                              <tr className=' hover:bg-[#F8FAFC14] duration-200'>
                                                   <td class="border border-[#F8FAFC14] text-[16px]  font-medium text-[#0284C7] hover:text-[#38BDF8]  cursor-pointer py-2 px-4">
-                                                      11    </td>
+                                                       11    </td>
                                                   <td class=" border border-[#F8FAFC14] text-[12px] flex justify-start items-center gap-2  font-medium  text-[#94A3B8] py-2 px-4">
                                                        <Image className=' w-[20px] h-[20px] rounded-full ' src={image5} alt='image'></Image>
                                                        <p className=' text-[#38BDF8] text-[16px] font-medium'>Marzuk Bin Zafar</p>
@@ -154,10 +156,10 @@ const page = () => {
                                                   <td class="border border-[#F8FAFC14] text-[16px]  font-medium  text-[#F8FAFC] !hidden lg:!table-cell text-center py-2 px-4">111</td>
                                                   <td class="border border-[#F8FAFC14] text-[16px]  font-medium  text-[#38BDF8] py-2 px-4  text-center">136</td>
                                              </tr>
-                                            
+
                                              <tr className=' hover:bg-[#F8FAFC14] duration-200'>
                                                   <td class="border border-[#F8FAFC14] text-[16px]  font-medium text-[#0284C7] hover:text-[#38BDF8]  cursor-pointer py-2 px-4">
-                                                        12    </td>
+                                                       12    </td>
                                                   <td class=" border border-[#F8FAFC14] text-[12px] flex justify-start items-center gap-2  font-medium  text-[#94A3B8] py-2 px-4">
                                                        <Image className=' w-[20px] h-[20px] rounded-full ' src={image2} alt='image'></Image>
                                                        <p className=' text-[#38BDF8] text-[16px] font-medium'>MD OBAIDUL ISLAM</p>
@@ -179,7 +181,7 @@ const page = () => {
                                              </tr>
                                              <tr className=' hover:bg-[#F8FAFC14] duration-200'>
                                                   <td class="border border-[#F8FAFC14] text-[16px]  font-medium text-[#0284C7] hover:text-[#38BDF8]  cursor-pointer py-2 px-4">
-                                                      14    </td>
+                                                       14    </td>
                                                   <td class=" border border-[#F8FAFC14] text-[12px] flex justify-start items-center gap-2  font-medium  text-[#94A3B8] py-2 px-4">
                                                        <Image className=' w-[20px] h-[20px] rounded-full ' src={image4} alt='image'></Image>
                                                        <p className=' text-[#38BDF8] text-[16px] font-medium'>Golam Rabbani</p>
@@ -210,7 +212,7 @@ const page = () => {
                                                   <td class="border border-[#F8FAFC14] text-[16px]  font-medium  text-[#F8FAFC] !hidden lg:!table-cell text-center py-2 px-4">111</td>
                                                   <td class="border border-[#F8FAFC14] text-[16px]  font-medium  text-[#38BDF8] py-2 px-4  text-center">136</td>
                                              </tr>
-                                            
+
                                              <tr className=' hover:bg-[#F8FAFC14] duration-200'>
                                                   <td class="border border-[#F8FAFC14] text-[16px]  font-medium text-[#0284C7] hover:text-[#38BDF8]  cursor-pointer py-2 px-4">
                                                        17   </td>
@@ -224,7 +226,7 @@ const page = () => {
                                              </tr>
                                              <tr className=' hover:bg-[#F8FAFC14] duration-200'>
                                                   <td class="border border-[#F8FAFC14] text-[16px]  font-medium text-[#0284C7] hover:text-[#38BDF8]  cursor-pointer py-2 px-4">
-                                                      18   </td>
+                                                       18   </td>
                                                   <td class=" border border-[#F8FAFC14] text-[12px] flex justify-start items-center gap-2  font-medium  text-[#94A3B8] py-2 px-4">
                                                        <Image className=' w-[20px] h-[20px] rounded-full ' src={image3} alt='image'></Image>
                                                        <p className=' text-[#38BDF8] text-[16px] font-medium'>Masum Ali</p>
@@ -266,10 +268,10 @@ const page = () => {
                                                   <td class="border border-[#F8FAFC14] text-[16px]  font-medium  text-[#F8FAFC] !hidden lg:!table-cell text-center py-2 px-4">111</td>
                                                   <td class="border border-[#F8FAFC14] text-[16px]  font-medium  text-[#38BDF8] py-2 px-4  text-center">136</td>
                                              </tr>
-                                            
+
                                              <tr className=' hover:bg-[#F8FAFC14] duration-200'>
                                                   <td class="border border-[#F8FAFC14] text-[16px]  font-medium text-[#0284C7] hover:text-[#38BDF8]  cursor-pointer py-2 px-4">
-                                                        22    </td>
+                                                       22    </td>
                                                   <td class=" border border-[#F8FAFC14] text-[12px] flex justify-start items-center gap-2  font-medium  text-[#94A3B8] py-2 px-4">
                                                        <Image className=' w-[20px] h-[20px] rounded-full ' src={image2} alt='image'></Image>
                                                        <p className=' text-[#38BDF8] text-[16px] font-medium'>MD OBAIDUL ISLAM</p>
@@ -322,10 +324,10 @@ const page = () => {
                                                   <td class="border border-[#F8FAFC14] text-[16px]  font-medium  text-[#F8FAFC] !hidden lg:!table-cell text-center py-2 px-4">111</td>
                                                   <td class="border border-[#F8FAFC14] text-[16px]  font-medium  text-[#38BDF8] py-2 px-4  text-center">136</td>
                                              </tr>
-                                            
+
                                              <tr className=' hover:bg-[#F8FAFC14] duration-200'>
                                                   <td class="border border-[#F8FAFC14] text-[16px]  font-medium text-[#0284C7] hover:text-[#38BDF8]  cursor-pointer py-2 px-4">
-                                                        27   </td>
+                                                       27   </td>
                                                   <td class=" border border-[#F8FAFC14] text-[12px] flex justify-start items-center gap-2  font-medium  text-[#94A3B8] py-2 px-4">
                                                        <Image className=' w-[20px] h-[20px] rounded-full ' src={image2} alt='image'></Image>
                                                        <p className=' text-[#38BDF8] text-[16px] font-medium'>MD OBAIDUL ISLAM</p>
@@ -378,7 +380,7 @@ const page = () => {
                                                   <td class="border border-[#F8FAFC14] text-[16px]  font-medium  text-[#F8FAFC] !hidden lg:!table-cell text-center py-2 px-4">111</td>
                                                   <td class="border border-[#F8FAFC14] text-[16px]  font-medium  text-[#38BDF8] py-2 px-4  text-center">136</td>
                                              </tr>
-                                            
+
 
                                         </tbody>
                                    </table>

@@ -17,6 +17,7 @@ const FAQ = () => {
                          <div className=' grid md:grid-cols-2 gap-10 '>
                               <div className='  flex justify-start items-end'>
                                    <div>
+                                        {/* FAQ  title  */}
                                         <div className='max-w-[450px]'>
                                              <SectionTitle size={"text-[34px]"} title_1={"সচরাচর জানতে চাওয়া"} title_2={"প্রশ্নের উত্তর"}></SectionTitle>
                                         </div>
@@ -28,18 +29,15 @@ const FAQ = () => {
 
                               </div>
                               <div>
-
+                                   {/* FAQ  Question  */}
                                    <div className=' h-[400px] overflow-y-scroll FAQscroll'>
                                         {FAQData?.map(item => <div className=' px-2  border-b border-[#F8FAFC14]' key={item?.id}>
                                              <div onClick={() => setActive(item?.id)} className={` ${active == item?.id ? " bg-[#0284C7] text-white" : ""} cursor-pointer flex   hover:bg-[#0284C7] text-[#94A3B8] hover:text-[#fff]  duration-200  p-2 py-4   justify-between items-center  gap-4`}>
                                                   <h1 className=' text-[18px]    font-medium '> {item?.title} </h1>
                                                   <div>
                                                        {
-                                                            active == item?.id ? <IoIosArrowUp size={24} />  : <IoIosArrowDown size={24} />
+                                                            active == item?.id ? <IoIosArrowUp size={24} /> : <IoIosArrowDown size={24} />
                                                        }
-
-
-
                                                   </div>
                                              </div>
                                              <div className='' >

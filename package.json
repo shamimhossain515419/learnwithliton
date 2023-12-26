@@ -10,10 +10,12 @@
   },
   "dependencies": {
     "@ramonak/react-progress-bar": "^5.1.1",
+    "aos": "^2.3.4",
     "next": "^14.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",
+    "react-phone-input-2": "^2.15.1",
     "react-responsive-masonry": "^2.1.7",
     "react-syntax-highlighter": "^15.5.0",
     "yarn": "^1.22.21"

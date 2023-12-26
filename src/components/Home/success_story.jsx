@@ -14,10 +14,12 @@ const Success_story = () => {
 
                     <Container>
                          <div>
+                              {/* success story title  */}
                               <SectionTitle title_1={'কোর্স'} title_2={"সাকসেস"} title_3={"স্টোরি"} paragraph={"যাদের চাকরি প্রাপ্তিতে আমাদের কোর্স সাহায্য করেছে"} alignment={"text-center"} size={"text-[34px]"}> </SectionTitle>
 
 
                               <div className=' grid   sm:grid-cols-2  xl:grid-cols-3  gap-2  sm:gap-2 md:gap-5 mt-14'>
+                                    {/* success story card  */} 
                                    <div className=' p-4 md:p-5 rounded-[12px]  flex items-center gap-4 justify-start  bg-[#0B1120]  border border-[#F8FAFC14]'>
                                         <div>
                                              <Image src={success1} alt='image'></Image>

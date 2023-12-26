@@ -18,12 +18,14 @@ const CoursePage = () => {
                          <div className=' md:col-span-2 w-full'>
 
                               <div className=' '>
+                                   {/* play video  */}
                                    <div className=' w-full h-[250px]  md:h-[401px] p-4 bg-[#151E33] rounded-[16px] flex justify-center  items-center' >
                                         <div className=' bg-[#1E293B]  rounded-full   p-7 cursor-pointer' >
                                              <FaPlay size={30} className='text-[#0F172A]' />
                                         </div>
 
                                    </div>
+                                   {/* vide  controller  */}
                                    <div className=' flex  justify-center  sm:justify-between flex-wrap gap-2 items-center  pt-10'>
                                         <div className=" inline-block   my-2 sm:my-0 ">
                                              <div className=" bg-[#0284C7]  cursor-pointer  w-full border border-[#f8fafc14] rounded-[32px] px-[25px] py-[5px] flex items-center   justify-center  gap-2">
@@ -38,6 +40,7 @@ const CoursePage = () => {
                                              </div>
                                         </div>
                                    </div>
+                                   {/* video   activities  */}
                                    <div className=' py-6'>
                                         <div className=' h-[1px]  bg-[#F8FAFC14] w-full'>  </div>
                                         <div className='py-4 flex  flex-wrap justify-between gap-2 items-center'>
@@ -60,10 +63,9 @@ const CoursePage = () => {
                                                   <small>কুইজ নেই</small>
                                              </div>
                                         </div>
-
                                         <div className=' h-[1px]  bg-[#F8FAFC14] w-full'></div>
                                    </div>
-
+                                   {/* video description  */}
                                    <div>
                                         <button className=' text-[#E2E8F0] py-3 px-4 border-b-2 border-[#0284C7] bg-[#1E293B]'>ভিডিও ডেসক্রিপশন</button>
                                         <div className=' h-[1px]  bg-[#F8FAFC14] w-full'>  </div>
@@ -83,6 +85,7 @@ const CoursePage = () => {
 
                          </div>
                          <div className='  w-full md:col-span-1'>
+                              {/* video  find section  */}
                               <div className='  w-full    border-2 border-[#f8fafc0f] rounded-[8px] p-2'>
                                    <div className=' w-full flex items-center gap-2 bg-[#1E293B] p-3  rounded-[4px] '>
                                         <IoMdSearch className=' text-white' size={18} />
@@ -99,10 +102,12 @@ const CoursePage = () => {
                                         </div>
 
                                         <div className='  max-h-[400px] moduleScrollBar overflow-y-scroll '>
+                                             {/* video data map section  */}
+                                           
                                              {
-                                                  Classes?.map((item, index) => <div  key={index}>
+                                                  Classes?.map((item, index) => <div key={index}>
                                                        <div>
-                                                            <div onClick={() => setActive(index)}  className={`flex ${active == index ? "bg-[#0284C7] duration-200 text-white " : "text-[#94A3B8] bg-transparent"}  cursor-pointer  p-2 justify-start gap-3 `} >
+                                                            <div onClick={() => setActive(index)} className={`flex ${active == index ? "bg-[#0284C7] duration-200 text-white " : "text-[#94A3B8] bg-transparent"}  cursor-pointer  p-2 justify-start gap-3 `} >
                                                                  <div className='  mt-[14px]'>
                                                                       {
                                                                            active == index ? <IoIosArrowDown className='  text-[#FFFFFF]' size={16} /> : <MdArrowForwardIos className='  text-[#FFFFFF]' size={16} />
