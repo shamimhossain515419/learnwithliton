@@ -218,6 +218,49 @@ export const Classes = [
                },
           ]
      },
+     {
+          id: 5,
+          name: "Module 5 - Project - Advanced Todo Application -(Redux Thunk) ",
+          videoTime: "02:56:52 hours",
+          dataLine: "19 Jul 2025 12:00:00 AM",
+          subClass: [
+               {
+                    id: 1,
+                    title: "1.1 What is State Management",
+                    time: "12:05 "
+               },
+               {
+                    id: 2,
+                    title: "1.1  Async Logic & Data Fetching ",
+                    time: "12:05 "
+               },
+               {
+                    id: 3,
+                    title: "1.1 What is State Management",
+                    time: "12:05 "
+               },
+               {
+                    id: 4,
+                    title: "1.1 What is State Management",
+                    time: "12:05 "
+               },
+               {
+                    id: 5,
+                    title: "1.1 What is State Management",
+                    time: "12:05 "
+               },
+               {
+                    id: 6,
+                    title: "1.1 What is State Management",
+                    time: "12:05 "
+               },
+               {
+                    id: 7,
+                    title: "1.1 What is State Management",
+                    time: "12:05 "
+               },
+          ]
+     },
 ]
 
 

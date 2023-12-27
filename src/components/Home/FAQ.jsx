@@ -9,7 +9,9 @@ import { Collapse } from 'react-collapse';
 const FAQ = () => {
 
      const [active, setActive] = useState(0);
-
+     const handleToggle = (id) => {
+          setActive((prevActive) => (prevActive === id ? null : id));
+     };
      return (
           <div className=' py-20 md:py-28 bg-[#0F172A]'>
 
@@ -33,7 +35,7 @@ const FAQ = () => {
                                    {/* FAQ  Question  */}
                                    <div className=' h-[400px] overflow-y-scroll FAQscroll'>
                                         {FAQData?.map(item => <div className=' px-2  border-b border-[#F8FAFC14]' key={item?.id}>
-                                             <div onClick={() => setActive(item?.id)} className={` ${active == item?.id ? " bg-[#0284C7] text-white" : ""} cursor-pointer flex   hover:bg-[#0284C7] text-[#94A3B8] hover:text-[#fff]  duration-200  p-2 py-4   justify-between items-center  gap-4`}>
+                                             <div onClick={() => handleToggle(item?.id)} className={` ${active == item?.id ? " bg-[#0284C7] text-white" : ""} cursor-pointer flex   hover:bg-[#0284C7] text-[#94A3B8] hover:text-[#fff]  duration-200  p-2 py-4   justify-between items-center  gap-4`}>
                                                   <h1 className=' text-[18px]    font-medium '> {item?.title} </h1>
                                                   <div>
                                                        {

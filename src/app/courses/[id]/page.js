@@ -10,8 +10,10 @@ import { GrKeyboard } from 'react-icons/gr';
 import { IoIosArrowDown, IoMdSearch } from 'react-icons/io';
 import { MdArrowForwardIos } from 'react-icons/md';
 const CoursePage = () => {
-     const [active, setActive] = useState(false)
-
+     const [active, setActive] = useState(0)
+     const handleToggle = (id) => {
+          setActive((prevActive) => (prevActive === id ? null : id));
+     };
      return (
           <div>
                <div className=' primaryBg   py-16  '>
@@ -108,7 +110,7 @@ const CoursePage = () => {
                                              {
                                                   Classes?.map((item, index) => <div key={index}>
                                                        <div>
-                                                            <div onClick={() => setActive(index)} className={`flex ${active == index ? "bg-[#0284C7] duration-200 text-white " : "text-[#94A3B8] bg-transparent"}  cursor-pointer  p-2 justify-start gap-3 `} >
+                                                            <div  onClick={() => handleToggle(index)} className={`flex ${active == index ? "bg-[#0284C7] duration-200 text-white " : "text-[#94A3B8] bg-transparent"}  cursor-pointer  p-2 justify-start gap-3 `} >
                                                                  <div className='  mt-[14px]'>
                                                                       {
                                                                            active == index ? <IoIosArrowDown className='  text-[#FFFFFF]' size={16} /> : <MdArrowForwardIos className='  text-[#FFFFFF]' size={16} />
@@ -120,7 +122,7 @@ const CoursePage = () => {
                                                                       <p className='  text-[13px]'>  {item?.videoTime}  <span> | ডেডলাইন: </span> {item?.dataLine} </p>
                                                                  </div>
                                                             </div>
-                                                            <Collapse isOpened={active == index}>
+                                                            <Collapse isOpened={active==index}>
                                                                  <div>
                                                                       {
                                                                            item?.subClass?.map((item, index) => <div className=' pl-5  py-3 cursor-pointer border-b border-[#F8FAFC14] hover:bg-[#F8FAFC14] duration-200' key={index}>
