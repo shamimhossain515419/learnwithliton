@@ -3,13 +3,15 @@
 import { Classes } from '@/utilis';
 import ProgressBar from '@ramonak/react-progress-bar';
 import React, { useState } from 'react';
+import { Collapse } from 'react-collapse';
 import { FaRegPlayCircle } from 'react-icons/fa';
 import { FaArrowLeft, FaArrowRightLong, FaPlay, FaRegCopyright, FaVideoSlash } from 'react-icons/fa6';
 import { GrKeyboard } from 'react-icons/gr';
 import { IoIosArrowDown, IoMdSearch } from 'react-icons/io';
 import { MdArrowForwardIos } from 'react-icons/md';
 const CoursePage = () => {
-     const [active, setActive] = useState(0)
+     const [active, setActive] = useState(false)
+
      return (
           <div>
                <div className=' primaryBg   py-16  '>
@@ -102,8 +104,7 @@ const CoursePage = () => {
                                         </div>
 
                                         <div className='  max-h-[400px] moduleScrollBar overflow-y-scroll '>
-                                             {/* video data map section  */}
-                                           
+
                                              {
                                                   Classes?.map((item, index) => <div key={index}>
                                                        <div>
@@ -115,33 +116,29 @@ const CoursePage = () => {
 
                                                                  </div>
                                                                  <div>
-
                                                                       <h2 className=' cursor-pointer  text-[17px]   font-medium leading-[ 18.4px]'> {item?.name} </h2>
                                                                       <p className='  text-[13px]'>  {item?.videoTime}  <span> | ডেডলাইন: </span> {item?.dataLine} </p>
                                                                  </div>
                                                             </div>
+                                                            <Collapse isOpened={active == index}>
+                                                                 <div>
+                                                                      {
+                                                                           item?.subClass?.map((item, index) => <div className=' pl-5  py-3 cursor-pointer border-b border-[#F8FAFC14] hover:bg-[#F8FAFC14] duration-200' key={index}>
 
-                                                            {active == index ? <div className='  mt-1   translate-y-0  duration-300      '>
-                                                                 {
-                                                                      item?.subClass?.map((item, index) => <div className=' pl-5  py-3 cursor-pointer border-b border-[#F8FAFC14] hover:bg-[#F8FAFC14] duration-200' key={index}>
-                                                                           <div className=' flex items-start justify-start gap-3'>
-                                                                                <div className=''>
-                                                                                     <FaRegPlayCircle className=' text-[#0284C7]' size={18} />
+                                                                                <div className=' flex items-start justify-start gap-3'>
+                                                                                     <div className=''>
+                                                                                          <FaRegPlayCircle className=' text-[#0284C7]' size={18} />
+                                                                                     </div>
+                                                                                     <div className=' -mt-2'>
+
+                                                                                          <h4 className='text-[#cfdbed] text-[14px] font-medium'> {item?.title} </h4>
+                                                                                          <p className=' text-[#94A3B8] text-[12px]'> {item?.time} minute </p>
+                                                                                     </div>
                                                                                 </div>
-                                                                                <div className=' -mt-2'>
-
-                                                                                     <h4 className='text-[#cfdbed] text-[14px] font-medium'> {item?.title} </h4>
-                                                                                     <p className=' text-[#94A3B8] text-[12px]'> {item?.time} minute </p>
-                                                                                </div>
-                                                                           </div>
-
-                                                                      </div>)
-
-                                                                 }
-                                                            </div> : null
-                                                            }
-
-
+                                                                           </div>)
+                                                                      }
+                                                                 </div>
+                                                            </Collapse>
                                                        </div>
                                                   </div>)
                                              }

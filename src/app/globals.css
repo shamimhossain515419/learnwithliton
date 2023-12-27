@@ -171,3 +171,7 @@ body {
   background-color: #747474;
   border-radius: 10px;
 }
+
+.ReactCollapse--collapse {
+  transition: height 1000ms;
+}

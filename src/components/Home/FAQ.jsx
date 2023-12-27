@@ -4,15 +4,16 @@ import Container from '../CommonComponent/Container/Container';
 import SectionTitle from '../SectionTitle/SectionTitle';
 import { FAQData } from '@/utilis';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
+import { Collapse } from 'react-collapse';
 
 const FAQ = () => {
 
-     const [active, setActive] = useState(0)
+     const [active, setActive] = useState(0);
+
      return (
           <div className=' py-20 md:py-28 bg-[#0F172A]'>
 
                <Container>
-
                     <div>
                          <div className=' grid md:grid-cols-2 gap-10 '>
                               <div className='  flex justify-start items-end'>
@@ -41,9 +42,11 @@ const FAQ = () => {
                                                   </div>
                                              </div>
                                              <div className='' >
-                                                  {
-                                                       active == item?.id ? <p className='text-[#94A3B8] leading-[24px]  duration-500 text-[16px] font-normal py-2' > {item?.paragraph} </p> : null
-                                                  }
+
+                                                  <Collapse isOpened={active === item?.id}>
+                                                       <p className='text-[#94A3B8] leading-[24px]  duration-500 text-[16px] font-normal py-2' > {item?.paragraph} </p>
+                                                  </Collapse>
+
                                              </div>
                                         </div>)}
                                    </div>
