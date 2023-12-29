@@ -1,7 +1,8 @@
+"use client"
+
 import React from 'react';
 import Container from '../CommonComponent/Container/Container';
 import SectionTitle from '../SectionTitle/SectionTitle';
-
 import feedback1 from '../../../public/image/home/success1.png'
 import Image from 'next/image';
 import { FaStar } from 'react-icons/fa';

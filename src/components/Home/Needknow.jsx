@@ -9,7 +9,7 @@ import { TbBrandVscode } from 'react-icons/tb';
 
 const Needknow = () => {
      return (
-          <div className='  py-24 border-t border-[#38BDF]  bg-[#0B1120]'>
+          <div className='  py-24 border-t   border-[#FFFFFF4D]'>
 
 
                <Container>

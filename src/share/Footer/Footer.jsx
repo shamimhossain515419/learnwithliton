@@ -8,12 +8,11 @@ import Image from "next/image";
 const Footer = () => {
      return (
           <div className=" bg-[#0B1120] border-t border-[#f8fafc2c]">
-               
-
                <div className=" pt-[70px]">
                     <Container>
                          <div className=" md:flex   md:flex-row-reverse  justify-between py-5">
                               <div className="  flex justify-center md:justify-start gap-5 items-center">
+                                   {/* Footer icons  */}
                                    <Link href={'/'}>
                                         <FaFacebook className=" text-[#38BDF8]" size={20} />
                                    </Link>
