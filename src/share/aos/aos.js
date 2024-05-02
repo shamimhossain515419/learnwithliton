@@ -1,12 +1,10 @@
 // aos.js
 
-import Aos from "aos";
+import Aos from 'aos';
 import 'aos/dist/aos.css';
 
 const initializeAOS = () => {
-  Aos.init({
-
-  });
+  Aos.init({});
 };
 
 export default initializeAOS;

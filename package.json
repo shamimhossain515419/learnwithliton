@@ -9,23 +9,35 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@prisma/client": "^5.13.0",
     "@ramonak/react-progress-bar": "^5.1.1",
     "aos": "^2.3.4",
+    "bcrypt": "^5.1.1",
+    "jose": "^5.2.4",
+    "js-cookie": "^3.0.5",
     "next": "^14.0.4",
+    "next-auth": "^4.24.7",
     "react": "^18.2.0",
     "react-collapse": "^5.1.1",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.51.3",
+    "react-hot-toast": "^2.4.1",
     "react-icons": "^4.12.0",
     "react-phone-input-2": "^2.15.1",
+    "react-player": "^2.16.0",
     "react-responsive-masonry": "^2.1.7",
     "react-syntax-highlighter": "^15.5.0",
+    "react-vimeo": "^2.0.0",
     "yarn": "^1.22.21"
   },
   "devDependencies": {
+    "@types/node": "20.12.8",
+    "@types/react": "18.3.1",
     "autoprefixer": "^10.4.16",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
     "postcss": "^8.4.32",
+    "prisma": "^5.13.0",
     "tailwindcss": "^3.4.0"
   }
 }

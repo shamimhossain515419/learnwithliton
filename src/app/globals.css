@@ -3,6 +3,8 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Allura&family=Great+Vibes&family=Lato&family=Readex+Pro:wght@400;500&family=Roboto:ital,wght@1,300&display=swap'); */
 
+@import url('https://fonts.maateen.me/solaiman-lipi/font.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,35 +15,32 @@
   box-sizing: border-box;
 }
 
-
-
 body {
-  font-family: 'Hind Siliguri';
+  font-family: 'SolaimanLipi', Arial, sans-serif !important;
   font-weight: 400;
   font-style: normal;
-  background-color: #0F172A;
+  background-color: #0f172a;
 }
 
-
 .primaryBg {
-  background-color: #0F172A;
+  background-color: #0f172a;
 }
 
 .secondBg {
-  background-color: #0B1120;
+  background-color: #0b1120;
 }
 
 .primaryColor {
-  color: #94A3B8;
+  color: #94a3b8;
 }
 
 .secondColor {
-  color: #E2E8F0;
+  color: #e2e8f0;
 }
 
 .heading-18 {
-  color: #94A3B8;
-  font-family: Hind Siliguri;
+  color: #94a3b8;
+  font-family: 'SolaimanLipi', Arial, sans-serif !important;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -49,8 +48,8 @@ body {
 }
 
 .heading-18 {
-  color: #94A3B8;
-  font-family: Hind Siliguri;
+  color: #94a3b8;
+  font-family: 'SolaimanLipi', Arial, sans-serif !important;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -58,8 +57,8 @@ body {
 }
 
 .heading-16 {
-  color: #94A3B8;
-  font-family: Hind Siliguri;
+  color: #94a3b8;
+  font-family: 'SolaimanLipi', Arial, sans-serif !important;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -67,8 +66,8 @@ body {
 }
 
 .heading-14 {
-  color: #F8FAFC;
-  font-family: Hind Siliguri;
+  color: #f8fafc;
+  font-family: 'SolaimanLipi', Arial, sans-serif !important;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -76,8 +75,8 @@ body {
 }
 
 .heading-28 {
-  color: #E2E8F0;
-  font-family: Hind Siliguri;
+  color: #e2e8f0;
+  font-family: 'SolaimanLipi', Arial, sans-serif !important;
   font-size: 28px;
   font-style: normal;
   font-weight: 400;
@@ -85,12 +84,9 @@ body {
   letter-spacing: 0.75px;
 }
 
-
-
 .FAQscroll::-webkit-scrollbar {
   width: 8px;
   margin: 2px;
-
 }
 
 .FAQscroll::-webkit-scrollbar-thumb {
@@ -98,15 +94,14 @@ body {
   border-radius: 10px;
 }
 
-
 .custom_file::-webkit-file-upload-button {
   outline: none;
   border: none;
   padding: 10px 20px;
   border-radius: 50px;
-  background: #1E293B;
-  color: #FFF;
-  font-family: Hind Siliguri;
+  background: #1e293b;
+  color: #fff;
+  font-family: 'SolaimanLipi', Arial, sans-serif !important;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -114,12 +109,9 @@ body {
   margin-right: 18px;
 }
 
-
-
 .moduleScrollBar::-webkit-scrollbar {
   width: 8px;
   margin: 2px;
-
 }
 
 .moduleScrollBar::-webkit-scrollbar-thumb {
@@ -128,43 +120,40 @@ body {
 }
 /* customButtonClass */
 .customButtonClass {
-  background-color: #1E293B !important;
+  background-color: #1e293b !important;
   outline: none;
-   border: none;
+  border: none;
 }
-.customButtonClass:hover  {
-     background-color: transparent !important;
+.customButtonClass:hover {
+  background-color: transparent !important;
 }
-.dropdownClass{
-  background-color: #1E293B !important;
-  color: white; 
-
+.dropdownClass {
+  background-color: #1e293b !important;
+  color: white;
 }
-.dropdownStyle{
-  background-color: #1E293B !important;
-  color: white; 
+.dropdownStyle {
+  background-color: #1e293b !important;
+  color: white;
 }
-.containerClass{
-   padding: 8px;
-   border-radius: 6px;
+.containerClass {
+  padding: 8px;
+  border-radius: 6px;
 }
-.containerClass:hover{
-   border: 1px solid #0284C7;
+.containerClass:hover {
+  border: 1px solid #0284c7;
 }
 
 .react-tel-input .flag-dropdown .selected-flag {
   background-color: transparent !important;
 }
 
-.react-tel-input  ul li:hover  {
-  background: #747474  !important;
-
+.react-tel-input ul li:hover {
+  background: #747474 !important;
 }
 
 .customButtonClass::-webkit-scrollbar {
   width: 8px;
   margin: 2px;
-
 }
 
 .customButtonClass::-webkit-scrollbar-thumb {
@@ -174,4 +163,17 @@ body {
 
 .ReactCollapse--collapse {
   transition: height 800ms;
+}
+
+/* video player  */
+
+.player-wrapper {
+  position: relative;
+  padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
