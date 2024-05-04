@@ -1,7 +1,6 @@
 'use client';
 import profileImage from '../../../public/image/other/profile.png';
-import Container from '@/components/CommonComponent/Container/Container';
-import SectionTitle from '@/components/SectionTitle/SectionTitle';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -11,6 +10,8 @@ import toast from 'react-hot-toast';
 
 import { FaEye } from 'react-icons/fa6';
 import { FaRegEyeSlash } from 'react-icons/fa6';
+import Container from '../../components/CommonComponent/Container/Container';
+import SectionTitle from '../../components/SectionTitle/SectionTitle';
 
 const Page = () => {
   const [gender, setGender] = useState('male');

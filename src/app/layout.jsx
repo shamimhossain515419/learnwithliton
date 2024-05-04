@@ -7,7 +7,8 @@ const HindSiliguri = Hind_Siliguri({
 import './globals.css';
 
 import { Toaster } from 'react-hot-toast';
-
+import ReduxProvider from '../components/AuthProvider/ReduxProvider';
+import TokenProvider from '../components/AuthProvider/TokenProvider';
 import Navbar from '../share/Navbar/Navbar';
 import Footer from '../share/Footer/Footer';
 import NextAuthProvider from '../components/AuthProvider/NextAuthProvider';
@@ -20,12 +21,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <NextAuthProvider>
-          <Navbar></Navbar>
-          <div className=" min-h-[50vh] pt-[60px]">{children}</div>
-          <Footer></Footer>
-          <Toaster />
-        </NextAuthProvider>
+        <ReduxProvider>
+          <TokenProvider>
+            <NextAuthProvider>
+              <Navbar></Navbar>
+              <div className=" min-h-[50vh] pt-[60px]">{children}</div>
+              <Footer></Footer>
+              <Toaster />
+            </NextAuthProvider>
+          </TokenProvider>
+        </ReduxProvider>
       </body>
     </html>
   );

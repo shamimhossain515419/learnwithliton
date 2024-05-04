@@ -11,6 +11,7 @@ import Container from '../../components/CommonComponent/Container/Container';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 
 const Page = () => {
+  const [erorr, setError] = useState('');
   const {
     register,
     handleSubmit,
@@ -34,13 +35,23 @@ const Page = () => {
       });
       const resultData = await res.json();
       console.log(resultData);
+
+      // if (resultData?.status === 'fail') {
+      //   setLoading(false);
+      //   setError(resultData?.message);
+      //   return;
+      //   // toast.error(resultData?.message);
+      // }
       const user = {
         email: resultData?.user?.email,
         name: resultData?.user?.name,
         id: resultData?.user?.id,
       };
       if (resultData.status == 'success') {
-        const result = await signIn('credentials', user);
+        const result = await signIn('credentials', {
+          ...user,
+          callbackUrl: '/',
+        });
         setLoading(false);
         toast.success('Login successful');
         window.location.replace('/');
@@ -122,6 +133,12 @@ const Page = () => {
                   >
                     <FaEye size={20} />
                   </div>
+                </div>
+                <div>
+                  <p className="text-[14px] text-red-700">
+                    {' '}
+                    {erorr ? erorr : ''}{' '}
+                  </p>
                 </div>
               </div>
               <div className=" flex justify-between items-center gap-2">

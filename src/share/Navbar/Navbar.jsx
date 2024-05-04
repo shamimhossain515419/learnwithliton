@@ -11,14 +11,14 @@ import { FaBars } from 'react-icons/fa';
 import { usePathname } from 'next/navigation';
 import Container from '../../components/CommonComponent/Container/Container';
 import { useSession } from 'next-auth/react';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
   const [Open, setOpen] = useState(true);
   const { data: session, status } = useSession();
-  console.log(session);
-  const user = true;
+  const { user } = useSelector(state => state.auth);
   const pathname = usePathname();
-  console.log(session);
+
   return (
     <div>
       <Container>
@@ -134,8 +134,10 @@ const Navbar = () => {
                               <Link href={'/account'}>
                                 {' '}
                                 <Image
+                                  width={28}
+                                  height={28}
                                   className=" h-[28px] w-[28px] rounded-full "
-                                  src={userImage}
+                                  src={`/uploads/users/${user?.photo}`}
                                   alt=""
                                 />
                               </Link>
