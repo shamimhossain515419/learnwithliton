@@ -12,14 +12,16 @@ import Container from '../../components/CommonComponent/Container/Container';
 import { signOut } from 'next-auth/react';
 import toast from 'react-hot-toast';
 import Cookies from 'js-cookie';
+import { useSelector } from 'react-redux';
 const Layout = ({ children }) => {
   const pathname = usePathname();
-  console.log(pathname);
+  const { user } = useSelector(state => state.auth);
 
   const handleLogout = () => {
     signOut();
     Cookies.remove('token');
     toast.success('logout successfully');
+    window.location.replace('/');
   };
   return (
     <div className=" pt-10 overflow-hidden border-b border-[#F8FAFC14] min-h-[50vh] ">
@@ -84,15 +86,18 @@ const Layout = ({ children }) => {
                   কোর্স সার্টিফিকেট
                 </p>
               </Link>
-              <div
-                onClick={handleLogout}
-                className="flex items-center gap-3 cursor-pointer  my-2 hover:bg-[#1E293B] rounded-[3px]  py-2 px-2"
-              >
-                <CiLogout className=" text-[#38BDF8]" size={16} />
-                <p className=" text-[#94A3B8] text-[14px]  font-semibold ">
-                  লগ আউট
-                </p>
-              </div>
+              {/* handle logout  */}
+              {user && (
+                <div
+                  onClick={handleLogout}
+                  className="flex items-center gap-3 cursor-pointer  my-2 hover:bg-[#1E293B] rounded-[3px]  py-2 px-2"
+                >
+                  <CiLogout className=" text-[#38BDF8]" size={16} />
+                  <p className=" text-[#94A3B8] text-[14px]  font-semibold ">
+                    লগ আউট
+                  </p>
+                </div>
+              )}
             </div>
           </div>
 

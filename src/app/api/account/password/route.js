@@ -2,14 +2,12 @@ import { VerifyToken } from '../../../../middleware/VerifyJwtToken';
 import { PrismaClient } from '@prisma/client';
 import { NextResponse } from 'next/server';
 const bcrypt = require('bcrypt');
-
 const prisma = new PrismaClient();
-
 export const POST = async (req, res) => {
   try {
-    const { body } = req.json();
-    console.log(body);
-    const { email, id } = VerifyToken();
+    const { oldPasword: password, newPassword } = await req.json();
+
+    const { email, id } = await VerifyToken();
 
     const ExistingUser = await prisma.user.findUnique({
       where: { email: email },
@@ -21,23 +19,34 @@ export const POST = async (req, res) => {
         message: 'could not find user',
       });
     }
+    const match = await bcrypt.compare(password, ExistingUser?.password);
 
-    const hashedPassword = await bcrypt.hash(password, 10); // 10 is the saltRounds
-    console.log(hashedPassword);
+    if (!match) {
+      return NextResponse.json({
+        status: 'fail',
+        message: 'Please Enter Right  password',
+      });
+    }
+    // bcrypt sring  data make
+    const hashedPassword = await bcrypt.hash(newPassword, 10); // 10 is the saltRounds
 
+    //  update user
     const updatedUser = await prisma.user.update({
       where: {
         id: id,
       },
-      data,
+      data: {
+        password: hashedPassword,
+      },
     });
 
     return NextResponse.json({
       status: 'success',
       code: 200,
-      message: ' Add user successfully',
+      message: ' Password Change  successfully',
     });
   } catch (err) {
+    console.log(err);
     return NextResponse.json({ message: err.message, code: 500 });
   }
 };

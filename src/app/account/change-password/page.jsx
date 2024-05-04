@@ -5,11 +5,14 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { FaEye, FaRegEyeSlash } from 'react-icons/fa';
+import { useDispatch } from 'react-redux';
+import { ToggleResePassword } from '@/redux/features/resetPasswordSlice/ResetPasswordSlice';
 
 const Page = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
@@ -20,6 +23,7 @@ const Page = () => {
 
   const ChnagePasswordHandler = async data => {
     setLoading(true);
+    setError('');
     const res = await fetch(`${process.env.BASE_URL}/api/account/password`, {
       method: 'POST',
       body: JSON.stringify(data),
@@ -31,7 +35,7 @@ const Page = () => {
       reset();
       setLoading(false);
     } else {
-      toast.error('Failed to Add  client');
+      setError(result?.message);
       setLoading(false);
     }
   };
@@ -81,7 +85,9 @@ const Page = () => {
                 placeholder="^%^$GHJUG*^&@"
               />
               {errors.oldPasword && (
-                <p role="alert">{errors.oldPasword.message}</p>
+                <p role="alert" className="text-red-500 text-[14px]">
+                  {errors.oldPasword.message}
+                </p>
               )}
               <div
                 onClick={() => setShowPassword(!showPassword)}
@@ -124,7 +130,9 @@ const Page = () => {
                 placeholder="S4346723jdsfs@"
               />
               {errors.newPassword && (
-                <p role="alert">{errors.newPassword.message}</p>
+                <p role="alert" className="text-red-500 text-[14px]">
+                  {errors.newPassword.message}
+                </p>
               )}
               <div
                 onClick={() => setShowPassword(!showPassword)}
@@ -138,6 +146,7 @@ const Page = () => {
               </div>
             </div>
           </div>
+
           {/* old  password  */}
           <div className="w-full py-3">
             <h1 className="font-medium text-[14px] text-[#94A3B8] leading-[21.7px] m-0">
@@ -167,7 +176,9 @@ const Page = () => {
                 placeholder="S4346723jdsfs@"
               />
               {errors.confirmPassword && (
-                <p role="alert">{errors.confirmPassword.message}</p>
+                <p role="alert" className="text-red-500 text-[14px]">
+                  {errors.confirmPassword.message}
+                </p>
               )}
               <div
                 onClick={() => setShowPassword(!showPassword)}
@@ -181,7 +192,16 @@ const Page = () => {
               </div>
             </div>
           </div>
-
+          {/* show Error message  */}
+          <div className="text-[14px] text-red-500 ">{error}</div>
+          <div className=" flex text-[14px] justify-end items-center  py-1 gap-2 text-white duration-300 hover:underline  hover:text-blue-500 ">
+            <p
+              className="  cursor-pointer"
+              onClick={() => dispatch(ToggleResePassword())}
+            >
+              forget password
+            </p>
+          </div>
           <div className=" py-4 mt-6">
             <div className=" inline-block my-2 sm:my-0 ">
               <button
