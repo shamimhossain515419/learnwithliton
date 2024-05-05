@@ -33,7 +33,6 @@ export async function GET(req, res) {
       });
     }
   } catch (error) {
-    console.log(error);
     return NextResponse.json({ status: 'fail', data: error });
   }
 }
@@ -103,6 +102,38 @@ export const PUT = async (req, res) => {
     return NextResponse.json({
       status: 'success',
       message: 'user Updated Successfully',
+      code: 200,
+    });
+  } catch (err) {
+    console.log(err.message);
+    return NextResponse.json({ message: err.message, code: 500 });
+  }
+};
+
+export const DELETE = async (req, res) => {
+  try {
+    const { searchParams } = new URL(req.url);
+    const id = parseInt(searchParams.get('id'));
+    // / Fetch the client data to get the current image filename
+    const user = await prisma.user.findUnique({
+      where: {
+        id: id,
+      },
+    });
+
+    // Delete the old image file
+    let imagePath = `public/uploads/users/${user.photo}`;
+    await unlink(imagePath);
+
+    const updatedUser = await prisma.user.delete({
+      where: {
+        id: id,
+      },
+    });
+
+    return NextResponse.json({
+      status: 'success',
+      message: 'user delete Successfully',
       code: 200,
     });
   } catch (err) {

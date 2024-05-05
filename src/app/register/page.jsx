@@ -16,14 +16,14 @@ import SectionTitle from '../../components/SectionTitle/SectionTitle';
 const Page = () => {
   const [gender, setGender] = useState('male');
   const [showPassword, setShowPassword] = useState(false);
-  const [error, setError] = useState('');
+  const [errorGender, setErrorGender] = useState('');
   const [term, setTerm] = useState(false);
+  const [imageError, setImageError] = useState(false);
   const [image, setImage] = useState('');
   const router = useRouter();
   const handleCheckboxChange = () => {
     setTerm(!term);
   };
-
   const {
     register,
     handleSubmit,
@@ -34,20 +34,16 @@ const Page = () => {
 
   const RegisterHandler = async data => {
     const formData = new FormData();
-    if (!term) {
-      setError(' term and condition must be specified');
-      return;
-    }
+
     if (!gender) {
-      setError(' Pleaes select Gender');
+      setErrorGender(' Pleaes select Gender');
       return;
     }
     if (!image) {
-      setError(' Please upload photo');
+      setImageError(' Please upload photo');
       return;
     }
 
-    console.log(data);
     formData.append('name', data?.name);
     formData.append('email', data?.email);
     formData.append('password', data?.password);
@@ -86,6 +82,16 @@ const Page = () => {
                 'একাউন্ট খোলার জন্য সঠিক তথ্য প্রদান করুন। এই তথ্য গুলো পরবর্তীতে লগইন এর সময় প্রয়োজন হবে।'
               }
             />
+          </div>
+
+          <div className=" flex items-center justify-center text-[17px] gap-3 text-white text-center">
+            <p>ইতিমধ্যে একটি সদস্যপদ আছে</p>
+            <Link
+              href="/login"
+              className=" text-[#0284C7] leading-[14.4px] text-[18px]  font-normal mt-1"
+            >
+              লগইন করুন
+            </Link>
           </div>
 
           <form
@@ -152,7 +158,9 @@ const Page = () => {
                       <span>নারী</span>
                     </div>
                   </div>
-                  {error && <p className="text-red-500 text-[14px]">{error}</p>}
+                  {errorGender && (
+                    <p className="text-red-500 text-[14px]">{errorGender}</p>
+                  )}
                 </div>
                 {/* input email  */}
                 <div className=" w-full py-3">
@@ -176,7 +184,7 @@ const Page = () => {
                   />
                   {errors.email?.type === 'required' && (
                     <p role="alert" className="text-red-500 text-[14px]">
-                      email is required
+                      Email is required
                     </p>
                   )}
                 </div>
@@ -209,11 +217,13 @@ const Page = () => {
                       placeholder="S4346723jdsfs@"
                     />
                     {errors.password && (
-                      <p role="alert">{errors.password.message}</p>
+                      <p role="alert" className="text-red-500 text-[14px]">
+                        {errors.password.message}
+                      </p>
                     )}
                     <div
                       onClick={() => setShowPassword(!showPassword)}
-                      className="absolute text-white top-6 right-2"
+                      className="absolute text-white top-5 right-2"
                     >
                       {showPassword ? (
                         <FaRegEyeSlash size={20} />
@@ -242,10 +252,20 @@ const Page = () => {
                           'Passwords do not match',
                       })}
                       className="relative w-full text-[#64748B] md:pl-6 my-2 focus:outline-[#0284C7] focus:outline-1 mt-2 border-none outline-none p-2 placeholder:text-[14px] rounded-[4px] bg-[#1E293B]"
-                      type="password"
                       name="confirmPassword"
+                      type={showPassword ? 'text' : 'password'}
                       placeholder="S4346723jdsfs@"
                     />
+                    <div
+                      onClick={() => setShowPassword(!showPassword)}
+                      className="absolute text-white top-5 right-2"
+                    >
+                      {showPassword ? (
+                        <FaRegEyeSlash size={20} />
+                      ) : (
+                        <FaEye size={20} />
+                      )}
+                    </div>
                     {errors.confirmPassword && (
                       <p role="alert" className="text-[14px] text-red-600">
                         {errors.confirmPassword.message}
@@ -285,8 +305,8 @@ const Page = () => {
                           id=""
                         />
                       </div>
-                      {error && (
-                        <p className="text-red-500 text-[14px]">{error}</p>
+                      {imageError && (
+                        <p className="text-red-500 text-[14px]">{imageError}</p>
                       )}
                     </div>
                   </div>
@@ -461,6 +481,7 @@ const Page = () => {
                     type="checkbox"
                     className="cursor-pointer w-[15px] h-[15px] bg-gray-500 border border-gray-700 md:accent-blue-500"
                     onChange={handleCheckboxChange}
+                    required={true}
                   />
                   <p className="text-[#FFF] text-[15px]">
                     আমি লার্ন উইথ সুমিত প্লাটফর্মের সকল শর্ত,{' '}

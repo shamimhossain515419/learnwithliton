@@ -26,6 +26,7 @@ model User {
   gender          String 
   discord         String?
   term            Boolean
+  verifiedCode     Int ?
   createdAt       DateTime          @default(now()) @db.Timestamp(0)
   updatedAt       DateTime          @default(now()) @updatedAt @db.Timestamp(0)
  

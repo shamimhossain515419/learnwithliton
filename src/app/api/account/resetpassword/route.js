@@ -1,10 +1,10 @@
-import { MailTransporter } from '@/utility/MailTransporter';
+import { EmailSend } from '@/utility/EmailSend';
+import { generateRandomNumericCode } from '@/utility/generateRandomNumericCode';
 import { PrismaClient } from '@prisma/client';
 import { NextResponse } from 'next/server';
-const nodemailer = require('nodemailer');
+
 const prisma = new PrismaClient();
 export const POST = async (req, res) => {
-  console.log('object');
   try {
     const { email } = await req.json();
     console.log(email);
@@ -16,39 +16,35 @@ export const POST = async (req, res) => {
       return NextResponse.json({
         status: 'fail',
         code: 402,
-        message: 'could not find user',
+        message: 'ইমেইল খুঁজে পাওয়া যাচ্ছে না সঠিকভাবে ব্যবহার করো',
       });
     }
-    console.log(ExistingUser);
-    console.log(email);
 
     // send mail with defined transport object
 
     try {
       // Create a Nodemailer transporter
-      const transporter = nodemailer.createTransport({
-        service: 'email',
-        port: 3000,
-        auth: {
-          user: 'shamimusman515419@gmail.com',
-          pass: 'zlpbrocklhsragqw',
+      const sendEmail = email;
+      const code = generateRandomNumericCode();
+      const subject = 'Reset password For ASIAN IT INC';
+      const text = 'reset password ';
+      const html = `  <div>
+          <h2> verify  Code: </h2>
+          <h2>  ${code} </h2>
+        </div> `;
+      const data = { verifiedCode: code };
+      // const email send
+      const SendEmailResult = await EmailSend(sendEmail, subject, text, html);
+      const updatedUser = await prisma.user.update({
+        where: {
+          email: email,
         },
+        data,
       });
-
-      // Sending email
-      const info = await transporter.sendMail({
-        from: 'shamimusman515419@gmail.com', // sender address
-        to: 'shamimhossain01617@gmail.com', // list of receivers
-        subject: 'Hello', // Subject line
-        text: 'Hello world?', // plain text body
-        html: '<b>Hello world?</b>', // html body
-      });
-
-      console.log('Message sent: %s', info.messageId);
       return NextResponse.json({
         status: 'success',
         code: 200,
-        message: 'Message sent successfully',
+        message: ' Please Check  Your Email',
       });
     } catch (err) {
       console.log(err);

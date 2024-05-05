@@ -9,6 +9,9 @@ import toast from 'react-hot-toast';
 import { signIn } from 'next-auth/react';
 import Container from '../../components/CommonComponent/Container/Container';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
+import { useDispatch } from 'react-redux';
+import { ToggleResePassword } from '@/redux/features/resetPasswordSlice/ResetPasswordSlice';
+import Link from 'next/link';
 
 const Page = () => {
   const [erorr, setError] = useState('');
@@ -23,12 +26,12 @@ const Page = () => {
   //  login user
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
   const LoginHandler = async data => {
     const email = data.email;
     const password = data.password;
-    console.log(email, password);
     try {
-      const res = await fetch(`http://localhost:3000/api/account/login`, {
+      const res = await fetch(`${process.env.BASE_URL}/api/account/login`, {
         method: 'POST',
         body: JSON.stringify({ email, password }),
         headers: { 'Content-Type': 'application/json' },
@@ -56,10 +59,12 @@ const Page = () => {
         toast.success('Login successful');
         window.location.replace('/');
       } else {
-        toast.error('Login Fail');
+        toast.error(resultData.message);
+        setError(resultData.message);
       }
     } catch (e) {
       setLoading(false);
+      setError(e.message);
     }
   };
 
@@ -77,6 +82,15 @@ const Page = () => {
                 size={'text-[34px]'}
                 alignment={'text-center'}
               ></SectionTitle>
+              <div className=" flex items-center justify-center text-[17px] gap-3 text-white text-center">
+                <p>কোনো অ্যাকাউন্ট নেই</p>
+                <Link
+                  href="/register"
+                  className=" text-[#0284C7] leading-[14.4px] text-[18px]  font-normal mt-1"
+                >
+                  রেজিস্টার
+                </Link>
+              </div>
             </div>
             <form onSubmit={handleSubmit(LoginHandler)} action="">
               <div className=" w-full py-3">
@@ -129,7 +143,7 @@ const Page = () => {
                   )}
                   <div
                     onClick={() => setShowPassword(!showPassword)}
-                    className=" absolute  top-6 right-2"
+                    className=" absolute  text-white top-6 right-2"
                   >
                     <FaEye size={20} />
                   </div>
@@ -153,8 +167,8 @@ const Page = () => {
                   </div>
                 </div>
                 <p
-                  className=" text-[#38BDF8] text-[16px] font-normal "
-                  href="#"
+                  onClick={() => dispatch(ToggleResePassword())}
+                  className=" text-[#38BDF8] cursor-pointer text-[16px] font-normal "
                 >
                   {' '}
                   পাসওয়ার্ড ভুলে গেছেন?

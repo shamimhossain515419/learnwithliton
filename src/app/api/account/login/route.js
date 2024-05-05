@@ -7,9 +7,18 @@ const prisma = new PrismaClient();
 export async function POST(req, res) {
   try {
     let { email, password } = await req.json();
+    console.log(email, password);
     const result = await prisma.user.findUnique({
       where: { email: email },
     });
+    if (!result) {
+      return NextResponse.json({
+        code: 400,
+        status: 'fail',
+        message: 'সঠিক ইমেইল এবং সঠিক পাসওয়ার্ড দিন',
+      });
+    }
+
     const match = await bcrypt.compare(password, result?.password);
 
     if (!match) {
@@ -31,11 +40,16 @@ export async function POST(req, res) {
           code: 200,
           user: result,
           token: token,
+          message: 'user Login successful',
         },
         { status: 200, headers: { 'set-cookie': cookieString } }
       );
     }
   } catch (e) {
-    return NextResponse.json({ status: 'fail', data: e });
+    return NextResponse.json({
+      status: 'fail',
+      data: e,
+      message: e.message,
+    });
   }
 }
