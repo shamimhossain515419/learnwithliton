@@ -19,7 +19,7 @@ export const POST = async (req, res) => {
     const address = data.get('address') || '';
     const discord = data.get('discord') || '';
 
-    const ExistingUser = await prisma.user.findUnique({
+    const ExistingUser = await prisma.users.findUnique({
       where: { email: email },
     });
     // upload image start
@@ -42,7 +42,7 @@ export const POST = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10); // 10 is the saltRounds
     console.log(hashedPassword);
 
-    const user = await prisma.user.create({
+    const user = await prisma.users.create({
       data: {
         name,
         term,

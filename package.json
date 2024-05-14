@@ -2,10 +2,11 @@
   "name": "learnwithsumit",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:5000",
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "dev": "next dev -p 5000",
+    "start": "next start -p 5000",
     "lint": "next lint"
   },
   "dependencies": {
@@ -14,6 +15,7 @@
     "@reduxjs/toolkit": "^2.2.3",
     "aos": "^2.3.4",
     "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
     "email-validator": "^2.0.4",
     "jose": "^5.2.4",
     "js-cookie": "^3.0.5",

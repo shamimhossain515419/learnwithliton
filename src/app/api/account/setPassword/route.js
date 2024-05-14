@@ -6,7 +6,7 @@ export const PUT = async (req, res) => {
   try {
     const { email, password } = await req.json();
 
-    const ExistingUser = await prisma.user.findUnique({
+    const ExistingUser = await prisma.users.findUnique({
       where: { email: email },
     });
     if (!ExistingUser) {
@@ -21,7 +21,7 @@ export const PUT = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10); // 10 is the saltRounds
 
     //  update user
-    const updatedUser = await prisma.user.update({
+    const updatedUser = await prisma.users.update({
       where: {
         email: email,
       },

@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 export const POST = async (req, res) => {
   try {
     const { email, verifiedCode } = await req.json();
-    const ExistingUser = await prisma.user.findUnique({
+    const ExistingUser = await prisma.users.findUnique({
       where: { email: email },
     });
 
@@ -25,7 +25,7 @@ export const POST = async (req, res) => {
         const data = {
           verifiedCode: 0,
         };
-        const updatedUser = await prisma.user.update({
+        const updatedUser = await prisma.users.update({
           where: {
             email: email,
           },

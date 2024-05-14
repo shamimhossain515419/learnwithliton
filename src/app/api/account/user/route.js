@@ -18,7 +18,7 @@ export async function GET(req, res) {
       });
     }
     //  find user
-    const result = await prisma.user.findUnique({
+    const result = await prisma.users.findUnique({
       where: { email: email },
     });
 
@@ -52,7 +52,7 @@ export const PUT = async (req, res) => {
     const file = formDataValue.get('photo') || File;
 
     // Fetch the client data to get the current image filename
-    const user = await prisma.user.findUnique({
+    const user = await prisma.users.findUnique({
       where: {
         id: id,
       },
@@ -92,7 +92,7 @@ export const PUT = async (req, res) => {
     };
     console.log(data);
     // Update the client data in the database
-    const updatedUser = await prisma.user.update({
+    const updatedUser = await prisma.users.update({
       where: {
         id: id,
       },
@@ -115,7 +115,7 @@ export const DELETE = async (req, res) => {
     const { searchParams } = new URL(req.url);
     const id = parseInt(searchParams.get('id'));
     // / Fetch the client data to get the current image filename
-    const user = await prisma.user.findUnique({
+    const user = await prisma.users.findUnique({
       where: {
         id: id,
       },
@@ -125,7 +125,7 @@ export const DELETE = async (req, res) => {
     let imagePath = `public/uploads/users/${user.photo}`;
     await unlink(imagePath);
 
-    const updatedUser = await prisma.user.delete({
+    const updatedUser = await prisma.users.delete({
       where: {
         id: id,
       },

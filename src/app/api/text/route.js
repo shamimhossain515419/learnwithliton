@@ -1,19 +1,33 @@
-import { NextResponse } from 'next/server';
-import emailValidator from 'email-validator';
+import { NextResponse } from "next/server";
+import { PrismaClient } from "@prisma/client";
+const prisma = new PrismaClient();
 export const POST = async (req, res) => {
+  const data = {
+    price: 33,
+    discount: 10
+  };
+  
   try {
-    const { email } = await req.json();
-    const data = await emailValidator.validate(email);
-    return NextResponse.json({
-      status: 'fail',
-      data: `Email ${data} is invalid: ${data}`,
-      message: 'email is invalid',
+    // Create a new instance of the "nila" model using Prisma
+    const result = await prisma.nila.create({
+      data: data
     });
-  } catch (e) {
+  
+    // Return the success response
     return NextResponse.json({
-      status: 'fail',
-      data: e,
-      message: e.message,
+      status: "success",
+      data: result,
+      message: "Instance created successfully"
+    });
+  } catch (error) {
+    // Handle any errors that occur during the creation process
+    console.error("Error creating instance:", error);
+  
+    // Return an error response
+    return NextResponse.json({
+      status: "fail",
+      message: "Error creating instance",
+      error: error.message // Optionally, you can include the error message in the response
     });
   }
 };

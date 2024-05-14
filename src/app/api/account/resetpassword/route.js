@@ -8,7 +8,7 @@ export const POST = async (req, res) => {
   try {
     const { email } = await req.json();
     console.log(email);
-    const ExistingUser = await prisma.user.findUnique({
+    const ExistingUser = await prisma.users.findUnique({
       where: { email: email },
     });
 
@@ -35,7 +35,7 @@ export const POST = async (req, res) => {
       const data = { verifiedCode: code };
       // const email send
       const SendEmailResult = await EmailSend(sendEmail, subject, text, html);
-      const updatedUser = await prisma.user.update({
+      const updatedUser = await prisma.users.update({
         where: {
           email: email,
         },

@@ -9,7 +9,7 @@ export const POST = async (req, res) => {
 
     const { email, id } = await VerifyToken();
 
-    const ExistingUser = await prisma.user.findUnique({
+    const ExistingUser = await prisma.users.findUnique({
       where: { email: email },
     });
     if (!ExistingUser) {
@@ -31,7 +31,7 @@ export const POST = async (req, res) => {
     const hashedPassword = await bcrypt.hash(newPassword, 10); // 10 is the saltRounds
 
     //  update user
-    const updatedUser = await prisma.user.update({
+    const updatedUser = await prisma.users.update({
       where: {
         id: id,
       },

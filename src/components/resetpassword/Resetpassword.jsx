@@ -61,7 +61,6 @@ const Resetpassword = () => {
     setLoading(true);
     e.preventDefault();
     const form = e.target;
-    console.log('object');
     try {
       const res = await fetch(
         `${process.env.BASE_URL}/api/account/confirmPassword`,
