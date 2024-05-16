@@ -19,12 +19,16 @@ export async function POST(req, res, next) {
 }
 //  get  facilities
 export async function GET(req, res, next) {
-  try { 
+  try {
     let { searchParams } = new URL(req.url);
     let course_id = parseFloat(searchParams.get("id"));
+    let searchData = searchParams.get("name") || ""
     const result = await prisma.facilities.findMany({
       where: {
         course_id: course_id,
+        name: {
+          contains: searchData,
+        },
       },
     });
     return NextResponse.json({

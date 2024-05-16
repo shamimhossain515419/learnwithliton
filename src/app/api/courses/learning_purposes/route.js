@@ -22,9 +22,13 @@ export async function GET(req, res, next) {
   try {
     let { searchParams } = new URL(req.url);
     let course_id = parseFloat(searchParams.get("id"));
+    let name = searchParams.get("name") || "";
     const result = await prisma.learning_purposes.findMany({
       where: {
         course_id: course_id,
+        name: {
+          contains: name,
+        },
       },
     });
     return NextResponse.json({
