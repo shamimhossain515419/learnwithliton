@@ -22,9 +22,13 @@ export async function GET(req, res, next) {
   try {
     let { searchParams } = new URL(req.url);
     let course_id = parseFloat(searchParams.get("id"));
+    let name = searchParams.get("name");
     const result = await prisma.inside_this_course.findMany({
       where: {
         course_id: course_id,
+        name: {
+          contains: name,
+        },
       },
     });
     return NextResponse.json({
@@ -55,7 +59,7 @@ export async function PUT(req, res) {
     return NextResponse.json({ status: "fail", data: error.toString() });
   }
 }
-//  delete inside_this_course 
+//  delete inside_this_course
 export async function DELETE(req, res) {
   try {
     let { searchParams } = new URL(req.url);
