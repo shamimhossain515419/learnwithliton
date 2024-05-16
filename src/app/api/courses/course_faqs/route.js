@@ -23,9 +23,13 @@ export async function GET(req, res, next) {
   try {
     let { searchParams } = new URL(req.url);
     let course_id = parseFloat(searchParams.get("id"));
+    let title = searchParams.get("title");
     const result = await prisma.course_faqs.findMany({
       where: {
         course_id: course_id,
+         title: {
+          contains: title,
+        },
       },
     });
     return NextResponse.json({
