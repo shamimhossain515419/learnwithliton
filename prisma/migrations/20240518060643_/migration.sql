@@ -1,5 +1,5 @@
 -- CreateTable
-CREATE TABLE `Users` (
+CREATE TABLE `users` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `email` VARCHAR(50) NOT NULL,
     `name` VARCHAR(50) NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE `Users` (
     `createdAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     `updatedAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
 
-    UNIQUE INDEX `Users_email_key`(`email`),
+    UNIQUE INDEX `users_email_key`(`email`),
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
@@ -86,7 +86,7 @@ CREATE TABLE `student_feedbacks` (
     `course_id` INTEGER NOT NULL,
     `student_id` INTEGER NOT NULL,
 
-    UNIQUE INDEX `student_feedbacks_student_id_key`(`student_id`),
+    UNIQUE INDEX `student_feedbacks_course_id_student_id_key`(`course_id`, `student_id`),
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
@@ -106,7 +106,6 @@ CREATE TABLE `mentors` (
 -- CreateTable
 CREATE TABLE `course_faqs` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
-    `title` VARCHAR(300) NOT NULL,
     `description` VARCHAR(191) NOT NULL,
     `course_id` INTEGER NOT NULL,
 
@@ -132,7 +131,7 @@ ALTER TABLE `prerequisites` ADD CONSTRAINT `prerequisites_course_id_fkey` FOREIG
 ALTER TABLE `student_feedbacks` ADD CONSTRAINT `student_feedbacks_course_id_fkey` FOREIGN KEY (`course_id`) REFERENCES `courses`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `student_feedbacks` ADD CONSTRAINT `student_feedbacks_student_id_fkey` FOREIGN KEY (`student_id`) REFERENCES `Users`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `student_feedbacks` ADD CONSTRAINT `student_feedbacks_student_id_fkey` FOREIGN KEY (`student_id`) REFERENCES `users`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE `mentors` ADD CONSTRAINT `mentors_course_id_fkey` FOREIGN KEY (`course_id`) REFERENCES `courses`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;

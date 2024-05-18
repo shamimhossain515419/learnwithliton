@@ -27,8 +27,8 @@ module.exports = {
         hostname: 'img.freepik.com',
       },
       {
-        protocol: 'https',
-        hostname: 'hips.hearstapps.com',
+        protocol: 'http',
+        hostname: 'localhost',
       },
       {
         protocol: 'https',

@@ -5,28 +5,20 @@ const prisma = new PrismaClient();
 //  create method student_feedbacks
 export async function POST(req, res, next) {
   try {
-    const body = await req.json();
-    const existing = await prisma.student_feedbacks.findUnique({
-      where: { course_id: body?.["course_id"] },
+    const { description, course_id, student_id } = await req.json();
+    const upsertFeedback = await prisma.student_feedbacks.create({
+      data: { description, course_id, student_id },
     });
-    console.log(existing);
-    if (existing) {
-      return NextResponse.json({
-        status: "fail",
-        data: "course not found",
-      });
-    }
-
-    const result = await prisma.student_feedbacks.create({ data: body });
     return NextResponse.json({
       status: "success",
-      data: result,
-      meassge: "  course successfully created",
+      data: upsertFeedback,
+      message: "  feedback successfully created",
     });
   } catch (error) {
-    console.log(error);
-    return NextResponse.json({ status: "fail", meassge: error?.meassge });
+    console.error("Error during upsert operation:", error);
+    return NextResponse.json({ status: "fail", message: error?.message });
   }
+
 }
 //  get  student_feedbacks
 export async function GET(req, res, next) {
@@ -38,7 +30,7 @@ export async function GET(req, res, next) {
         course_id: course_id,
       },
       include: {
-        Users: true,
+        users: true,
       },
     });
     return NextResponse.json({

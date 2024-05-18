@@ -14,7 +14,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Users {
+model users {
   id                Int                 @id @default(autoincrement())
   email             String              @unique @db.VarChar(50)
   name              String              @db.VarChar(50)
@@ -30,7 +30,6 @@ model Users {
   createdAt         DateTime            @default(now()) @db.Timestamp(0)
   updatedAt         DateTime            @default(now()) @updatedAt @db.Timestamp(0)
   student_feedbacks student_feedbacks[]
-  
 }
 
 model courses {
@@ -52,6 +51,7 @@ model courses {
   course_faqs        course_faqs[]
   learning_objects   learning_objects[]
 }
+
 //  inside_this_course model 
 model inside_this_course {
   id        Int     @id @default(autoincrement())
@@ -59,6 +59,7 @@ model inside_this_course {
   course_id Int
   courses   courses @relation(fields: [course_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
 }
+
 //  learning_objects model 
 model learning_objects {
   id        Int     @id @default(autoincrement())
@@ -66,6 +67,7 @@ model learning_objects {
   course_id Int
   courses   courses @relation(fields: [course_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
 }
+
 //  facilities 
 model facilities {
   id        Int     @id @default(autoincrement())
@@ -73,6 +75,7 @@ model facilities {
   course_id Int
   courses   courses @relation(fields: [course_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
 }
+
 //  learning_purposes 
 model learning_purposes {
   id        Int     @id @default(autoincrement())
@@ -80,6 +83,7 @@ model learning_purposes {
   course_id Int
   courses   courses @relation(fields: [course_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
 }
+
 //  prerequisites 
 model prerequisites {
   id        Int     @id @default(autoincrement())
@@ -87,15 +91,18 @@ model prerequisites {
   course_id Int
   courses   courses @relation(fields: [course_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
 }
+
 //  student_feedbacks 
 model student_feedbacks {
   id          Int     @id @default(autoincrement())
   description String
   course_id   Int
-  student_id  Int     @unique
+  student_id  Int     
   courses     courses @relation(fields: [course_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
-  Users       Users   @relation(fields: [student_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  users       users   @relation(fields: [student_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
+@@unique([course_id, student_id])
 }
+
 //  mentors model 
 model mentors {
   id          Int     @id @default(autoincrement())
@@ -109,7 +116,6 @@ model mentors {
 
 model course_faqs {
   id          Int     @id @default(autoincrement())
-  title       String  @db.VarChar(300)
   description String
   course_id   Int
   courses     courses @relation(fields: [course_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
