@@ -30,6 +30,8 @@ model users {
   createdAt         DateTime            @default(now()) @db.Timestamp(0)
   updatedAt         DateTime            @default(now()) @updatedAt @db.Timestamp(0)
   student_feedbacks student_feedbacks[]
+  enrollment        enrollment[]
+  payment           payment[]
 }
 
 model courses {
@@ -50,6 +52,9 @@ model courses {
   mentors            mentors[]
   course_faqs        course_faqs[]
   learning_objects   learning_objects[]
+  batch              batch[]
+  payment            payment[]
+  enrollment         enrollment[]
 }
 
 //  inside_this_course model 
@@ -70,18 +75,22 @@ model learning_objects {
 
 //  facilities 
 model facilities {
-  id        Int     @id @default(autoincrement())
-  name      String  @db.VarChar(400)
+  id        Int      @id @default(autoincrement())
+  name      String   @db.VarChar(400)
   course_id Int
-  courses   courses @relation(fields: [course_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  courses   courses  @relation(fields: [course_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  createdAt DateTime @default(now()) @db.Timestamp(0)
+  updatedAt DateTime @default(now()) @updatedAt @db.Timestamp(0)
 }
 
 //  learning_purposes 
 model learning_purposes {
-  id        Int     @id @default(autoincrement())
-  name      String  @db.VarChar(400)
+  id        Int      @id @default(autoincrement())
+  name      String   @db.VarChar(400)
   course_id Int
-  courses   courses @relation(fields: [course_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  courses   courses  @relation(fields: [course_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  createdAt DateTime @default(now()) @db.Timestamp(0)
+  updatedAt DateTime @default(now()) @updatedAt @db.Timestamp(0)
 }
 
 //  prerequisites 
@@ -116,11 +125,58 @@ model mentors {
 }
 
 model course_faqs {
-  id          Int     @id @default(autoincrement())
+  id          Int      @id @default(autoincrement())
   description String
   title       String
   course_id   Int
-  courses     courses @relation(fields: [course_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  courses     courses  @relation(fields: [course_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  createdAt   DateTime @default(now()) @db.Timestamp(0)
+  updatedAt   DateTime @default(now()) @updatedAt @db.Timestamp(0)
+}
+
+//  batch schema 
+model batch {
+  id          Int          @id @default(autoincrement())
+  name        String       @db.VarChar(50)
+  startDate   DateTime
+  endDate     DateTime
+  course_id   Int
+  createdAt   DateTime     @default(now()) @db.Timestamp(0)
+  updatedAt   DateTime     @default(now()) @updatedAt @db.Timestamp(0)
+  course      courses      @relation(fields: [course_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  enrollments enrollment[]
+  payment     payment[]
+}
+
+model payment {
+  id             Int          @id @default(autoincrement())
+  user_id        Int
+  course_id      Int
+  batch_id       Int
+  amount         Float
+  transaction_id String
+  method_name    String
+  status         String       @default("pending")
+  users          users        @relation(fields: [user_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  course         courses      @relation(fields: [course_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  batch          batch        @relation(fields: [batch_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  createdAt      DateTime     @default(now()) @db.Timestamp(0)
+  updatedAt      DateTime     @default(now()) @updatedAt @db.Timestamp(0)
+  enrollment     enrollment[]
+}
+
+model enrollment {
+  id         Int      @id @default(autoincrement())
+  batch_id   Int
+  user_id    Int
+  course_id  Int
+  payment_id Int
+  batch      batch    @relation(fields: [batch_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  payment    payment  @relation(fields: [payment_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  user       users    @relation(fields: [user_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  course     courses  @relation(fields: [course_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  createdAt  DateTime @default(now()) @db.Timestamp(0)
+  updatedAt  DateTime @default(now()) @updatedAt @db.Timestamp(0)
 }
 
 // / facilities

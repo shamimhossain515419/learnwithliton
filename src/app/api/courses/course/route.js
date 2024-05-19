@@ -20,12 +20,16 @@ export async function POST(req, res, next) {
 export async function GET(req, res, next) {
   try {
     const { searchParams } = new URL(req.url);
-    const name = searchParams.get("name");
+    const name = searchParams.get("name") || "";
     const result = await prisma.courses.findMany({
       where: {
         name: {
           contains: name,
         },
+      },
+      include: {
+        batch: true,
+        payment: true,
       },
     });
     return NextResponse.json({
