@@ -6,6 +6,16 @@ const prisma = new PrismaClient();
 export async function POST(req, res, next) {
   try {
     const { description, course_id, student_id } = await req.json();
+    const coursesExisting = await prisma.student_feedbacks.findUnique({
+      course_id: course_id,
+      student_id: student_id,
+    });
+    if (coursesExisting) {
+      return NextResponse.json({
+        status: "fail",
+        data: " Mentors already exist",
+      });
+    }
     const upsertFeedback = await prisma.student_feedbacks.create({
       data: { description, course_id, student_id },
     });
@@ -18,7 +28,6 @@ export async function POST(req, res, next) {
     console.error("Error during upsert operation:", error);
     return NextResponse.json({ status: "fail", message: error?.message });
   }
-
 }
 //  get  student_feedbacks
 export async function GET(req, res, next) {

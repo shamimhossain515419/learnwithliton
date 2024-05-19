@@ -13,18 +13,6 @@ export async function POST(req, res, next) {
     const description = data.get("description") || "";
     const name = data.get("name") || "";
     const course_id = Number(data.get("course_id")) || 0;
-
-    console.log(file, name, description, course_id, about, description);
-    const existing = await prisma.mentors.findUnique({
-      where: { course_id: course_id },
-    });
-    if (existing) {
-      return NextResponse.json({
-        status: "fail",
-        data: " Mentors already exist",
-      });
-    }
-
     // upload file menter
     if (!file?.name) {
       return NextResponse.json({ status: false });
@@ -100,8 +88,6 @@ export async function PUT(req, res) {
         data: "mentors not found ",
       });
     }
-
-    console.log(existing)
     let imagePath = ""; // Variable to store the path of the new image
     let randomFileName = existing.photo; // Initialize with the current image filename
 
@@ -124,7 +110,7 @@ export async function PUT(req, res) {
     });
     return NextResponse.json({ status: "success", data: result });
   } catch (error) {
-    console.log(error?.message)
+    console.log(error?.message);
     return NextResponse.json({ status: "fail", data: error.toString() });
   }
 }

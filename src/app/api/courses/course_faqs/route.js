@@ -24,17 +24,33 @@ export async function GET(req, res, next) {
     let { searchParams } = new URL(req.url);
     let course_id = parseFloat(searchParams.get("id"));
     let title = searchParams.get("title") || "";
-    const result = await prisma.course_faqs.findMany({
-      where: {
-        course_id: course_id,
-        title: {
-          contains: title,
+    let page = parseInt(searchParams.get("page")) || 1;
+    let limit = parseInt(searchParams.get("limit")) || 10;
+     const [result, totalCount] = await Promise.all([
+      prisma.course_faqs.findMany({
+        where: {
+          course_id: course_id,
+          title: {
+            contains: title,
+          },
         },
-      },
-    });
+        skip: (page - 1) * limit,
+        take: limit,
+      }),
+      prisma.course_faqs.count({
+        where: {
+          course_id: course_id,
+          title: {
+            contains: title,
+          },
+        },
+      }),
+    ]);
+
     return NextResponse.json({
       status: "success",
       data: result,
+      count: totalCount,
       meassge: " course_faqs   get successfully ",
     });
   } catch (error) {
