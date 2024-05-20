@@ -91,7 +91,7 @@ const Page = () => {
               )}
               <div
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute text-white top-5 right-2"
+                className="absolute text-white-base top-5 right-2"
               >
                 {showPassword ? (
                   <FaRegEyeSlash size={20} />
@@ -136,7 +136,7 @@ const Page = () => {
               )}
               <div
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute text-white top-5 right-2"
+                className="absolute text-white-base top-5 right-2"
               >
                 {showPassword ? (
                   <FaRegEyeSlash size={20} />
@@ -182,7 +182,7 @@ const Page = () => {
               )}
               <div
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute text-white top-5 right-2"
+                className="absolute text-white-base top-5 right-2"
               >
                 {showPassword ? (
                   <FaRegEyeSlash size={20} />
@@ -194,7 +194,7 @@ const Page = () => {
           </div>
           {/* show Error message  */}
           <div className="text-[14px] text-red-500 ">{error}</div>
-          <div className=" flex text-[14px] justify-end items-center  py-1 gap-2 text-white duration-300 hover:underline  hover:text-blue-500 ">
+          <div className=" flex text-[14px] justify-end items-center  py-1 gap-2 text-white-base duration-300 hover:underline  hover:text-blue-500 ">
             <p
               className="  cursor-pointer"
               onClick={() => dispatch(ToggleResePassword())}

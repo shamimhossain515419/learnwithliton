@@ -28,14 +28,14 @@ const page = () => {
 
                               <div>
                                    {/* leader board table  */}
-                                   <table class="min-w-full border border-[#F8FAFC14] text-white">
+                                   <table class="min-w-full border border-[#F8FAFC14] text-white-base">
                                         <thead>
                                              <tr>
-                                                  <th class="border border-[#F8FAFC14] text-white text-[13px]  font-medium  text-start py-2 px-4">র‍্যাঙ্ক</th>
-                                                  <th class="border border-[#F8FAFC14] text-white text-[13px]  font-medium  text-start py-2 px-4">নাম</th>
-                                                  <th class="border  !hidden lg:!table-cell  border-[#F8FAFC14] text-white text-[13px] text-center  font-medium  py-2 px-4">কুইজ থেকে প্রাপ্ত নাম্বার</th>
-                                                  <th class="border  !hidden lg:!table-cell border-[#F8FAFC14] text-white text-[13px]  text-center font-medium   py-2 px-4">এসাইনমেন্ট থেকে প্রাপ্ত নাম্বার</th>
-                                                  <th class="border border-[#F8FAFC14] text-white text-[13px]  font-medium   text-center py-2 px-4">মোট নাম্বার</th>
+                                                  <th class="border border-[#F8FAFC14] text-white-base text-[13px]  font-medium  text-start py-2 px-4">র‍্যাঙ্ক</th>
+                                                  <th class="border border-[#F8FAFC14] text-white-base text-[13px]  font-medium  text-start py-2 px-4">নাম</th>
+                                                  <th class="border  !hidden lg:!table-cell  border-[#F8FAFC14] text-white-base text-[13px] text-center  font-medium  py-2 px-4">কুইজ থেকে প্রাপ্ত নাম্বার</th>
+                                                  <th class="border  !hidden lg:!table-cell border-[#F8FAFC14] text-white-base text-[13px]  text-center font-medium   py-2 px-4">এসাইনমেন্ট থেকে প্রাপ্ত নাম্বার</th>
+                                                  <th class="border border-[#F8FAFC14] text-white-base text-[13px]  font-medium   text-center py-2 px-4">মোট নাম্বার</th>
                                              </tr>
                                         </thead>
                                         {/* table data  */}

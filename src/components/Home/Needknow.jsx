@@ -38,7 +38,7 @@ const Needknow = () => {
               >
                 <div className=" text-center">
                   <div className=" bg-[#EA580C] rounded-full    inline-block   p-3">
-                    <FaHtml5 className=" text-white" size={20} />
+                    <FaHtml5 className=" text-white-base" size={20} />
                   </div>
                 </div>
                 <h1 className=" heading-16 text-center text-[#E2E8F0] py-1">

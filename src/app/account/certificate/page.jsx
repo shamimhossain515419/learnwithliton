@@ -21,10 +21,10 @@ const page = () => {
                          <p className=' heading-16 mt-4'> <span className=' text-[#F87171]'>মনে রাখবেন, কোর্স রিসেট করলে আগের ব্যাচের আপনার সকল পার্ফরমেন্স এর তথ্য মুছে যাবে এবং আগের ব্যাচের সার্টিফিকেটটি ইনভ্যালিডেট হয়ে যাবে। এটি কোনভাবেই আর ফিরিয়ে দেয়া সম্ভব হবেনা</span>  ।সফলভাবে শেষ করার পর নতুনভাবে আপনার সার্টিফিকেটটি জেনারেট হবে। এছাড়া আপনি প্লাটফর্ম থেকে অটো লগ আউট হয়ে যাবেন এবং আপনাকে নতুন করে লগইন করতে হবে।</p>
 
                          <div className=' my-5  flex gap-4 items-center flex-wrap'>
-                              <button className='inline-flex text-white  text-[14px] font-medium px-3 py-1 justify-center items-center gap-4 rounded-2xl bg-gradient-to-r from-blue-400 via-blue-600 to-teal-500'>
+                              <button className='inline-flex text-white-base  text-[14px] font-medium px-3 py-1 justify-center items-center gap-4 rounded-2xl bg-gradient-to-r from-blue-400 via-blue-600 to-teal-500'>
                                    <span>কোর্স রিপোর্ট এবং সার্টিফিকেট</span>
                               </button>
-                                <button className='inline-flex text-white  text-[14px] font-medium px-3 py-1 justify-center items-center gap-4 rounded-2xl  bg-gradient-to-r from-red-500 to-pink-500'>  <span className='text-white  text-[14px] font-medium'>কোর্স রিসেট করে বর্তমান ব্যাচে চলুন</span> </button>
+                                <button className='inline-flex text-white-base  text-[14px] font-medium px-3 py-1 justify-center items-center gap-4 rounded-2xl  bg-gradient-to-r from-red-500 to-pink-500'>  <span className='text-white-base  text-[14px] font-medium'>কোর্স রিসেট করে বর্তমান ব্যাচে চলুন</span> </button>
                          </div>
 
                     </div>

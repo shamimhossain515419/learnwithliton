@@ -31,7 +31,7 @@ const Navbar = () => {
                 <div className=" logo flex  items-center gap-4">
                   <Image src={logo} alt="image"></Image>
                   <Link
-                    className="text-[16px] uppercase   font-semibold text-white"
+                    className="text-[16px] uppercase   font-semibold text-white-base"
                     href={'/'}
                   >
                     Asian IT inc

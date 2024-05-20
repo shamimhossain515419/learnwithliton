@@ -49,7 +49,7 @@ const FAQ = () => {
                     <div
                       onClick={() => handleToggle(item?.id)}
                       className={` ${
-                        active == item?.id ? ' bg-[#0284C7] text-white' : ''
+                        active == item?.id ? ' bg-[#0284C7] text-white-base' : ''
                       } cursor-pointer flex   hover:bg-[#0284C7] text-[#94A3B8] hover:text-[#fff]  duration-200  p-2 py-4   justify-between items-center  gap-4`}
                     >
                       <h1 className=" text-[18px]    font-medium ">

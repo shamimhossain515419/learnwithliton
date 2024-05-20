@@ -17,14 +17,14 @@ const page = () => {
 
 
                     <div className='   mt-12 border border-[#F8FAFC14] rounded-md  p-4'>
-                         <table class="min-w-full border border-[#F8FAFC14] text-white">
+                         <table class="min-w-full border border-[#F8FAFC14] text-white-base">
                               {/* enrolment table  */}
                               <thead>
                                    <tr>
-                                        <th class="border border-[#F8FAFC14] text-white text-[13px]  font-medium  text-start py-2 px-4">কোর্স</th>
-                                        <th class="border border-[#F8FAFC14] text-white text-[13px]  font-medium  text-start py-2 px-4">এনরোলমেন্টের সময়</th>
-                                        <th class="border border-[#F8FAFC14] text-white text-[13px]  font-medium  text-start py-2 px-4">এনরোলমেন্ট আইডি</th>
-                                        <th class="border border-[#F8FAFC14] text-white text-[13px]  font-medium  text-start py-2 px-4">ব্যাচ</th>
+                                        <th class="border border-[#F8FAFC14] text-white-base text-[13px]  font-medium  text-start py-2 px-4">কোর্স</th>
+                                        <th class="border border-[#F8FAFC14] text-white-base text-[13px]  font-medium  text-start py-2 px-4">এনরোলমেন্টের সময়</th>
+                                        <th class="border border-[#F8FAFC14] text-white-base text-[13px]  font-medium  text-start py-2 px-4">এনরোলমেন্ট আইডি</th>
+                                        <th class="border border-[#F8FAFC14] text-white-base text-[13px]  font-medium  text-start py-2 px-4">ব্যাচ</th>
                                    </tr>
                               </thead>
                               <tbody>

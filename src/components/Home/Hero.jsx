@@ -106,7 +106,7 @@ const Hero = () => {
 
             <div
               data-aos="fade-left"
-              className="  pt-9  text-white sm:ml-5 w-full"
+              className="  pt-9  text-white-base sm:ml-5 w-full"
             >
               <div className=" flex justify-start  gap-0">
                 <div className=" border-t border-l  border-[#f8fafc29]  flex justify-start gap-2 items-center p-2 ">

@@ -84,7 +84,7 @@ const Page = () => {
             />
           </div>
 
-          <div className=" flex items-center justify-center text-[17px] gap-3 text-white text-center">
+          <div className=" flex items-center justify-center text-[17px] gap-3 text-white-base text-center">
             <p>ইতিমধ্যে একটি সদস্যপদ আছে</p>
             <Link
               href="/login"
@@ -223,7 +223,7 @@ const Page = () => {
                     )}
                     <div
                       onClick={() => setShowPassword(!showPassword)}
-                      className="absolute text-white top-5 right-2"
+                      className="absolute text-white-base top-5 right-2"
                     >
                       {showPassword ? (
                         <FaRegEyeSlash size={20} />
@@ -258,7 +258,7 @@ const Page = () => {
                     />
                     <div
                       onClick={() => setShowPassword(!showPassword)}
-                      className="absolute text-white top-5 right-2"
+                      className="absolute text-white-base top-5 right-2"
                     >
                       {showPassword ? (
                         <FaRegEyeSlash size={20} />

@@ -132,13 +132,13 @@ const Resetpassword = () => {
       <div className=" min-w-[220px]  bg-[#1E293B99] px-8 rounded-xl py-11 sm:min-w-[400px] xl:w-[600px]  mx-auto">
         <div
           onClick={() => dispatch(ToggleResePassword())}
-          className=" absolute cursor-pointer right-2 top-1 p-5 text-white"
+          className=" absolute cursor-pointer right-2 top-1 p-5 text-white-base"
         >
           <IoMdClose className="text-[25px]" />
         </div>
 
         <div>
-          <h1 className="text-white text-[25px]  md:text-[35px] font-bold text-center pb-8">
+          <h1 className="text-white-base text-[25px]  md:text-[35px] font-bold text-center pb-8">
             ASIAN IT INC
           </h1>
         </div>
@@ -332,7 +332,7 @@ const Resetpassword = () => {
                         )}
                         <div
                           onClick={() => setShowPassword(!showPassword)}
-                          className="absolute text-white top-5 right-2"
+                          className="absolute text-white-base top-5 right-2"
                         >
                           {showPassword ? (
                             <FaRegEyeSlash size={20} />
@@ -367,7 +367,7 @@ const Resetpassword = () => {
                         />
                         <div
                           onClick={() => setShowPassword(!showPassword)}
-                          className="absolute text-white top-5 right-2"
+                          className="absolute text-white-base top-5 right-2"
                         >
                           {showPassword ? (
                             <FaRegEyeSlash size={20} />

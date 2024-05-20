@@ -17,17 +17,17 @@ const page = () => {
                </div>
 
                <div className='   mt-12 border border-[#F8FAFC14] rounded-md  p-4'>
-                    <table class="min-w-full border border-[#F8FAFC14] text-white">
+                    <table class="min-w-full border border-[#F8FAFC14] text-white-base">
                          {/* transactions table  */}
                          <thead>
                               <tr>
-                                   <th class="border border-[#F8FAFC14] text-white text-[13px]  font-medium  text-start py-2 px-4">কোর্স</th>
-                                   <th class="border border-[#F8FAFC14] text-white text-[13px]  font-medium  text-start py-2 px-4">তারিখ</th>
-                                   <th class="border border-[#F8FAFC14] text-white text-[13px]  font-medium  text-start py-2 px-4">পেমেন্ট মেথড</th>
-                                   <th class="border border-[#F8FAFC14] text-white text-[13px]  font-medium  text-start py-2 px-4">এমাউন্ট</th>
-                                   <th class="border border-[#F8FAFC14] text-white text-[13px]  font-medium  text-start py-2 px-4">ইনভয়েস নং</th>
-                                   <th class="border border-[#F8FAFC14] text-white text-[13px]  font-medium  text-start py-2 px-4">পেমেন্ট স্ট্যাটাস</th>
-                                   <th class="border border-[#F8FAFC14] text-white text-[13px]  font-medium  text-start py-2 px-4">অপশন</th>
+                                   <th class="border border-[#F8FAFC14] text-white-base text-[13px]  font-medium  text-start py-2 px-4">কোর্স</th>
+                                   <th class="border border-[#F8FAFC14] text-white-base text-[13px]  font-medium  text-start py-2 px-4">তারিখ</th>
+                                   <th class="border border-[#F8FAFC14] text-white-base text-[13px]  font-medium  text-start py-2 px-4">পেমেন্ট মেথড</th>
+                                   <th class="border border-[#F8FAFC14] text-white-base text-[13px]  font-medium  text-start py-2 px-4">এমাউন্ট</th>
+                                   <th class="border border-[#F8FAFC14] text-white-base text-[13px]  font-medium  text-start py-2 px-4">ইনভয়েস নং</th>
+                                   <th class="border border-[#F8FAFC14] text-white-base text-[13px]  font-medium  text-start py-2 px-4">পেমেন্ট স্ট্যাটাস</th>
+                                   <th class="border border-[#F8FAFC14] text-white-base text-[13px]  font-medium  text-start py-2 px-4">অপশন</th>
 
                               </tr>
                          </thead>

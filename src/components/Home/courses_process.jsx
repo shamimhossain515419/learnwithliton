@@ -52,7 +52,7 @@ const CoursesProcess = () => {
             <div>
               <div className=" text-center md:text-star">
                 <div className=" relative z-10 mx-auto grid w-24 place-items-center py-10 lg:mx-px ">
-                  <h1 className="section-title text-3xl font-bold relative z-10  !text-white drop-shadow-[3px_3px_0px_#1e293b]">
+                  <h1 className="section-title text-3xl font-bold relative z-10  !text-white-base drop-shadow-[3px_3px_0px_#1e293b]">
                     ১
                   </h1>
                   <Image
@@ -106,7 +106,7 @@ const CoursesProcess = () => {
             <div>
               <div className=" text-center md:text-star">
                 <div className=" relative z-10 mx-auto grid w-24 place-items-center py-10 lg:mx-px ">
-                  <h1 className="section-title text-3xl font-bold relative z-10  !text-white drop-shadow-[3px_3px_0px_#1e293b]">
+                  <h1 className="section-title text-3xl font-bold relative z-10  !text-white-base drop-shadow-[3px_3px_0px_#1e293b]">
                     ২
                   </h1>
                   <Image
@@ -145,7 +145,7 @@ const CoursesProcess = () => {
             <div>
               <div className=" text-center md:text-star">
                 <div className=" relative z-10 mx-auto grid w-24 place-items-center py-10 lg:mx-px ">
-                  <h1 className="section-title text-3xl font-bold relative z-10  !text-white drop-shadow-[3px_3px_0px_#1e293b]">
+                  <h1 className="section-title text-3xl font-bold relative z-10  !text-white-base drop-shadow-[3px_3px_0px_#1e293b]">
                     ৩
                   </h1>
                   <Image
@@ -200,7 +200,7 @@ const CoursesProcess = () => {
             <div>
               <div className=" text-center md:text-star">
                 <div className=" relative z-10 mx-auto grid w-24 place-items-center py-10 lg:mx-px ">
-                  <h1 className="section-title text-3xl font-bold relative z-10  !text-white drop-shadow-[3px_3px_0px_#1e293b]">
+                  <h1 className="section-title text-3xl font-bold relative z-10  !text-white-base drop-shadow-[3px_3px_0px_#1e293b]">
                     ৪
                   </h1>
                   <Image
@@ -241,7 +241,7 @@ const CoursesProcess = () => {
             <div>
               <div className=" text-center md:text-star">
                 <div className=" relative z-10 mx-auto grid w-24 place-items-center py-10 lg:mx-px ">
-                  <h1 className="section-title text-3xl font-bold relative z-10  !text-white drop-shadow-[3px_3px_0px_#1e293b]">
+                  <h1 className="section-title text-3xl font-bold relative z-10  !text-white-base drop-shadow-[3px_3px_0px_#1e293b]">
                     ৫
                   </h1>
                   <Image

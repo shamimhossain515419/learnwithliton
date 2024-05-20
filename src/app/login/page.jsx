@@ -82,7 +82,7 @@ const Page = () => {
                 size={'text-[34px]'}
                 alignment={'text-center'}
               ></SectionTitle>
-              <div className=" flex items-center justify-center text-[17px] gap-3 text-white text-center">
+              <div className=" flex items-center justify-center text-[17px] gap-3 text-white-base text-center">
                 <p>কোনো অ্যাকাউন্ট নেই</p>
                 <Link
                   href="/register"
@@ -143,7 +143,7 @@ const Page = () => {
                   )}
                   <div
                     onClick={() => setShowPassword(!showPassword)}
-                    className=" absolute  text-white top-6 right-2"
+                    className=" absolute  text-white-base top-6 right-2"
                   >
                     <FaEye size={20} />
                   </div>

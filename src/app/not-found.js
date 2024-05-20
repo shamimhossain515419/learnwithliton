@@ -20,7 +20,7 @@ const NotFoundPage = () => {
             </svg>
           </div>
           <div className=" md:max-w-[600px] mx-auto text-center  md:absolute   md:top-1/4   inset-0  ">
-            <h1 className=" text-[35px] font-medium  text-white py-3">
+            <h1 className=" text-[35px] font-medium  text-white-base py-3">
               পেজটি খুঁজে পাওয়া যায়নি!
             </h1>
             <p className="  heading-18">

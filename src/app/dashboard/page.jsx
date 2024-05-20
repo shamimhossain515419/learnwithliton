@@ -15,7 +15,7 @@ const page = () => {
                     {/* কোর্স অগ্রগতি   */}
                     <div className=' py-3 flex justify-between gap-3  items-center'>
                          <h1 className=' heading-18 '> কোর্স অগ্রগতি - Batch-2 </h1>
-                         <button className='bg-gradient-to-r from-[#0a8a63] to-[#1971c2] text-white text-[16px] font-normal   rounded-2xl px-3 py-[6px]'>কোর্স সার্টিফিকেট</button>
+                         <button className='bg-gradient-to-r from-[#0a8a63] to-[#1971c2] text-white-base text-[16px] font-normal   rounded-2xl px-3 py-[6px]'>কোর্স সার্টিফিকেট</button>
                     </div>
 
                     <div className='  grid md:grid-cols-3 gap-5   bg-[#0F172A]   rounded-lg border border-[#F8FAFC14]'>
@@ -62,7 +62,7 @@ const page = () => {
                     <div class="grid w-full grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-10 py-24">
                          <div className='  h-full w-full'>
                               <h1 className=' heading-18'>কুইজ রিপোর্ট সামারি</h1>
-                              <div className="flex mt-3  h-full  text-white flex-col justify-center rounded-lg border  border-[#F8FAFC14]  bg-[#0F172A]  px-2 py-4 text-center   sm:p-6">
+                              <div className="flex mt-3  h-full  text-white-base flex-col justify-center rounded-lg border  border-[#F8FAFC14]  bg-[#0F172A]  px-2 py-4 text-center   sm:p-6">
                                    <p>কোন কুইজে অংশগ্রহণ করেন নি!  </p>
                               </div>
                          </div>
@@ -155,13 +155,13 @@ const page = () => {
                                              <p className=' text-end text-[14px] text-[#64748B] font-normal py-2' >* এসাইনমেন্টে ইন্সট্রাকটরের মতামত দেখতে, সংশ্লিষ্ট লেসনের এসাইনমেন্ট ট্যাব দেখুন* </p>
                                              <div>
                                                   {/* dashboard table  */}
-                                                  <table class="min-w-full border border-[#F8FAFC14] text-white">
+                                                  <table class="min-w-full border border-[#F8FAFC14] text-white-base">
                                                        <thead>
                                                             <tr>
-                                                                 <th class="border border-[#F8FAFC14] text-white text-[13px]  font-medium  text-start py-2 px-4">এসাইনমেন্ট</th>
-                                                                 <th class="border border-[#F8FAFC14] text-white text-[13px]  font-medium  text-start py-2 px-4">নাম্বার</th>
-                                                                 <th class="border border-[#F8FAFC14] text-white text-[13px]  font-medium  text-start py-2 px-4">জমার সময়</th>
-                                                                 <th class="border border-[#F8FAFC14] text-white text-[13px]  font-medium  text-start py-2 px-4">ডেডলাইন</th>
+                                                                 <th class="border border-[#F8FAFC14] text-white-base text-[13px]  font-medium  text-start py-2 px-4">এসাইনমেন্ট</th>
+                                                                 <th class="border border-[#F8FAFC14] text-white-base text-[13px]  font-medium  text-start py-2 px-4">নাম্বার</th>
+                                                                 <th class="border border-[#F8FAFC14] text-white-base text-[13px]  font-medium  text-start py-2 px-4">জমার সময়</th>
+                                                                 <th class="border border-[#F8FAFC14] text-white-base text-[13px]  font-medium  text-start py-2 px-4">ডেডলাইন</th>
                                                             </tr>
                                                        </thead>
                                                        <tbody>
@@ -236,7 +236,7 @@ const page = () => {
 
                          <div className='col-span-1 h-full w-full  '>
                               <h1 className=' heading-18'>কুইজ রিপোর্ট সামারি</h1>
-                              <div className='flex mt-5  h-[90%]  text-white  items-center justify-center rounded-lg border  border-[#F8FAFC14]  bg-[#0F172A]  px-2 py-4 text-center   sm:p-6'>
+                              <div className='flex mt-5  h-[90%]  text-white-base  items-center justify-center rounded-lg border  border-[#F8FAFC14]  bg-[#0F172A]  px-2 py-4 text-center   sm:p-6'>
                                    <h1 className=' heading-18'>কুইজ রিপোর্ট সামারি</h1>
                               </div>
                          </div>
