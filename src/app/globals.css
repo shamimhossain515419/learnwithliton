@@ -12,7 +12,7 @@
 @layer base {
   :root {
     --color-primary-base: #0f172a;
-    --color-primary-muted: #1E293B99;
+    --color-primary-muted: #1e293b99;
     --color-secondary-base: #0b1120;
     --color-blue-base: #0284c7;
     --color-blue-muted: #0285c732;
@@ -51,6 +51,22 @@ body {
 
 .secondColor {
   color: #e2e8f0;
+}
+
+/* dodet stype  */
+
+.swiper .swiper-pagination-bullet-active {
+  background: #e2e8f0;
+  height: 14px !important;
+  width: 14px !important;
+  border-radius: 50%;
+}
+
+.swiper .swiper-pagination-bullet {
+  background: #e2e8f0;
+  width: 14px;
+  height: 14px !important;
+  border-radius: 50%;
 }
 
 .heading-18 {

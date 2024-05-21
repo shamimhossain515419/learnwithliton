@@ -29,7 +29,6 @@ const Page = () => {
       body: JSON.stringify(data),
     });
     const result = await res.json();
-    console.log(result);
     if (result.status === 'success') {
       toast.success(result?.message);
       reset();

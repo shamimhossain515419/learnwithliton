@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 
-const CourseCard = () => {
+const CourseCard = ({ item }) => {
   return (
     <div className=" border border-[#F8FAFC14] rounded-lg overflow-hidden">
       <div>
@@ -11,9 +11,7 @@ const CourseCard = () => {
           className=" w-full h-[200px] object-fill"
           width={300}
           height={200}
-          src={
-            "https://cdn.ostad.app/course/cover/2023-12-04T11-05-21.903Z-Flutter.jpg"
-          }
+          src={`/uploads/courses/${item?.photo_url}`}
           alt="image"
         />
       </div>
@@ -34,11 +32,11 @@ const CourseCard = () => {
       <div className="p-3">
         <h1 className="text-[16px] md:text-[18px] leading-7  lg:text-[px] text-white-base">
           {" "}
-          Web Development With MERN stack
+          {item?.name}
         </h1>
         <div className="pt-3 ">
           <Link
-            href={"/courses"}
+            href={`/courses/${item?.id}`}
             className=" group py-2 text-white-base bg-[#1F273D]  rounded  flex items-center gap-4 justify-center text-center w-full "
           >
             {" "}

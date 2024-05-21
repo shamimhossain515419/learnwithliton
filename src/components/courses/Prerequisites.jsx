@@ -1,7 +1,7 @@
 import { FaCheck } from "react-icons/fa6";
 import SectionTitle from "../SectionTitle/SectionTitle";
 
-const Prerequisites = () => {
+const Prerequisites = ({ prerequisites }) => {
   return (
     <div>
       <div className=" pt-10">
@@ -14,24 +14,17 @@ const Prerequisites = () => {
         {/* inside  contentt section  */}
         <div className=" border bg-primary-muted border-white-muted p-6 rounded-lg ">
           <div className=" grid grid-cols-1  sm:grid-cols-2 gap-4">
-            <div className=" flex items-center gap-3 text-white-base">
-              <div className=" w-[22px] h-[22px] flex justify-center items-center  bg-blue-base  rounded-full  text-white-base  bg-">
-                <FaCheck className="text-[12px] " />
+            {prerequisites?.map((item, index) => (
+              <div
+                key={index}
+                className=" flex items-center gap-3 text-white-base"
+              >
+                <div className=" w-[22px] h-[22px] flex justify-center items-center  bg-blue-base  rounded-full  text-white-base  bg-">
+                  <FaCheck className="text-[12px] " />
+                </div>
+                <p>{item?.name}</p>
               </div>
-              <p>সফটওয়্যার ও ডিজিটাল প্রোডাক্ট নিয়ে বেসিক আইডিয়া</p>
-            </div>
-            <div className=" flex items-center gap-3 text-white-base">
-              <div className=" w-[22px] h-[22px] flex justify-center items-center  bg-blue-base  rounded-full  text-white-base  bg-">
-                <FaCheck className="text-[12px] " />
-              </div>
-              <p>ইন্টারনেটের বেসিক ব্যবহার</p>
-            </div>
-            <div className=" flex items-center gap-3 text-white-base">
-              <div className=" w-[22px] h-[22px] flex justify-center items-center  bg-blue-base  rounded-full  text-white-base  bg-">
-                <FaCheck className="text-[12px] " />
-              </div>
-              <p>কম্পিউটারের বেসিক ব্যবহার</p>
-            </div>
+            ))}
           </div>
         </div>
       </div>

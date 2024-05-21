@@ -40,7 +40,6 @@ const Resetpassword = () => {
         }
       );
       const resultData = await res.json();
-      console.log(resultData);
       if (resultData.status === 'success') {
         toast.success(resultData?.message);
         setLoading(false);

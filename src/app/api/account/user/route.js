@@ -90,7 +90,7 @@ export const PUT = async (req, res) => {
       phone,
       email,
     };
-    console.log(data);
+   
     // Update the client data in the database
     const updatedUser = await prisma.users.update({
       where: {

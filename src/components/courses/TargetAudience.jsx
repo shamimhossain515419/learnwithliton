@@ -1,18 +1,19 @@
-import { FaCheck } from "react-icons/fa6";
+import React from "react";
 import SectionTitle from "../SectionTitle/SectionTitle";
+import { FaCheck } from "react-icons/fa6";
 
-const LearningObjects = ({ learning_objects }) => {
+const TargetAudience = ({ targetAudience }) => {
   return (
     <div className=" pt-10">
       <SectionTitle
         size={" text-[17px]  md:text-[22px]"}
-        title_1={"কী কী শিখবেন "}
-        title_2={"এ কোর্স থেকে?"}
+        title_1={"কোর্সটি  "}
+        title_2={"যাদের জন্য?"}
       />
       {/* inside  contentt section  */}
       <div className=" border bg-primary-muted border-white-muted p-6 rounded-lg ">
         <div className=" grid grid-cols-1  sm:grid-cols-2 gap-4">
-          {learning_objects?.map((item, index) => (
+          {targetAudience?.map((item, index) => (
             <div
               key={index}
               className=" flex items-center gap-3 text-white-base"
@@ -23,16 +24,10 @@ const LearningObjects = ({ learning_objects }) => {
               <p>{item?.name}</p>
             </div>
           ))}
-          <div>
-            <a className="text-[17px] px-6 text-white-base bg-blue-base py-2 rounded text-center inline-block">
-              {" "}
-              পুরো সিলেবাস দেখুন{" "}
-            </a>
-          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default LearningObjects;
+export default TargetAudience;

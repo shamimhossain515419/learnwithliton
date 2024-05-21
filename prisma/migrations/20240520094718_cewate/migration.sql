@@ -125,6 +125,7 @@ CREATE TABLE `batch` (
     `startDate` DATETIME(3) NOT NULL,
     `endDate` DATETIME(3) NOT NULL,
     `course_id` INTEGER NOT NULL,
+    `status` ENUM('running', 'ending', 'completed') NOT NULL DEFAULT 'running',
     `createdAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     `updatedAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
 

@@ -21,7 +21,7 @@ const PaymentPage = () => {
      const handlePhoneChange = (newPhone) => {
           setPhone(newPhone);
      };
-     console.log(phone);
+ 
      return (
           <div className=' py-28 border-b border-[#F8FAFC14]'>
                <Container>

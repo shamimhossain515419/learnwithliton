@@ -20,7 +20,7 @@ model users {
   name              String              @db.VarChar(50)
   password          String
   role              users_role?
-  address           String?
+  address           String?             @db.VarChar(500)
   photo             String
   phone             Int?
   gender            String
@@ -37,7 +37,7 @@ model users {
 model courses {
   id                 Int                  @id @default(autoincrement())
   name               String               @db.VarChar(50)
-  description        String
+  description        String               @db.Text
   photo_url          String
   video_url          String
   price              Int
@@ -55,6 +55,8 @@ model courses {
   batch              batch[]
   payment            payment[]
   enrollment         enrollment[]
+  targetAudience     targetAudience[]
+  assignmentShowcase assignmentShowcase[]
 }
 
 //  inside_this_course model 
@@ -83,6 +85,16 @@ model facilities {
   updatedAt DateTime @default(now()) @updatedAt @db.Timestamp(0)
 }
 
+//  facilities 
+model targetAudience {
+  id        Int      @id @default(autoincrement())
+  name      String   @db.VarChar(400)
+  course_id Int
+  courses   courses  @relation(fields: [course_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  createdAt DateTime @default(now()) @db.Timestamp(0)
+  updatedAt DateTime @default(now()) @updatedAt @db.Timestamp(0)
+}
+
 //  learning_purposes 
 model learning_purposes {
   id        Int      @id @default(autoincrement())
@@ -101,10 +113,18 @@ model prerequisites {
   courses   courses @relation(fields: [course_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
 }
 
+model assignmentShowcase {
+  id        Int     @id @default(autoincrement())
+  name      String  @db.VarChar(400)
+  photo     String  @db.VarChar(500)
+  course_id Int
+  courses   courses @relation(fields: [course_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
+}
+
 //  student_feedbacks 
 model student_feedbacks {
   id          Int     @id @default(autoincrement())
-  description String
+  description String  @db.Text
   course_id   Int
   student_id  Int
   courses     courses @relation(fields: [course_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
@@ -118,15 +138,19 @@ model mentors {
   id          Int     @id @default(autoincrement())
   name        String  @db.VarChar(400)
   photo       String
-  about       String  @db.VarChar(250)
-  description String
-  course_id   Int
-  courses     courses @relation(fields: [course_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  about       String  @db.VarChar(300)
+  description String  @db.Text
+  education   String? @db.VarChar(250)
+  phone       String? @db.VarChar(50)
+  email       String? @db.VarChar(50)
+
+  course_id Int
+  courses   courses @relation(fields: [course_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
 }
 
 model course_faqs {
   id          Int      @id @default(autoincrement())
-  description String
+  description String   @db.Text
   title       String
   course_id   Int
   courses     courses  @relation(fields: [course_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
@@ -141,6 +165,7 @@ model batch {
   startDate   DateTime
   endDate     DateTime
   course_id   Int
+  status      batch_status @default(running)
   createdAt   DateTime     @default(now()) @db.Timestamp(0)
   updatedAt   DateTime     @default(now()) @updatedAt @db.Timestamp(0)
   course      courses      @relation(fields: [course_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
@@ -179,37 +204,15 @@ model enrollment {
   updatedAt  DateTime @default(now()) @updatedAt @db.Timestamp(0)
 }
 
-// / facilities
-// id
-// course_id
-// title
-// logged_in_user_id
-
-// / courses
-// id
-// title
-// description
-// photo_url
-// video_url
-//  price int
-//  discount int
-// logged_in_user_id
-
-// course description 
-
-// Learning_objects
-// id
-// course_id
-// title
-// logged_in_user_id
-
-// // prerequisite
-// id
-// course_id
-// title
-// logged_in_user_id
+// enum models 
 enum users_role {
   student
   admin
   mentors
+}
+
+enum batch_status {
+  running
+  ending
+  completed
 }

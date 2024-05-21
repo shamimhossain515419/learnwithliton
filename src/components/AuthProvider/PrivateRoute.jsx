@@ -6,7 +6,6 @@ import { useRouter } from 'next/navigation';
 
 const PrivateRoute = ({ children }) => {
   const { data: session, status } = useSession();
-  console.log(session);
 
   const token = Cookies.get('token');
   const router = useRouter();
