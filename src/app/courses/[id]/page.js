@@ -24,7 +24,7 @@ async function getData(id) {
 
 const page = async ({ params }) => {
  const { data } = await getData(params?.id);
- console.log(data)
+ 
 
   return (
     <div className="primaryBg text-[#64748B]   py-16 ">

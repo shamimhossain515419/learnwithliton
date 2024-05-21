@@ -32,8 +32,7 @@ const UpdateProfile = () => {
       }
     );
     const result = await res.json();
-    console.log(result);
-    if (result.status === 'success') {
+   if (result.status === 'success') {
       toast.success(result?.message);
 
       form.reset();

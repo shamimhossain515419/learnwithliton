@@ -3,10 +3,11 @@ import { PrismaClient } from "@prisma/client";
 import { CreateToken } from "@/utility/JwtTokenHelper";
 const bcrypt = require("bcrypt");
 const prisma = new PrismaClient();
-export const POST = async (req, res, next) => {
+export const GET = async (req, res, next) => {
   try {
-    let { email, password } = await req.json();
-    console.log(email, password);
+    let { searchParams } = new URL(req.url);
+    let email = searchParams.get("email") || "";
+    let password = searchParams.get("password") || "";
     const result = await prisma.users.findUnique({
       where: { email: email },
     });
@@ -31,12 +32,11 @@ export const POST = async (req, res, next) => {
         message: "Incorrect password",
       });
     }
-
     let token = await CreateToken(result["email"], result["id"]);
     let expireDuration = new Date(Date.now() + 24 * 60 * 60 * 1000);
     const cookieString = `token=${token}; expires=${expireDuration.toUTCString()} ;path=/`;
     return NextResponse.json({
-      status: "fail",
+      status: "success",
       code: 200,
       user: result,
       token: token,

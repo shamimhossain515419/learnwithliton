@@ -22,7 +22,7 @@ export async function GET(req, res, next) {
   try {
     let { searchParams } = new URL(req.url);
     let course_id = parseFloat(searchParams.get("id"));
-    let searchData = searchParams.get("name") || ""
+    let searchData = searchParams.get("name") || "";
     const result = await prisma.targetAudience.findMany({
       where: {
         course_id: course_id,
@@ -63,9 +63,10 @@ export async function PUT(req, res) {
 export async function DELETE(req, res) {
   try {
     let { searchParams } = new URL(req.url);
-    let id = parseFloat(searchParams.get("id"));
+    let id = parseInt(searchParams.get("id"));
+    // targetAudience find 
     const findCourse = await prisma.targetAudience.findUnique({
-      where: { id },
+      where: { id: id },
     });
     if (!findCourse) {
       return NextResponse.json({
@@ -73,7 +74,8 @@ export async function DELETE(req, res) {
         data: "Target-audience not found",
       });
     }
-    const result = await prisma.facilities.delete({
+    // delete targetAudience  
+    const result = await prisma.targetAudience.delete({
       where: { id },
     });
     return NextResponse.json({ status: "success", data: result });

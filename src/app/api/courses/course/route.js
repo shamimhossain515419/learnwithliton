@@ -155,8 +155,10 @@ export async function DELETE(req, res) {
         data: "course not found",
       });
     }
-    let imagePath = `public/uploads/courses/${findCourse.photo_url}`;
-    await unlink(imagePath);
+    if (findCourse.photo_url) {
+      let imagePath = `public/uploads/courses/${findCourse.photo_url}`;
+      await unlink(imagePath);
+    }
 
     const result = await prisma.courses.delete({
       where: { id },

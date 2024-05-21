@@ -17,10 +17,7 @@ export const POST = async (req, res) => {
       });
     }
 
-    console.log(ExistingUser?.verifiedCode);
-    console.log(verifiedCode);
-
-    try {
+  try {
       if (ExistingUser?.verifiedCode == verifiedCode) {
         const data = {
           verifiedCode: 0,

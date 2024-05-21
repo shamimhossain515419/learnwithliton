@@ -58,7 +58,6 @@ const Page = () => {
       body: formData,
     });
     const result = await res.json();
-    console.log(result);
     if (result.status === 'success') {
       toast.success(result?.message);
       router.push('/login');

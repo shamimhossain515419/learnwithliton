@@ -3,7 +3,7 @@ import SectionTitle from "../SectionTitle/SectionTitle";
 import CourseFaqsCard from "./CourseFaqsCard";
 
 const CourseFaqs = ({ course_faqs }) => {
-  console.log(course_faqs)
+
   return (
     <div className=" pt-10">
       <SectionTitle

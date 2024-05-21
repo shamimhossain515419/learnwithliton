@@ -6,8 +6,7 @@ const prisma = new PrismaClient();
 export const POST = async (req) => {
   try {
     const body = await req.json();
-    console.log(body)
-    if (!prisma.batch) {
+     if (!prisma.batch) {
       throw new Error("The 'batch' model is not defined in Prisma Client.");
     }
     const result = await prisma.batch.create({

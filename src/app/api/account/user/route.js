@@ -1,20 +1,23 @@
-import { NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
-import { VerifyToken } from '../../../../middleware/VerifyJwtToken';
-import { generateRandomFileName } from '../../../../utility/generateRandomFileName';
-const fs = require('fs').promises;
-const path = require('path');
-import { unlink } from 'fs/promises';
+import { NextResponse } from "next/server";
+import { PrismaClient } from "@prisma/client";
+import { VerifyToken } from "../../../../middleware/VerifyJwtToken";
+import { generateRandomFileName } from "../../../../utility/generateRandomFileName";
+const fs = require("fs").promises;
+const path = require("path");
+import { unlink } from "fs/promises";
+import { VerifyJwtTokenAdmin } from "@/middleware/VerifyJwtTokenAdmin";
 const prisma = new PrismaClient();
 export async function GET(req, res) {
   try {
+    console.log("first");
     // verify token
-    const { email, id } = await VerifyToken();
+    const data = await VerifyJwtTokenAdmin();
+    console.log(data)
     if (!email) {
       return NextResponse.json({
-        status: 'fail',
+        status: "fail",
         code: 401,
-        message: ' verification failed',
+        message: " verification failed",
       });
     }
     //  find user
@@ -24,16 +27,16 @@ export async function GET(req, res) {
 
     // and resultn
     if (!result.email) {
-      return NextResponse.json({ status: 'fail', data: result });
+      return NextResponse.json({ status: "fail", data: result });
     } else {
       return NextResponse.json({
-        status: 'success',
+        status: "success",
         code: 200,
         user: result,
       });
     }
   } catch (error) {
-    return NextResponse.json({ status: 'fail', data: error });
+    return NextResponse.json({ status: "fail", data: error });
   }
 }
 
@@ -43,13 +46,13 @@ export const PUT = async (req, res) => {
   try {
     const formDataValue = await req.formData();
     const { searchParams } = new URL(req.url);
-    const id = parseInt(searchParams.get('id'));
-    const name = formDataValue.get('name') || '';
-    const email = formDataValue.get('email') || '';
-    const phone = Number(formDataValue.get('phone')) || 0;
-    const address = formDataValue.get('address') || '';
-    const discord = formDataValue.get('discord') || '';
-    const file = formDataValue.get('photo') || File;
+    const id = parseInt(searchParams.get("id"));
+    const name = formDataValue.get("name") || "";
+    const email = formDataValue.get("email") || "";
+    const phone = Number(formDataValue.get("phone")) || 0;
+    const address = formDataValue.get("address") || "";
+    const discord = formDataValue.get("discord") || "";
+    const file = formDataValue.get("photo") || File;
 
     // Fetch the client data to get the current image filename
     const user = await prisma.users.findUnique({
@@ -60,13 +63,11 @@ export const PUT = async (req, res) => {
 
     if (!user) {
       return NextResponse.json({
-        message: 'user not found',
+        message: "user not found",
         code: 404,
       });
     }
-    console.log(user);
-
-    let imagePath = ''; // Variable to store the path of the new image
+    let imagePath = ""; // Variable to store the path of the new image
     let randomFileName = user.photo; // Initialize with the current image filename
 
     if (file?.name) {
@@ -90,7 +91,7 @@ export const PUT = async (req, res) => {
       phone,
       email,
     };
-   
+
     // Update the client data in the database
     const updatedUser = await prisma.users.update({
       where: {
@@ -100,12 +101,11 @@ export const PUT = async (req, res) => {
     });
 
     return NextResponse.json({
-      status: 'success',
-      message: 'user Updated Successfully',
+      status: "success",
+      message: "user Updated Successfully",
       code: 200,
     });
   } catch (err) {
-    console.log(err.message);
     return NextResponse.json({ message: err.message, code: 500 });
   }
 };
@@ -113,7 +113,7 @@ export const PUT = async (req, res) => {
 export const DELETE = async (req, res) => {
   try {
     const { searchParams } = new URL(req.url);
-    const id = parseInt(searchParams.get('id'));
+    const id = parseInt(searchParams.get("id"));
     // / Fetch the client data to get the current image filename
     const user = await prisma.users.findUnique({
       where: {
@@ -132,8 +132,8 @@ export const DELETE = async (req, res) => {
     });
 
     return NextResponse.json({
-      status: 'success',
-      message: 'user delete Successfully',
+      status: "success",
+      message: "user delete Successfully",
       code: 200,
     });
   } catch (err) {

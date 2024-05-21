@@ -6,8 +6,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import Image from "next/image";
 const AssignmentShowcase = ({ targetAudience }) => {
-  console.log(targetAudience);
-  const data = [1, 2, 4, 5];
+  
   return (
     <>
       <div className=" pt-10">

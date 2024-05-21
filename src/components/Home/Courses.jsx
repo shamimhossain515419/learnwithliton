@@ -18,7 +18,6 @@ async function getData() {
 
 const Courses = async () => {
   const {data} = await getData();
-  console.log(data)
   return (
     <Container>
       <div className=" my-10">
