@@ -84,6 +84,11 @@ export async function PUT(req, res) {
       return NextResponse.json({ status: false });
     }
 
+    console.log({name: name,
+      description: description,
+      video_url: video_url,
+     price,
+      discount,})
     let { searchParams } = new URL(req.url);
     let id = parseFloat(searchParams.get("id"));
 

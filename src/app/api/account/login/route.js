@@ -42,7 +42,7 @@ export async function POST(req, res) {
           token: token,
           message: "user Login successful",
         },
-       
+        { status: 200, headers: { "set-cookie": cookieString } }
       );
     }
   } catch (e) {

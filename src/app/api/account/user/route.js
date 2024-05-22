@@ -5,15 +5,11 @@ import { generateRandomFileName } from "../../../../utility/generateRandomFileNa
 const fs = require("fs").promises;
 const path = require("path");
 import { unlink } from "fs/promises";
-import { VerifyJwtTokenAdmin } from "@/middleware/VerifyJwtTokenAdmin";
 const prisma = new PrismaClient();
 export async function GET(req, res) {
   try {
-    console.log("first");
-    // verify token
-    const data = await VerifyJwtTokenAdmin();
-    console.log(data)
-    if (!email) {
+    const { email, id } = await VerifyToken(req);
+    if (!id) {
       return NextResponse.json({
         status: "fail",
         code: 401,
@@ -22,7 +18,7 @@ export async function GET(req, res) {
     }
     //  find user
     const result = await prisma.users.findUnique({
-      where: { email: email },
+      where: { id: id },
     });
 
     // and resultn

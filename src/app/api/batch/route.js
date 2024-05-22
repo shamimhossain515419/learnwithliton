@@ -6,9 +6,21 @@ const prisma = new PrismaClient();
 export const POST = async (req) => {
   try {
     const body = await req.json();
-     if (!prisma.batch) {
+    if (!prisma.batch) {
       throw new Error("The 'batch' model is not defined in Prisma Client.");
     }
+
+    // const findBatch = await prisma.batch.findMany({
+    //   where: { name: body?.name},
+    // });
+
+    // if (findBatch) {
+    //   return NextResponse.json({
+    //     status: "fail",
+    //     message: "This branch has been created in this Branch course",
+    //   });
+    // }
+
     const result = await prisma.batch.create({
       data: body,
     });
@@ -46,5 +58,49 @@ export async function GET(req, res, next) {
   } catch (error) {
     console.log(error);
     return NextResponse.json({ status: "fail", meassge: error?.meassge });
+  }
+}
+
+
+
+
+// update batch
+
+export async function PUT(req, res) {
+  try {
+    let { searchParams } = new URL(req.url);
+    let id = parseFloat(searchParams.get("id"));
+    let reqBody = await req.json();
+    const result = await prisma.batch.update({
+      where: { id },
+      data: reqBody,
+    });
+    return NextResponse.json({ status: "success", data: result });
+  } catch (error) {
+    console.log(error?.message);
+    return NextResponse.json({ status: "fail", data: error.toString() });
+  }
+}
+//  delete batch
+export async function DELETE(req, res) {
+  try {
+    let { searchParams } = new URL(req.url);
+    let id = parseFloat(searchParams.get("id"));
+    const findCourse = await prisma.batch.findUnique({
+      where: { id },
+    });
+    if (!findCourse) {
+      return NextResponse.json({
+        status: "fail",
+        data: "batch not found",
+      });
+    }
+    console.log(findCourse)
+    const result = await prisma.batch.delete({
+      where: { id },
+    });
+    return NextResponse.json({ status: "success", data: result });
+  } catch (error) {
+    return NextResponse.json({ status: "fail", data: error?.message });
   }
 }
