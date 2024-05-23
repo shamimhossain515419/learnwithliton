@@ -65,6 +65,9 @@ module.exports = {
           base: `var(--color-white-base)`,
           muted: `var(--color-white-muted)`,
         },
+        blue: {
+          base: `var(--color-blue-base)`,
+        },
       },
     },
   },

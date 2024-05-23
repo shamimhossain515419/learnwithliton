@@ -1,7 +1,7 @@
 import Link from "next/link";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import { FaCheck } from "react-icons/fa";
-const InsideThisCourse = ({ inside_this_course,price,id }) => {
+const InsideThisCourse = ({ inside_this_course, price, id }) => {
   return (
     <div className=" pt-10">
       {/* inside  contentt section  */}
@@ -30,7 +30,7 @@ const InsideThisCourse = ({ inside_this_course,price,id }) => {
           <p className="text-[25px] font-medium">৳ {price}</p>
         </div>
         <Link
-          href={"/"}
+          href={`/purchase/checkout/${id}`}
           className=" bg-blue-base w-full block rounded text-white-base py-3 text-center px-2
         "
         >

@@ -13,10 +13,10 @@ const CoursesBanner = ({title,video_url,photo_url,description}) => {
       </p>
       <div className="relative">
         <Image
-          className=" w-full   max-h-[800px] rounded-xl pt-7"
+          className=" w-full   max-h-[800px] md:h-[500px] rounded-xl pt-7"
           width={800}
-          height={800}
-          src={photo_url}
+          height={600}
+          src={`/uploads/courses/${photo_url}`}
           alt="image"
         />
         <div className=" w-[60px] h-[60px]">

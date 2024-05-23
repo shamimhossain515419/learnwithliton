@@ -48,7 +48,14 @@ export async function GET(req, res, next) {
     let { searchParams } = new URL(req.url);
     let course_id = parseFloat(searchParams.get("id"));
     let name = searchParams.get("name") || "";
-    const result = await prisma.batch.findMany();
+    const result = await prisma.batch.findMany({
+      where: {
+        course_id: course_id,
+        name: {
+          contains: name,
+        },
+      },
+    });
 
     return NextResponse.json({
       status: "success",
@@ -60,9 +67,6 @@ export async function GET(req, res, next) {
     return NextResponse.json({ status: "fail", meassge: error?.meassge });
   }
 }
-
-
-
 
 // update batch
 
@@ -95,7 +99,7 @@ export async function DELETE(req, res) {
         data: "batch not found",
       });
     }
-    console.log(findCourse)
+    console.log(findCourse);
     const result = await prisma.batch.delete({
       where: { id },
     });

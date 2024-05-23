@@ -18,7 +18,7 @@ const CourseCard = ({ item }) => {
       <div className=" py-3 border-b   border-[#FFFFFF80]">
         <div className=" text-white-base flex items-center gap-4 text-[12px] px-4">
           <button className=" bg-[#1F273D] px-3 py-[2px] rounded-md">
-            ব্যাচ ২
+            {item?.batch?.[0]?.name}
           </button>
           <button className=" bg-[#1F273D] px-3 py-[2px] rounded-md">
             ৫০ সিট বাকি

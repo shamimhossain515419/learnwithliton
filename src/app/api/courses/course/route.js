@@ -80,19 +80,9 @@ export async function PUT(req, res) {
     const name = data.get("name") || "";
     const description = data.get("description") || "";
     const video_url = data.get("video_url") || "";
-    if (!file?.name) {
-      return NextResponse.json({ status: false });
-    }
-
-    console.log({name: name,
-      description: description,
-      video_url: video_url,
-     price,
-      discount,})
     let { searchParams } = new URL(req.url);
     let id = parseFloat(searchParams.get("id"));
-
-    const existing = await prisma.courses.findUnique({
+   const existing = await prisma.courses.findUnique({
       where: { id: id },
     });
     if (!existing) {
