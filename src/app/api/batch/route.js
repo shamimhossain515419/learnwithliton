@@ -99,7 +99,7 @@ export async function DELETE(req, res) {
         data: "batch not found",
       });
     }
-    console.log(findCourse);
+    
     const result = await prisma.batch.delete({
       where: { id },
     });

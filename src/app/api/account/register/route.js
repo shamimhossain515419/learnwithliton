@@ -40,7 +40,7 @@ export const POST = async (req, res) => {
     await fs.writeFile(path, buffer);
     // password generate
     const hashedPassword = await bcrypt.hash(password, 10); // 10 is the saltRounds
-    console.log(hashedPassword);
+ 
 
     const user = await prisma.users.create({
       data: {
@@ -62,6 +62,7 @@ export const POST = async (req, res) => {
       message: ' Add user successfully',
     });
   } catch (err) {
+    console.log(err)
     return NextResponse.json({ message: err.message, code: 500 });
   }
 };

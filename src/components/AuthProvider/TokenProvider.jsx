@@ -6,9 +6,9 @@ import { userLoggedIn } from "../../redux/features/auth/authSlice";
 
 const TokenProvider = ({ children }) => {
   const token = Cookies.get("token");
-  console.log(token);
+
   const { data: userInfo, error } = useFetchUserQuery();
-  console.log(userInfo)
+
   const dispatch = useDispatch();
   dispatch(
     userLoggedIn({

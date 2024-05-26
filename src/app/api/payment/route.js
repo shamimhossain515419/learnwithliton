@@ -7,7 +7,7 @@ const prisma = new PrismaClient();
 export const POST = async (req) => {
   try {
     const { email, id } = await VerifyToken();
-     if (!id) {
+    if (!id) {
       return NextResponse.json({
         status: "fail",
         code: 401,
@@ -18,9 +18,7 @@ export const POST = async (req) => {
       await req.json();
 
     if (!prisma.enrollment || !prisma.payment) {
-      throw new Error(
-        "The 'enrollment' model is not defined in Prisma Client."
-      );
+      throw new Error("The  model is not defined in Prisma Client.");
     }
     const paymetResult = await prisma.payment.create({
       data: {
@@ -75,12 +73,13 @@ export const GET = async (req, res) => {
         message: "verification failed",
       });
     }
+
     const AllPayment = await prisma.payment.findMany({
       where: {
         user_id: parseInt(id),
       },
       include: {
-        enrollment: true,
+        courses: { select: { name: true } },
       },
     });
     return NextResponse.json({

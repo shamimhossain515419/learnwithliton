@@ -17,7 +17,7 @@ const authOptions = {
         id: { label: 'ID', type: 'text', placeholder: 'Enter ID' },
       },
       async authorize(credentials) {
-        console.log(credentials, 'author');
+
         try {
           const user = credentials;
 

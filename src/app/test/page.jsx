@@ -7,15 +7,28 @@ const page = () => {
     try {
       const { data } = await axios.post(
         "http://localhost:5000/api/bkash/payment/create",
-        { amount: 50, orderId: 1 },
+        { amount: 20, course_id: 1, batch_id: 1 },
         { withCredentials: true }
       );
-      console.log(data);
+
       window.location.href = data.bkashURL;
     } catch (error) {
       console.log(error.response.data);
     }
   };
+
+  const get = async () => {
+    try {
+      const { data } = await axios.get(
+        "http://localhost:5000/api/bkash/payment/callback"
+      );
+
+      console.log(data);
+    } catch (error) {
+      console.log(error.response.data);
+    }
+  };
+
   return (
     <div>
       <button
@@ -23,6 +36,12 @@ const page = () => {
         onClick={pay}
       >
         Pay bkash
+      </button>
+      <button
+        className="text-[50px] block text-red-500 font-bold pt-60"
+        onClick={get}
+      >
+      gt ifo
       </button>
     </div>
   );

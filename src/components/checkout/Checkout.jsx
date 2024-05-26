@@ -1,4 +1,5 @@
 "use client";
+import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -7,6 +8,22 @@ import { FaAngleRight } from "react-icons/fa";
 
 const Checkout = ({ data }) => {
   const [active, setActive] = useState("bkash");
+  console.log(data);
+
+  const pay = async () => {
+    try {
+      const { data: responsePayment } = await axios.post(
+        "http://localhost:5000/api/bkash/payment/create",
+        { amount: 20, course_id: data?.id, batch_id: 2 },
+        { withCredentials: true }
+      );
+
+      window.location.href = responsePayment.bkashURL;
+    } catch (error) {
+      console.log(error.response.data);
+    }
+  };
+
   return (
     <div className=" max-w-[1000px] mx-auto mt-20 p-5 rounded-[7px]  mb-10 bg-primary-muted">
       <div className=" ">
@@ -198,7 +215,10 @@ const Checkout = ({ data }) => {
                 <h1 className="text-white-base "> $ {data?.price} </h1>
               </div>
 
-              <div className=" bg-[#0284C7]  my-6  cursor-pointer  w-full border border-[#f8fafc14] rounded-[32px] px-[25px] py-[8px] flex items-center   justify-center  gap-2">
+              <div
+                onClick={pay}
+                className=" bg-[#0284C7]  my-6  cursor-pointer  w-full border border-[#f8fafc14] rounded-[32px] px-[25px] py-[8px] flex items-center   justify-center  gap-2"
+              >
                 <p className=" text-[19px] font-semibold secondColor">
                   পেমেন্ট সম্পন্ন করি
                 </p>

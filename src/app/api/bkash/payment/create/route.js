@@ -1,3 +1,4 @@
+import { VerifyToken } from "@/middleware/VerifyJwtToken";
 import { BkashBerifytoekn } from "@/middleware/bkashVerifyToken";
 import axios from "axios";
 import { cookies } from "next/headers";
@@ -6,13 +7,16 @@ import { v4 as uuidv4 } from "uuid";
 
 export const POST = async (req, res, next) => {
   try {
+    // const { email, id } = await VerifyToken(req);
+
     const bkashToen = await BkashBerifytoekn(req, res, next);
     const tokenBkash = cookies().get("bkash_token");
-    console.log(tokenBkash);
-    const { amount, userId } = await req.json();
-    console.log(amount, userId);
-    console.log(process.env.bkash_create_payment_url);
-
+    const { amount, course_id, batch_id } = await req.json();
+    const courseInfor = { course_id, batch_id };
+    const courseDetails = cookies().set(
+      "course_info",
+      JSON.stringify(courseInfor)
+    );
     const { data } = await axios.post(
       process.env.bkash_create_payment_url,
       {
@@ -33,13 +37,15 @@ export const POST = async (req, res, next) => {
         },
       }
     );
-     return NextResponse.json({
+
+    console.log(data)
+   return NextResponse.json({
       status: "success",
       bkashURL: data.bkashURL,
       message: "Course retrieved successfully",
     });
   } catch (error) {
-    console.error(error); // Log the error for debugging purposes
+   // Log the error for debugging purposes
     return NextResponse.json({
       status: "fail",
       message: error.message,

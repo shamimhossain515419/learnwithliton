@@ -57,7 +57,7 @@ model courses {
   enrollment         enrollment[]
   targetAudience     targetAudience[]
   assignmentShowcase assignmentShowcase[]
-}
+} 
 
 //  inside_this_course model 
 model inside_this_course {
@@ -174,20 +174,24 @@ model batch {
 }
 
 model payment {
-  id             Int          @id @default(autoincrement())
-  user_id        Int
-  course_id      Int
-  batch_id       Int
-  amount         Float
-  transaction_id String
-  method_name    String
-  status         String       @default("pending")
-  users          users        @relation(fields: [user_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
-  course         courses      @relation(fields: [course_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
-  batch          batch        @relation(fields: [batch_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
-  createdAt      DateTime     @default(now()) @db.Timestamp(0)
-  updatedAt      DateTime     @default(now()) @updatedAt @db.Timestamp(0)
-  enrollment     enrollment[]
+  id                    Int          @id @default(autoincrement())
+  user_id               Int
+  course_id             Int
+  batch_id              Int
+  amount                Float
+  transaction_id        String       @db.VarChar(500)
+  method_name           String
+  currency              String
+  customerMsisdn        String
+  merchantInvoiceNumber String
+  trxID                 String
+  status                String       @default("pending")
+  users                 users        @relation(fields: [user_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  courses               courses      @relation(fields: [course_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  batch                 batch        @relation(fields: [batch_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  createdAt             DateTime     @default(now()) @db.Timestamp(0)
+  updatedAt             DateTime     @default(now()) @updatedAt @db.Timestamp(0)
+  enrollment            enrollment[]
 }
 
 model enrollment {

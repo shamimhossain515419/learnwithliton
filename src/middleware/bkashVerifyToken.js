@@ -19,6 +19,7 @@ export const BkashBerifytoekn = async (req, res, next) => {
         },
       }
     );
+    console.log(data)
     cookies().set("bkash_token", data.id_token);
     next();
   } catch (error) {

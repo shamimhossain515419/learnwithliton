@@ -5,7 +5,7 @@ CREATE TABLE `users` (
     `name` VARCHAR(50) NOT NULL,
     `password` VARCHAR(191) NOT NULL,
     `role` ENUM('student', 'admin', 'mentors') NULL,
-    `address` VARCHAR(191) NULL,
+    `address` VARCHAR(500) NULL,
     `photo` VARCHAR(191) NOT NULL,
     `phone` INTEGER NULL,
     `gender` VARCHAR(191) NOT NULL,
@@ -23,7 +23,7 @@ CREATE TABLE `users` (
 CREATE TABLE `courses` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(50) NOT NULL,
-    `description` VARCHAR(191) NOT NULL,
+    `description` TEXT NOT NULL,
     `photo_url` VARCHAR(191) NOT NULL,
     `video_url` VARCHAR(191) NOT NULL,
     `price` INTEGER NOT NULL,
@@ -64,6 +64,17 @@ CREATE TABLE `facilities` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
+CREATE TABLE `targetAudience` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(400) NOT NULL,
+    `course_id` INTEGER NOT NULL,
+    `createdAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
+    `updatedAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
 CREATE TABLE `learning_purposes` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(400) NOT NULL,
@@ -84,9 +95,19 @@ CREATE TABLE `prerequisites` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
+CREATE TABLE `assignmentShowcase` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(400) NOT NULL,
+    `photo` VARCHAR(500) NOT NULL,
+    `course_id` INTEGER NOT NULL,
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
 CREATE TABLE `student_feedbacks` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
-    `description` VARCHAR(191) NOT NULL,
+    `description` TEXT NOT NULL,
     `course_id` INTEGER NOT NULL,
     `student_id` INTEGER NOT NULL,
 
@@ -99,8 +120,11 @@ CREATE TABLE `mentors` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(400) NOT NULL,
     `photo` VARCHAR(191) NOT NULL,
-    `about` VARCHAR(250) NOT NULL,
-    `description` VARCHAR(191) NOT NULL,
+    `about` VARCHAR(300) NOT NULL,
+    `description` TEXT NOT NULL,
+    `education` VARCHAR(250) NULL,
+    `phone` VARCHAR(50) NULL,
+    `email` VARCHAR(50) NULL,
     `course_id` INTEGER NOT NULL,
 
     PRIMARY KEY (`id`)
@@ -109,7 +133,7 @@ CREATE TABLE `mentors` (
 -- CreateTable
 CREATE TABLE `course_faqs` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
-    `description` VARCHAR(191) NOT NULL,
+    `description` TEXT NOT NULL,
     `title` VARCHAR(191) NOT NULL,
     `course_id` INTEGER NOT NULL,
     `createdAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
@@ -141,6 +165,10 @@ CREATE TABLE `payment` (
     `amount` DOUBLE NOT NULL,
     `transaction_id` VARCHAR(191) NOT NULL,
     `method_name` VARCHAR(191) NOT NULL,
+    `currency` VARCHAR(191) NOT NULL,
+    `customerMsisdn` VARCHAR(191) NOT NULL,
+    `merchantInvoiceNumber` VARCHAR(191) NOT NULL,
+    `trxID` VARCHAR(191) NOT NULL,
     `status` VARCHAR(191) NOT NULL DEFAULT 'pending',
     `createdAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
     `updatedAt` TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
@@ -171,10 +199,16 @@ ALTER TABLE `learning_objects` ADD CONSTRAINT `learning_objects_course_id_fkey` 
 ALTER TABLE `facilities` ADD CONSTRAINT `facilities_course_id_fkey` FOREIGN KEY (`course_id`) REFERENCES `courses`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
+ALTER TABLE `targetAudience` ADD CONSTRAINT `targetAudience_course_id_fkey` FOREIGN KEY (`course_id`) REFERENCES `courses`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
 ALTER TABLE `learning_purposes` ADD CONSTRAINT `learning_purposes_course_id_fkey` FOREIGN KEY (`course_id`) REFERENCES `courses`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE `prerequisites` ADD CONSTRAINT `prerequisites_course_id_fkey` FOREIGN KEY (`course_id`) REFERENCES `courses`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `assignmentShowcase` ADD CONSTRAINT `assignmentShowcase_course_id_fkey` FOREIGN KEY (`course_id`) REFERENCES `courses`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE `student_feedbacks` ADD CONSTRAINT `student_feedbacks_course_id_fkey` FOREIGN KEY (`course_id`) REFERENCES `courses`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;

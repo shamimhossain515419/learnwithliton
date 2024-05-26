@@ -1,22 +1,22 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import MenuBar from './MenuBar';
-import logo from '../../../public/image/home/asianitinc 2.png';
-import userImage from '../../../public/image/home/IMAGE (2).png';
-import { IoIosClose } from 'react-icons/io';
-import Image from 'next/image';
-import Link from 'next/link';
-import { FaBars } from 'react-icons/fa';
-import { usePathname } from 'next/navigation';
-import Container from '../../components/CommonComponent/Container/Container';
-import { useSession } from 'next-auth/react';
-import { useSelector } from 'react-redux';
+import { useState } from "react";
+import MenuBar from "./MenuBar";
+import logo from "../../../public/image/home/asianitinc 2.png";
+import userImage from "../../../public/image/home/IMAGE (2).png";
+import { IoIosClose } from "react-icons/io";
+import Image from "next/image";
+import Link from "next/link";
+import { FaBars } from "react-icons/fa";
+import { usePathname } from "next/navigation";
+import Container from "../../components/CommonComponent/Container/Container";
+import { useSession } from "next-auth/react";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [Open, setOpen] = useState(true);
   const { data: session, status } = useSession();
-  const { user } = useSelector(state => state.auth);
+  const { user } = useSelector((state) => state.auth);
   const pathname = usePathname();
 
   return (
@@ -32,7 +32,7 @@ const Navbar = () => {
                   <Image src={logo} alt="image"></Image>
                   <Link
                     className="text-[16px] uppercase   font-semibold text-white-base"
-                    href={'/'}
+                    href={"/"}
                   >
                     Asian IT inc
                   </Link>
@@ -44,65 +44,68 @@ const Navbar = () => {
                       <div className=" flex items-center gap-[10px]  space-x-5">
                         <Link
                           className={
-                            pathname == '/'
-                              ? ' text-[14px]  rounded-[6px] bg-[#8194ae6c]  px-[12px] py-[9px] secondColor '
-                              : 'primaryColor hover:bg-[#8194ae6c]  rounded-[6px] duration-200  px-[12px] py-[9px] text-[14px]'
+                            pathname == "/"
+                              ? " text-[14px]  rounded-[6px] bg-[#8194ae6c]  px-[12px] py-[9px] secondColor "
+                              : "primaryColor hover:bg-[#8194ae6c]  rounded-[6px] duration-200  px-[12px] py-[9px] text-[14px]"
                           }
                           href="/"
                         >
-                          হোম{' '}
+                          হোম{" "}
                         </Link>
                         <Link
                           className={
-                            pathname == '/corses-access'
-                              ? '  text-[14px]  rounded-[6px] bg-[#8194ae6c]  px-[12px] py-[9px] secondColor '
-                              : 'primaryColor  text-[14px] hover:bg-[#8194ae6c]  rounded-[6px] duration-200  px-[12px] py-[9px]'
+                            pathname == "/corses-access"
+                              ? "  text-[14px]  rounded-[6px] bg-[#8194ae6c]  px-[12px] py-[9px] secondColor "
+                              : "primaryColor  text-[14px] hover:bg-[#8194ae6c]  rounded-[6px] duration-200  px-[12px] py-[9px]"
                           }
                           href="/courses/1"
                         >
-                          কোর্স এক্সেস{' '}
+                          কোর্স এক্সেস{" "}
                         </Link>
+                        {user ? (
+                          <Link
+                            className={
+                              pathname == "/dashboard/my-courses"
+                                ? "  text-[14px]  rounded-[6px] bg-[#8194ae6c]  px-[12px] py-[9px] secondColor "
+                                : "primaryColor text-[14px] hover:bg-[#8194ae6c]  rounded-[6px] duration-200  px-[12px] py-[9px]"
+                            }
+                            href="/dashboard/my-courses"
+                          >
+                            {" "}
+                            আমার ক্লাস
+                          </Link>
+                        ) : null}
+
                         <Link
                           className={
-                            pathname == '/dashboard'
-                              ? '  text-[14px]  rounded-[6px] bg-[#8194ae6c]  px-[12px] py-[9px] secondColor '
-                              : 'primaryColor text-[14px] hover:bg-[#8194ae6c]  rounded-[6px] duration-200  px-[12px] py-[9px]'
-                          }
-                          href="/dashboard"
-                        >
-                          {' '}
-                          ড্যাশবোর্ড
-                        </Link>
-                        <Link
-                          className={
-                            pathname == '/leaderboard'
-                              ? '  text-[14px]  rounded-[6px] bg-[#8194ae6c]  px-[12px] py-[9px] secondColor '
-                              : 'primaryColor text-[14px] hover:bg-[#8194ae6c]  rounded-[6px] duration-200  px-[12px] py-[9px]'
+                            pathname == "/leaderboard"
+                              ? "  text-[14px]  rounded-[6px] bg-[#8194ae6c]  px-[12px] py-[9px] secondColor "
+                              : "primaryColor text-[14px] hover:bg-[#8194ae6c]  rounded-[6px] duration-200  px-[12px] py-[9px]"
                           }
                           href="/leaderboard"
                         >
-                          লিডারবোর্ড{' '}
+                          লিডারবোর্ড{" "}
                         </Link>
                         <Link
                           className={
-                            pathname == '/live'
-                              ? '  text-[14px]  rounded-[6px] bg-[#8194ae6c]  px-[12px] py-[9px] secondColor '
-                              : 'primaryColor text-[14px] hover:bg-[#8194ae6c]  rounded-[6px] duration-200  px-[12px] py-[9px]'
+                            pathname == "/live"
+                              ? "  text-[14px]  rounded-[6px] bg-[#8194ae6c]  px-[12px] py-[9px] secondColor "
+                              : "primaryColor text-[14px] hover:bg-[#8194ae6c]  rounded-[6px] duration-200  px-[12px] py-[9px]"
                           }
                           href="/live"
                         >
-                          {' '}
+                          {" "}
                           লাইভ সেশনস
                         </Link>
                         <Link
                           className={
-                            pathname == '/payment'
-                              ? '  text-[14px]  rounded-[6px] bg-[#8194ae6c]  px-[12px] py-[9px] secondColor '
-                              : 'primaryColor text-[14px] hover:bg-[#8194ae6c]  rounded-[6px] duration-200  px-[12px] py-[9px]'
+                            pathname == "/payment"
+                              ? "  text-[14px]  rounded-[6px] bg-[#8194ae6c]  px-[12px] py-[9px] secondColor "
+                              : "primaryColor text-[14px] hover:bg-[#8194ae6c]  rounded-[6px] duration-200  px-[12px] py-[9px]"
                           }
                           href="/payment"
                         >
-                          {' '}
+                          {" "}
                           পেমেন্ট করুন
                         </Link>
                       </div>
@@ -131,8 +134,8 @@ const Navbar = () => {
                         <div>
                           {user ? (
                             <>
-                              <Link href={'/account'}>
-                                {' '}
+                              <Link href={"/account"}>
+                                {" "}
                                 <Image
                                   width={28}
                                   height={28}
@@ -144,11 +147,11 @@ const Navbar = () => {
                             </>
                           ) : (
                             <Link
-                              href={'/login'}
+                              href={"/login"}
                               className=" text-[#FFF]  cursor-pointer bg-[#0284C7]   w-full border border-[#0284C7] rounded-[32px] px-[18px] py-[4px] flex items-center   font-medium   justify-center  gap-2"
                             >
-                              {' '}
-                              <span>লগইন</span>{' '}
+                              {" "}
+                              <span>লগইন</span>{" "}
                             </Link>
                           )}
                         </div>
@@ -184,7 +187,7 @@ const Navbar = () => {
                       <div>
                         {Open ? (
                           <FaBars size={24} className="  text-[#FFF]">
-                            {' '}
+                            {" "}
                           </FaBars>
                         ) : (
                           <IoIosClose className="  text-[#FFF]" size={28} />
@@ -197,7 +200,7 @@ const Navbar = () => {
               {/* navigation links  for mobile screen */}
 
               <div className="lg:hidden ">
-                {Open ? '' : <MenuBar setOpen={setOpen}></MenuBar>}
+                {Open ? "" : <MenuBar setOpen={setOpen}></MenuBar>}
               </div>
             </div>
           </Container>

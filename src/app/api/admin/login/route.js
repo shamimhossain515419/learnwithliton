@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
 import { CreateToken } from "@/utility/JwtTokenHelper";
+import { headers } from "next/headers";
 const bcrypt = require("bcrypt");
 const prisma = new PrismaClient();
 export const GET = async (req, res, next) => {
@@ -35,13 +36,16 @@ export const GET = async (req, res, next) => {
     let token = await CreateToken(result["email"], result["id"]);
     let expireDuration = new Date(Date.now() + 24 * 60 * 60 * 1000);
     const cookieString = `token=${token}; expires=${expireDuration.toUTCString()} ;path=/`;
-    return NextResponse.json({
-      status: "success",
-      code: 200,
-      user: result,
-      token: token,
-      message: "user Login successful",
-    });
+    return NextResponse.json(
+      {
+        status: "success",
+        code: 200,
+        user: result,
+        token: token,
+        message: "user Login successful",
+      },
+      { status: 200, headers: { "set-cookie": cookieString } }
+    );
   } catch (err) {
     console.log(err?.message);
     return NextResponse.json({
